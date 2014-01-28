@@ -116,7 +116,8 @@
             margin-left: -5px;
         }
         #help {
-            margin: 10px 80px -30px 200px;
+            margin: 10px 80px 0px 200px;
+            z-index: 100;
         }
         #levels,#genres {
             margin-left: 20px;
@@ -178,7 +179,7 @@
     </div>
 </div>
     <div class='row' id='help'>
-        Click a bar to zoom. Double click background to unzoom.
+        Click a bar to zoom. Double click background to <a href="#" id="unzoom">unzoom</a>.
     </div>
 <div class='row' id='svgdiv'>
 </div>
@@ -190,9 +191,10 @@
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+$(function(){
 
     var height = 1500, width = 600;
-    var margin = {left: 30,top: 10,right: 30,bottom:30};
+    var margin = {left: 30,top: 0,right: 30,bottom:30};
 
     var maxLevel = +$('#levels label.active input').attr('x-num');
     var yearFrom = 1500;
@@ -222,7 +224,10 @@
         literature: $('#literature').hasClass('active'),
         architecture:$('#architecture').hasClass('active')};
     var svg = d3.select('#svgdiv').append('svg').attr('width',width).attr('height',height);
+
     svg.on('dblclick',bgDblClick);
+    $('#unzoom').click(function(){bgDblClick();return false;}); //For mobile.
+
     var g_people = svg.append('g');
 
     var x = d3.time.scale().domain([new Date(yearFrom,0,0,0,0,0,0),new Date(yearTo,0,0,0,0,0,0)]).range([margin.left,width-margin.right]);
@@ -312,7 +317,7 @@
         xaxisobj.transition().duration(500).call(xAxis.scale(x));
         var y1945 = new Date(1945,0,0,0,0,0,0);
         svg.select('.vert').transition().duration(500).attr({x1: x(y1945),y1:0,x2:x(y1945),y2:height-50});
-        gs.transition().duration(500).attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+60)+')';})
+        gs.transition().duration(500).attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';})
                 .attr('width',function(d){return x(d.to)-x(d.from);});
         gs.selectAll('rect').transition().duration(500).attr('width',function(d){return x(d.to)-x(d.from);});
         gs.selectAll('.person-text').transition().duration(500).attr('x',function(d){
@@ -375,7 +380,7 @@
                 .orient("bottom");
 
         xaxisobj = svg.append("g")
-                .attr("transform", "translate(0,50)")
+                .attr("transform", "translate(0,30)")
                 .attr('class','axis x x1')
                 .call(xAxis);
 
@@ -408,14 +413,14 @@
 
         //Move existing ones
         gs.transition().duration(500)
-                .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+60)+')';});
+                .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';});
 
-        xaxisobj2.transition().duration(500).attr("transform", "translate(0,"+(usedData.length*yinterval+80)+")");
+        xaxisobj2.transition().duration(500).attr("transform", "translate(0,"+(usedData.length*yinterval+60)+")");
 
                  //Append new ones
         gs.enter().append('g')
                 .style('opacity',0)
-                .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+60)+')';})
+                .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';})
                 .call(mkPerson)
                 .transition().duration(500).style('opacity',1);
 
@@ -427,7 +432,7 @@
         var y1945 = new Date(1945,0,0,0,0,0,0);
 
     }
-
+});
 </script>
 </body>
 </html>

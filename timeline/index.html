@@ -460,6 +460,7 @@ $(function(){
     }
 
     function update(dat){
+        svg.transition().duration(500).attr('height',dat.length * yinterval+100);
         gs = g_people.selectAll('g')
                 .data(dat,function(d){return d.name;});
 

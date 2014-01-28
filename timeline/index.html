@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Timeline</title>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
+    <meta name="viewport" content="width=700, initial-scale=1">
+
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
 
@@ -21,6 +25,15 @@
         }
         .axis text {
             font-size: 14px;
+        }
+
+        /*This is essential for correct axis drawing */
+        /* http://stackoverflow.com/questions/12148188/d3-js-yaxis-not-drawing-all-the-ticks-properly */
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
         }
 
         .event {
@@ -123,11 +136,18 @@
             margin-left: 20px;
         }
 
+        h1 {
+            font-size: 25px;
+            color: #804571;
+            margin: 20px 0px 0px 20px;
+        }
+
     </style>
 </head>
 <body>
 <div class='container'>
 
+<div class='row'><h1>Art Timeline</h1></div>
     <div class='row'>
     <div class="btn-group" id="levels" data-toggle="buttons">
         <label class="btn">
@@ -197,8 +217,14 @@ $(function(){
     var margin = {left: 30,top: 0,right: 30,bottom:30};
 
     var maxLevel = +$('#levels label.active input').attr('x-num');
-    var yearFrom = 1500;
-    var yearTo = 2000;
+
+
+    var yearFromDef = 1500;
+    var yearToDef = 2014;
+
+    var yearFrom = yearFromDef;
+    var yearTo = yearToDef;
+
     var yinterval = 15;
 
 //    $( "#levels > label" ).on('click',function(e){
@@ -223,7 +249,12 @@ $(function(){
         painting: $('#painting').hasClass('active'),
         literature: $('#literature').hasClass('active'),
         architecture:$('#architecture').hasClass('active')};
+
     var svg = d3.select('#svgdiv').append('svg').attr('width',width).attr('height',height);
+
+    // http://www.h2.dion.ne.jp/~defghi/svgMemo/svgMemo_10.htm
+//    svg.append('defs').append('clipPath').attr('id','clip').attr('clip-rule','evenodd')
+//            .append('rect').attr({x: 0,y:0,width: 800,height:300});
 
     svg.on('dblclick',bgDblClick);
     $('#unzoom').click(function(){bgDblClick();return false;}); //For mobile.
@@ -285,7 +316,7 @@ $(function(){
         console.log(event);
         if(zoomed){
             zoomed = false;
-            setYearRange(1500,2000);
+            setYearRange(yearFromDef,yearToDef);
         }
     }
 
@@ -295,8 +326,8 @@ $(function(){
 
         if(zoomed){ // already zoomed in?
             zoomed = false;
-            from = 1500;
-            to = 2000;
+            from = yearFromDef;
+            to = yearToDef;
         }else{
             zoomed = true;
 //         var cent = x.invert(event.x);
@@ -314,7 +345,20 @@ $(function(){
         yearFrom = from;
         yearTo = to;
         x = d3.time.scale().domain([new Date(yearFrom,0,0,0,0,0,0),new Date(yearTo,0,0,0,0,0,0)]).range([margin.left,width-margin.right]);
+
+        //Set axes
+        xAxis = d3.svg.axis()
+                .scale(x)
+                .tickSize(-4).ticks(10).orient("top");
+
+        xAxis2 = d3.svg.axis()
+                .scale(x)
+                .tickSize(-4).ticks(10).orient("bottom");
+
         xaxisobj.transition().duration(500).call(xAxis.scale(x));
+        xaxisobj2.transition().duration(500).call(xAxis2.scale(x));
+
+
         var y1945 = new Date(1945,0,0,0,0,0,0);
         svg.select('.vert').transition().duration(500).attr({x1: x(y1945),y1:0,x2:x(y1945),y2:height-50});
         gs.transition().duration(500).attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';})
@@ -371,23 +415,27 @@ $(function(){
     function mkAxis(){
         xAxis = d3.svg.axis()
                 .scale(x)
-            // .tickFormat(d3.time.format('%Y'))
-                .tickSize(2).ticks(d3.time.years,50).tickSubdivide(false).orient("top");
-            //    .ticks(10).orient("top");
+                .tickSize(-4).ticks(d3.time.years,50).orient("top");
+
         xAxis2 = d3.svg.axis()
                 .scale(x)
-                .tickSize(2)
-                .orient("bottom");
+                .tickSize(-4).ticks(d3.time.years,50).orient("bottom");
 
         xaxisobj = svg.append("g")
                 .attr("transform", "translate(0,30)")
                 .attr('class','axis x x1')
                 .call(xAxis);
 
+        xaxisobj.selectAll("path.domain").attr("stroke","black").style('fill','none');
+        xaxisobj.selectAll("line.tick").style('fill','black');
+
         xaxisobj2 = svg.append("g")
                   .attr("transform", "translate(0,100)")
                 .attr('class','axis x x2')
                 .call(xAxis2);
+
+        xaxisobj2.selectAll("path.domain").attr("stroke","black").style('fill','none');
+        xaxisobj2.selectAll("line.tick").style('fill','black');
     }
 
     function updateShowLevel(_minLevel){
@@ -419,6 +467,7 @@ $(function(){
 
                  //Append new ones
         gs.enter().append('g')
+      //          .attr('clip-path',"url(#clip)")
                 .style('opacity',0)
                 .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';})
                 .call(mkPerson)

@@ -151,6 +151,10 @@
             margin-top: 30px;
         }
 
+        #social {
+            opacity: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -224,10 +228,11 @@
     </div>
 <div class='row' id='svgdiv'>
 </div>
+    <div id="social">
     <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="300" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
+    </div>
 </div>
 
 <!-- <script src='d3.js'></script> -->
@@ -312,6 +317,7 @@ $(function(){
 
                     allData = _.sortBy(_.filter(dat2,function(d){return !!d.name;}),function(d){return d.from;});
                     updateFiltered();
+                    d3.select('#social').transition().delay(600).duration(100).style('opacity',1);
                 });
             });
         });

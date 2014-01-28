@@ -116,8 +116,7 @@
             margin-left: -5px;
         }
         #help {
-            text-align: right;
-            margin: 10px 80px -30px 0px;
+            margin: 10px 80px -30px 200px;
         }
         #levels,#genres {
             margin-left: 20px;
@@ -129,7 +128,7 @@
 <div class='container'>
 
     <div class='row'>
-    <div class="btn-group col-md-5" id="levels" data-toggle="buttons">
+    <div class="btn-group" id="levels" data-toggle="buttons">
         <label class="btn">
             <input type="radio" name="levels" x-num="1">
             <span class="glyphicon glyphicon-user"></span>
@@ -163,7 +162,7 @@
     </div>
     </div>
     <div class='row'>
-    <div class="btn-group col-md-6" id='genres' data-toggle="buttons">
+    <div class="btn-group" id='genres' data-toggle="buttons">
         <label class="btn active" id='music'>
             <input type="checkbox"> Music
         </label>
@@ -278,6 +277,7 @@
     }
 
     function bgDblClick(){
+        console.log(event);
         if(zoomed){
             zoomed = false;
             setYearRange(1500,2000);

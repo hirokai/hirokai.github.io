@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>Publication counts</title>
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <style type="text/css">
+
+
+        .node {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+
+        .link {
+            stroke: #999;
+            stroke-opacity: .6;
+        }
+
+        body {
+
+        }
+
+        svg {
+            font: 10px sans-serif;
+            margin: 0px;
+            padding: 10px;
+            width: 100%;
+            height: 300px;
+        }
+
+        .y.axis path {
+            display: none;
+        }
+
+        .y.axis line {
+            stroke: #fff;
+            stroke-opacity: .2;
+            shape-rendering: crispEdges;
+        }
+
+        .y.axis .zero line {
+            stroke: #000;
+            stroke-opacity: 1;
+        }
+        table {
+        }
+    </style>
+
+</head>
+<body class='container'>
+
+<h1>Coauthor frequency histogram</h1>
+
+<div class='row'>
+
+    <div class='md-col-12'>
+        <form action="" id='form'>
+            <input type="text" id='freeword'/>
+            <button class='btn btn-default' id='freeword-go'>Search</button>
+            <select name="" id="pi-choice">
+                <option value=""></option>
+                <option value="groves">Jay T. Groves</option>
+                <option value="vale">Ronald D. Vale</option>
+                <option value="kuriyan">John Kuriyan</option>
+                <option value="dustin">Michael Dustin</option>
+                <!--                <option value="aida">Takuzo Aida</option>
+                                <option value="noji">Hiroyuki Noji</option>
+                                <option value="takeuchi">Shoji Takeuchi</option>
+                                <option value="mullins">Dyche Mullins</option>
+                                <option value="jamesallison">James Allison</option> -->
+
+            </select>
+            <span>Records more than 500 most recent papers are omitted.</span>
+        </form>
+        <button class='btn btn-sm btn-default' id='erase'>Erase cache of this person</button>
+
+    </div>
+</div>
+<div class="row">
+    <div class='col-md-8'>
+        <svg></svg>
+    </div>
+
+    <div class='col-md-4'>
+        <table class="table" id="authors">
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery/2.1.1/jquery.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.9/d3.js'></script>
+
+<script type="text/javascript" src="./example-opt.js"></script>
+<script type="text/javascript" src="./example-launcher.js"></script>
+
+</body>
+</html>

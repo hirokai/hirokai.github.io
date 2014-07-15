@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Timers</title>
 		<link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="app/bower_components/angular-ui/build/angular-ui.min.css">
 		<style>
 		div.timer {
 			float: left;
@@ -31,6 +32,17 @@
 		.remove {
 			float: right;
 		}
+		#fulltime {
+			width: 50px;
+		}
+		.bar {
+			height: 15px;
+			width: 0px;
+			background: lightblue;
+			margin-top: 3px;
+			margin-left: -6px;
+		}
+		.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 		</style>
 
 		<script src='app/bower_components/angular/angular.min.js'></script>
@@ -38,14 +50,18 @@
 		<script src='app/bower_components/jquery/dist/jquery.min.js'></script>
 		<script src='app/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
 		<script src='app/bower_components/numeral/min/numeral.min.js'></script>
+		<script src='app/bower_components/angular-ui/build/angular-ui.min.js'></script>
 		<script src='js/main.js'></script>
 	</head>
 	<body ng-controller="EntireCtrl" ng-keydown='keyDown($event)'>
 
-<div><button class="btn btn-default" ng-click='addTimer()'>Add</button></div>
+<div><button class="btn btn-default" ng-click='addTimer()'>Add</button>
+<label for="fulltime">Full time (min):</label>
+<input id='fulltime' type="text" ng-model='fullTime'>
+</div>
 <div class="timer" ng-class='{running: running, selected: selected}' ng-repeat='timer in timers' ng-controller='TimerCtrl'>
 <div class='name'>
-	{{timer.name}} {{selected}}
+	{{timer.name}}
 	<button class="btn btn-xs btn-default remove" ng-click='remove()'><span class="glyphicon glyphicon-remove"></span></button>
 </div>
 <div class='timer-value'>{{timerStr()}}</div>
@@ -57,7 +73,8 @@
 </div>
 <div><button class='btn btn-default' ng-click='reset()' ng-disabled='running'><span class="glyphicon glyphicon-step-backward"></span></button>
 </div>
-
+<progressbar max="20" value="10"></progressbar>
+<div class='bar' ng-style='{width: barWidth, background: barColor}'></div>
 </div>
 
 	</body>

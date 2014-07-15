@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<html lang="en" ng-app="TimerApp">
+	<head>
+		<meta charset="UTF-8">
+		<title>Timers</title>
+		<link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<style>
+		div.timer {
+			float: left;
+			width: 150px;
+			height: 180px;
+			margin: 10px;
+			padding: 10px;
+			background: gray;
+		}
+		div.timer.running {
+			background: pink;
+		}
+		div.timer.selected {
+			border: 2px black solid;
+		}
+				div.name {
+			margin: 0px;
+			padding: 0px;
+			font-size: 20px;
+		}
+		.timer-value {
+			font-size: 40px;
+		}
+		.remove {
+			float: right;
+		}
+		</style>
+
+		<script src='app/bower_components/angular/angular.min.js'></script>
+		<script src='app/bower_components/underscore/underscore.js'></script>
+		<script src='app/bower_components/jquery/dist/jquery.min.js'></script>
+		<script src='app/bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+		<script src='app/bower_components/numeral/min/numeral.min.js'></script>
+		<script src='js/main.js'></script>
+	</head>
+	<body ng-controller="EntireCtrl" ng-keydown='keyDown($event)'>
+
+<div><button class="btn btn-default" ng-click='addTimer()'>Add</button></div>
+<div class="timer" ng-class='{running: running, selected: selected}' ng-repeat='timer in timers' ng-controller='TimerCtrl'>
+<div class='name'>
+	{{timer.name}} {{selected}}
+	<button class="btn btn-xs btn-default remove" ng-click='remove()'><span class="glyphicon glyphicon-remove"></span></button>
+</div>
+<div class='timer-value'>{{timerStr()}}</div>
+<div>
+<button class='btn btn-default' ng-click='start()' ng-disabled='running'>Start</button>
+<button class='btn btn-default' ng-click='stop()' ng-disabled='!running'>Stop</button>
+	
+</div>
+<div><button class='btn btn-default' ng-click='reset()' ng-disabled='running'>Reset</button>
+</div>
+
+</div>
+
+	</body>
+	</html>	

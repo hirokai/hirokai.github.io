@@ -1,0 +1,23 @@
+{
+  "name": "Timer",
+  "version": "0.0.0",
+  "authors": [
+    "Hiro Kai"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.3.0-beta.15",
+    "underscore": "~1.6.0",
+    "bootstrap": "~3.2.0",
+    "numeral": "~1.5.3"
+  }
+}

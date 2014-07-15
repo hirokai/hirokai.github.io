@@ -2,15 +2,16 @@
 	<html lang="en" ng-app="TimerApp">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Timers</title>
 		<link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<style>
 		div.timer {
 			float: left;
-			width: 150px;
-			height: 180px;
-			margin: 10px;
-			padding: 10px;
+			width: 130px;
+			height: 170px;
+			margin: 10px 10px 0px 10px;
+			padding: 10px 10px 0px 10px;
 			background: gray;
 		}
 		div.timer.running {
@@ -25,7 +26,7 @@
 			font-size: 20px;
 		}
 		.timer-value {
-			font-size: 40px;
+			font-size: 32px;
 		}
 		.remove {
 			float: right;
@@ -49,11 +50,12 @@
 </div>
 <div class='timer-value'>{{timerStr()}}</div>
 <div>
-<button class='btn btn-default' ng-click='start()' ng-disabled='running'>Start</button>
-<button class='btn btn-default' ng-click='stop()' ng-disabled='!running'>Stop</button>
+
+<button class='btn btn-default' ng-click='start()' ng-disabled='running'><span class="glyphicon glyphicon-play"></span></button>
+<button class='btn btn-default' ng-click='stop()' ng-disabled='!running'><span class="glyphicon glyphicon-pause"></span></button>
 	
 </div>
-<div><button class='btn btn-default' ng-click='reset()' ng-disabled='running'>Reset</button>
+<div><button class='btn btn-default' ng-click='reset()' ng-disabled='running'><span class="glyphicon glyphicon-step-backward"></span></button>
 </div>
 
 </div>

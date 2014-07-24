@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hiro Kai's website</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    a.lang {
+        display: inline ! important;
+    }
+</style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<!--                <li class="sidebar-brand"><a href="#">Contents</a>
+                </li> -->
+                <li><a href="index.html">About</a>
+                </li>
+                <li><a href="#">Interests</a>
+                <ul>
+                    <li><a href="signaling.html">Cell signaling</a></li>
+                    <li><a href="nanobio.html">Nano/bio interface</a></li>
+                    <li><a href="programming.html">Programming </a></li>
+                </ul>
+                </li>
+                <li><a href="skills.html">Skills</a>
+                <li><a href="contact.html">Contact</a>
+                <li></li>
+                <li><a class='lang' href="/resume/en/index.html">English</a>/<a class='lang' href="/resume/index.ja.html">Japanese</a></li>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            
+
+<h2>Led Zeppelin</h2>
+<dl>
+    
+        <dt>Jimmy Page</dt>
+        <dd>guitar</dd>
+    
+        <dt>Robert Plant</dt>
+        <dd>vocal</dd>
+    
+        <dt>John Paul Jones</dt>
+        <dd>bass</dd>
+    
+        <dt>John Bonham</dt>
+        <dd>drums</dd>
+    
+</dl>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+
+</html>

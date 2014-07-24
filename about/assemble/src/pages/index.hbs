@@ -1,0 +1,74 @@
+---
+title: Hiro Kai's website - Welcome
+layout: default.hbs
+name: index
+---
+
+<head>
+    <style type="text/css">
+        body {
+            overflow-x: hidden;
+        }
+
+    </style>
+</head>
+
+<div class="content-header">
+    <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        Hiroyuki Kai
+    </h1>
+</div>
+
+<div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="img/welcome.jpg" width='105%' style="margin: -20px -50px 0px -20px;"><br>
+            <section class="lead">
+                Welcome to Hiro Kai's website!<br>I'm a biophysical chemist with an engineer's mind.
+            </section>
+            <section id='affiliation'>
+                <h3>Current affiliation</h3>
+                Graduate Student Researcher, University of California, Berkeley (from 2010).<br>
+                Supervisor: Prof. Jay T. Groves.
+            </section>
+            <section id='research'>
+                <h3>Current topic of research</h3>
+                Spatiotemporal dynamics of juxtacrine signaling of T cells using (1) live-cell fluorescence microscopy and (2) nanofabricated materials.
+            </section>
+            <section id='research-past'>
+                <h3>Past topics of research</h3>
+                <ul></ul>
+                <li>Supramolecular machines for remote transmission of molecular motion.</li>
+                <li>Nanofillers for toughening thermoplastics.</li>
+                <li>Thermoplastics made from cellulose derivatives and cashew extract.</li>
+            </section>
+            <section id='experience'>
+                <h3>Education and experience</h3>
+                <ul>
+                    <li>2010-: PhD candidate, Department of Chemistry, University of California, Berkeley.</li>
+                    <li>2008-2010: Researcher, Nanoelectronics Laboratory, NEC Corporation.</li>
+                    <li>2006-2008: Department of Chemistry and Biotechnology, The University of Tokyo (Master of Engineering)</li>
+                    <li>2002-2006: Department of Chemistry and Biotechnology, The University of Tokyo (Bachelor of Engineering)</li>
+                </ul>
+            </section>
+            <section id='publication'>
+                <h3>Publication</h3>
+                <span style='margin-left: 20px;'>(&#x2021; indicates first coauthorship.)</span>
+                <ol class='publication' reversed>
+                    {{#each publication}}
+                    <li>{{{paper .}}}</li>
+                    {{/each}}
+                </ol>
+            </section>
+            <section id='presentation'>
+                <h3>Presentations</h3>
+                <ol class='publication' reversed>
+                    {{#each presentation}}
+                    <li>{{{.}}}</li>
+                    {{/each}}
+                </ol>
+            </section>
+        </div>
+    </div>
+</div>

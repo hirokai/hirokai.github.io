@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>T cell signaling</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+    a.lang {
+        display: inline ! important;
+    }
+    ol.publication li {
+        margin-bottom: 10px;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: black ! important;
+    }
+
+</style>
+<style type="text/css">
+    .lead {
+        color: #006;
+    }
+        #sidebar-wrapper{
+        background: #002;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: #002 ! important;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<!--                <li class="sidebar-brand"><a href="#">Contents</a>
+                </li> -->
+                <li><a href="index.html">About</a>
+                </li>
+                <li><a  class='nohover' href="#">Interests</a>
+                <ul>
+                    <li><a href="signaling.html">Cell signaling</a></li>
+                    <li><a href="nanobio.html">Nano/bio interface</a></li>
+                    <li><a href="molecularmachine.html">Molecular machine</a></li>
+                    <li><a href="programming.html">Programming </a></li>
+                </ul>
+                </li>
+                <li><a href="skills.html">Skills</a>
+                <li><a href="contact.html">Contact</a>
+                <li><a class='nohover' href="#">&nbsp;</a></li>
+                <li><small><a class='lang' href="./signaling.html">English</a> / <a class='lang' href="./signaling.ja.html">Japanese</a></small></li>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            
+
+<div class="content-header">
+    <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        Imaging studies of T cell signaling
+    </h1>
+</div>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+    <div class='row'>
+        <img src="img/tcr.jpg" height='220px' style='margin: -20px -50px 0px -20px;'>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <section class="lead">
+                Cell signaling is regulated in space and time. I study dynamic organization of T cell receptor (TCR) and other related signaling molecules on the T cell surface by fluorescence imaging combined with supported lipid bilayer (SLB)s.
+            </section>
+            <section id='intro'>
+                <h3>Early T cell signaling</h3>
+                <p>The T cell recognizes antigen, and it plays a central role in adaptive immune system. It has high selectivity and sensitivity to foreign peptides that are presented by an antigen presenting cell (APC). TCR can distinguish peptide sequences of difference of even a single residue, which leads to dramatic difference of final outcome of T cell response. This sophisticated machinery inspires us to study the mechanism behind T cell signaling.</p>               
+            </section>
+
+            <section id='microclusters'>
+                <h3>TCR microclusters</h3>
+                <img src="img/pathway.svg" style='max-width: 500px'>
+                <p>TCR forms a microcluster when it is engaged by antigen. The TCR microcluster is considered as a primary scaffold to give the T cell high recognition capability for antigen. One plausible mechanism is "size segregation model", in which TCR is phosphorylated by excluding phosphatases from the microcluster.</p>
+
+            </section>
+            <section id='bilayer'>
+                <h3>Supported lipid bilayer (SLB)</h3>
+                <p>A planar bilayer of phospholipid molecules can be formed on a glass coverslip by depositing small unilamellar vesicles of the lipids. This is called a supported lipid bilayer (SLB). Lipid molecules in the SLB can freely diffuse in two dimensions. You can functionalize a SLB with multiple proteins in a selective and controlled manner through various linkages such as poly-His chelation, maleimide/thiol, and DNA hybridization, etc. This works as a surrogate cell membrane for studying juxtacrine signaling of cells. You can use TIRF microscopy to achive high sensitivity down to a single molecule of fluorophore.</p>
+            </section>
+            <section id='review'>
+                <h3>Review papers for understanding the field</h3>
+                <ul>
+                    <li>Kaushik Choudhuri, Michael L Dustin; &quot;Signaling microdomains in T cells.&quot; <i>FEBS Lett.</i>, <b>584,</b> 4823-31 (2010).</li>
+                    <li>P Anton van der Merwe, Omer Dushek; &quot;Mechanisms for T cell receptor triggering.&quot; <i>Nat. Rev. Immunol.</i>, <b>11,</b> 47-55 (2010).</li>
+                    <li>David R Fooksman, et al.; &quot;Functional anatomy of T cell activation and synapse formation.&quot; <i>Annu. Rev. Immunol.</i>, <b>28,</b> 79-105 (2010).</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+
+</html>

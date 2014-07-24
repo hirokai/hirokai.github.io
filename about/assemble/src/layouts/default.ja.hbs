@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{page.title}}</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+{{> common}}
+<style type="text/css">
+    .lead {
+        color: #600;
+    }
+    #sidebar-wrapper{
+        background: #200;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: #200 ! important;
+    }
+</style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<!--                <li class="sidebar-brand"><a href="#">Contents</a>
+                </li> -->
+                <li><a href="index.ja.html">トップ</a>
+                </li>
+                <li><a class='nohover' href="#">興味</a>
+                <ul>
+                    <li><a href="signaling.ja.html">T細胞シグナリング</a></li>
+                    <li><a href="nanobio.ja.html">ナノ・バイオ境界</a></li>
+                    <li><a href="molecularmachine.ja.html">合成分子機械</a></li>
+                    <li><a href="programming.ja.html">プログラミング </a></li>
+                </ul>
+                </li>
+                <li><a href="skills.ja.html">スキル</a>
+                <li><a href="contact.ja.html">連絡先</a>
+                <li><a class='nohover' href="#">&nbsp;</a></li>
+                <li><small><a class='lang' href="./{{page.name}}.html">English</a> / <a class='lang' href="./{{page.name}}.ja.html">Japanese</a></small></li>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+        {{> body}}
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+
+</html>

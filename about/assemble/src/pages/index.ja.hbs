@@ -1,0 +1,55 @@
+---
+title: 甲斐洋行
+layout: default.ja.hbs
+name: index
+---
+<div class="content-header">
+    <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        Hiroyuki Kai <span style='font-size: 21px'>甲斐 洋行</span>
+    </h1>
+</div>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="img/welcome.jpg" width='105%' style="margin: -20px -50px 0px -20px;"><br>
+            <p class="lead">生物物理化学者です。T細胞シグナル伝達のダイナミクスを、ナノ加工したガラス基板を用いて蛍光イメージングにより研究しています。幅広いバックグラウンドを持ち、材料・情報・生物の分野融合研究に興味があります。</p>
+
+            <h3>現在の所属</h3>
+            カリフォルニア大学バークレー校　大学院生（2010年より）<br>
+            指導教官： Jay T. Groves教授
+
+            <h3>現在の研究</h3>
+            ナノ加工した材料を用いる、T細胞シグナリングの時空間制御のイメージング研究。  
+
+            <h3>過去の研究</h3>
+            <ul>
+                <li>分子の動きを遠隔に伝える超分子機械の作製</li>
+                <li>熱可塑性樹脂の機械特性を向上させる自己組織化ナノフィラーの開発</li>
+                <li>セルロースとカルダノールからなる熱可塑性樹脂の開発</li>
+            </ul>
+
+            <h3>経歴</h3>
+            <ul>
+                <li>2010-: PhD candidate, カリフォルニア大学バークレー校化学科大学院（指導教官：Jay T. Groves教授）</li>
+                <li>2008-2010: 日本電気ナノエレクトロニクス研究所</li>
+                <li>2006-2008: 東京大学大学院工学系研究科化学生命工学専攻　修士課程（指導教官：相田卓三教授）</li>
+                <li>2002-2006: 東京大学工学部化学生命工学科　学士課程</li>
+            </ul>
+            <h3>査読付き論文</h3>
+            <span style='margin-left: 20px;'>（&#x2021;は共同筆頭著者）</span>
+            <ol class='publication' reversed>
+                {{#each publication}}
+                <li>{{{paper .}}}</li>
+                {{/each}}
+            </ol>
+            <h3>学会発表</h3>
+            <ol class='publication' reversed>
+                {{#each presentation}}
+                <li>{{.}}</li>
+                {{/each}}
+            </ol>
+        </div>
+    </div>
+</div>

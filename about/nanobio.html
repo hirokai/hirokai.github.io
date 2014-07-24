@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nano/bio interface</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+    a.lang {
+        display: inline ! important;
+    }
+    ol.publication li {
+        margin-bottom: 10px;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: black ! important;
+    }
+
+</style>
+<style type="text/css">
+    .lead {
+        color: #006;
+    }
+        #sidebar-wrapper{
+        background: #002;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: #002 ! important;
+    }
+
+</style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<!--                <li class="sidebar-brand"><a href="#">Contents</a>
+                </li> -->
+                <li><a href="index.html">About</a>
+                </li>
+                <li><a  class='nohover' href="#">Interests</a>
+                <ul>
+                    <li><a href="signaling.html">Cell signaling</a></li>
+                    <li><a href="nanobio.html">Nano/bio interface</a></li>
+                    <li><a href="molecularmachine.html">Molecular machine</a></li>
+                    <li><a href="programming.html">Programming </a></li>
+                </ul>
+                </li>
+                <li><a href="skills.html">Skills</a>
+                <li><a href="contact.html">Contact</a>
+                <li><a class='nohover' href="#">&nbsp;</a></li>
+                <li><small><a class='lang' href="./nanobio.html">English</a> / <a class='lang' href="./nanobio.ja.html">Japanese</a></small></li>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            
+<div class="content-header">
+    <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        Interface between nanostructures and live cells
+    </h1>
+</div>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+    <div class='row'>
+        <img src="img/nanobio.jpg" height='220px' style='margin: -20px -50px 0px -20px;'>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="lead">
+            Nanomaterials can be tailored to match the dimensions of signaling assemblies on the cell surface. I use top-down and bottom-up approaches to fabricate micro/nanostructures (40 nm-10 µm), and combine them with a supported lipid bilayer (SLB) to reveal spatiotemporal behavior of signaling assemblies on the T cell membrane.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h3>Diffusion barrier by metal grids</h3>
+            <img src="img/chrome.png"><br>
+            <p>Normally, individual molecules on a SLB can diffuse freely in two dimensions. You can, however, confine the diffusion of molecules in a limited area by drawing metal grids (line width: 80 nm, height: 5 nm, side of each grid: 500 nm-several hundreds of µm) by photo- and ebeam- lithographies. This setup will inhibit lateral transport of receptor/ligand complexes formed at the interface between a live cell and the SLB. This is useful for studying the effect of cluster formation and transport behavior of receptors on the downstream signaling of the cell.</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Gold nanoparticles</h3>
+            <img src="img/nanodot.jpg"><br>
+            <p>Self-assembly of micelles on the glass substrate gives a regular array gold nanoparticles with controlled interparticle distances (40 nm-180 nm). While the difussion barrier by metal grids confines all the lipids and proteins into the limited area, these nanoparticles do not confine them. When the clusters of proteins are big enough compared to the interparticle distance of nanoparticles, the transport of the clusters is blocked. Using this technology, you can observe and manipulate the dynamic behavior of signaling clusters (Caculitan, Kai, Liu, et al. <a href="http://pubs.acs.org/doi/abs/10.1021/nl404514e"><i>Nano Lett.</i>&nbsp;2014</a>).</p>
+        </div>
+    </div>
+</div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+
+</html>

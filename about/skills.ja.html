@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>保有スキル</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    a.lang {
+        display: inline ! important;
+    }
+    ol.publication li {
+        margin-bottom: 10px;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: black ! important;
+    }
+
+</style>
+<style type="text/css">
+    .lead {
+        color: #600;
+    }
+    #sidebar-wrapper{
+        background: #200;
+    }
+    a.nohover:hover {
+        cursor: default;
+        color: #999999 ! important;
+        background: #200 ! important;
+    }
+</style>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+<!--                <li class="sidebar-brand"><a href="#">Contents</a>
+                </li> -->
+                <li><a href="index.ja.html">トップ</a>
+                </li>
+                <li><a class='nohover' href="#">興味</a>
+                <ul>
+                    <li><a href="signaling.ja.html">T細胞シグナリング</a></li>
+                    <li><a href="nanobio.ja.html">ナノ・バイオ境界</a></li>
+                    <li><a href="molecularmachine.ja.html">合成分子機械</a></li>
+                    <li><a href="programming.ja.html">プログラミング </a></li>
+                </ul>
+                </li>
+                <li><a href="skills.ja.html">スキル</a>
+                <li><a href="contact.ja.html">連絡先</a>
+                <li><a class='nohover' href="#">&nbsp;</a></li>
+                <li><small><a class='lang' href="./skills.html">English</a> / <a class='lang' href="./skills.ja.html">Japanese</a></small></li>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+        
+ <div class="content-header">
+                <h1>
+                    <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+                    スキル
+                </h1>
+            </div>
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+                <div class="row">
+                    <div class="col-md-12">
+
+                                        <img src="img/skills.svg">
+
+                    <ul>
+    <li>Organic synthesis
+        <ul>
+            <li>Synthetic design of pi-conjugated molecules</li>
+            <li>Various reactions in the scales from 1 mg to 100 g</li>
+            <li>Purification (column chromatography, HPLC, SEC, etc.)</li>
+        </ul>
+    </li>
+
+    <li>Micro/nanofabrication
+        <ul>
+            <li>Photolithography</li>
+            <li>E-beam lithography</li>   
+            <li>Focused ion beam</li>
+            <li>Metal deposition</li>
+        </ul>
+    </li>
+
+    <li>Characterization
+        <ul>
+            <li>NMR</li>
+            <li>UV-Vis, IR</li>
+            <li>Circular dichroism</li>
+            <li>SEM</li>
+
+        </ul>
+    </li>
+
+    <li>Molecular and cell biology
+        <ul><li>Primary T cell culture</li>
+            <li>Retroviral transduction</li>
+            <li>Immunostaining</li>
+            
+        </ul>
+    </li>
+
+    <li>Biological imaging
+        <ul>
+            <li>TIRF microscopy</li>
+            <li>Confocal microscopy</li>
+
+        </ul>
+    </li>
+
+    <li>Programming
+        <ul>
+            <li>Various programming languages (Scala, Haskell, JavaScript, C/C++, Matlab, Ruby, Python, Java, etc.)</li>
+            <li>Image and data analysis (scipy, OpenCV, scikit-learn, Halide, etc.)</li>
+            <li>Automation of experiment by scripting</li>
+            <li>Web app development (Play! framework, AngularJS, Meteor, etc.)</li>
+            <li>Data visualization (D3.js)</li>
+        </ul>
+    </li>
+</ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Custom JavaScript for the Menu Toggle -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+    });
+    </script>
+</body>
+
+</html>

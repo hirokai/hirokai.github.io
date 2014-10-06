@@ -171,6 +171,10 @@ phonecatControllers.controller('PhoneGridCtrl', ['$scope', 'Phone',
       var temp = $scope.xaxis;
       $scope.xaxis = $scope.yaxis;
       $scope.yaxis = temp;
+      temp = $scope.xkeys;
+      $scope.xkeys = $scope.ykeys;
+      $scope.ykeys = $scope.temp;
+      $scope.recalcStat();
     };
 
     $scope.$watch('xaxis',function(nv){

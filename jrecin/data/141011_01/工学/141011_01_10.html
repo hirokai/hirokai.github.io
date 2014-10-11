@@ -1,0 +1,3841 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--[if lte IE 8]><html lang="ja" class="IE8"><![endif]-->
+<!--[if (gt IE 8)|(!IE)]><!--><html lang="ja"><!--<![endif]-->
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" href="style-sheet_seek.css" type="text/css" media="screen,print">
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<title>研究者人材データベース JREC-IN Portal</title>
+<script lang="JavaScript" type="text/javascript">
+<!--
+var sm = new Object;
+   
+	sm['00012'] = [
+	
+	['全て','.....']
+	
+	,['地域研究','00001']
+	
+	,['ジェンダー','00002']
+	
+	,['観光学','00003']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00001'] = [
+	
+	['全て','.....']
+	
+	,['哲学','00003']
+	
+	,['芸術学','00007']
+	
+	,['文学','00004']
+	
+	,['言語学','00001']
+	
+	,['史学','00002']
+	
+	,['人文地理学','00005']
+	
+	,['文化人類学','00006']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00002'] = [
+	
+	['全て','.....']
+	
+	,['法学','00001']
+	
+	,['政治学','00002']
+	
+	,['経済学','00004']
+	
+	,['経営学','00003']
+	
+	,['社会学','00006']
+	
+	,['心理学','00007']
+	
+	,['教育学','00008']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00013'] = [
+	
+	['全て','.....']
+	
+	,['ナノ・マイクロ科学','00001']
+	
+	,['応用物理学','00002']
+	
+	,['量子ビーム科学','00003']
+	
+	,['計算科学','00004']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00003'] = [
+	
+	['全て','.....']
+	
+	,['数学','00001']
+	
+	,['天文学','00004']
+	
+	,['物理学','00002']
+	
+	,['地球惑星科学','00005']
+	
+	,['プラズマ科学','00006']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00004'] = [
+	
+	['全て','.....']
+	
+	,['基礎化学','00001']
+	
+	,['複合化学','00002']
+	
+	,['材料化学','00003']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00005'] = [
+	
+	['全て','.....']
+	
+	,['機械工学','00002']
+	
+	,['電気電子工学','00003']
+	
+	,['土木工学','00004']
+	
+	,['建築学','00008']
+	
+	,['材料工学','00005']
+	
+	,['プロセス工学・化学工学','00006']
+	
+	,['総合工学','00007']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00014'] = [
+	
+	['全て','.....']
+	
+	,['神経科学','00001']
+	
+	,['実験動物学','00002']
+	
+	,['腫瘍学','00003']
+	
+	,['ゲノム科学','00004']
+	
+	,['生物資源保全学','00005']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00006'] = [
+	
+	['全て','.....']
+	
+	,['生物科学','00002']
+	
+	,['基礎生物学','00001']
+	
+	,['人類学','00003']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00007'] = [
+	
+	['全て','.....']
+	
+	,['生産環境農学','00008']
+	
+	,['農芸化学','00002']
+	
+	,['森林圏科学','00005']
+	
+	,['水圏応用科学','00009']
+	
+	,['社会経済農学','00004']
+	
+	,['農業工学','00003']
+	
+	,['動物生命科学','00007']
+	
+	,['境界農学','00006']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00008'] = [
+	
+	['全て','.....']
+	
+	,['薬学','00007']
+	
+	,['基礎医学','00001']
+	
+	,['境界医学','00002']
+	
+	,['社会医学','00003']
+	
+	,['内科系臨床医学','00004']
+	
+	,['外科系臨床医学','00005']
+	
+	,['歯学','00006']
+	
+	,['看護学','00008']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00015'] = [
+	
+	['全て','.....']
+	
+	,['情報学基礎','00001']
+	
+	,['計算基盤','00002']
+	
+	,['人間情報学','00003']
+	
+	,['情報学フロンティア','00004']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00016'] = [
+	
+	['全て','.....']
+	
+	,['環境解析学','00001']
+	
+	,['環境保全学','00002']
+	
+	,['環境創成学','00003']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['00017'] = [
+	
+	['全て','.....']
+	
+	,['デザイン学','00001']
+	
+	,['生活科学','00002']
+	
+	,['科学教育・教育工学','00003']
+	
+	,['科学社会学・科学技術史','00004']
+	
+	,['文化財科学・博物館学','00005']
+	
+	,['地理学','00006']
+	
+	,['社会・安全システム科学','00007']
+	
+	,['人間医工学','00008']
+	
+	,['健康・スポーツ科学','00009']
+	
+	,['子ども学','00010']
+	
+	,['生体分子科学','00011']
+	
+	,['脳科学','00012']
+	
+	,['その他','99999']
+	
+				];
+   
+	sm['99999'] = [
+	
+	['全て','.....']
+	
+	,['その他','99999']
+	
+				];
+   
+   
+function getBgSelectObject( type ){
+	var obj;
+	if( type == 1 ) {
+		obj= document.f_multi.bg1;
+	} else if( type == 2 ) {
+		obj = document.f_multi.bg2;
+	} else if( type == 3 ) {
+		obj = document.f_multi.bg3;
+	} else if( type == 4 ) {
+		obj = document.f_multi.bg4;
+	} else if( type == 5 ) {
+		obj = document.f_multi.bg5;
+	} else if( type == 6 ) {
+		obj = document.f_multi.bg6;
+	}
+	return obj;
+}
+
+function getSmSelectObject( type ){
+	var obj;
+	if( type == 1 ) {
+		obj= document.f_multi.sm1;
+	} else if( type == 2 ) {
+		obj = document.f_multi.sm2;
+	} else if( type == 3 ) {
+		obj = document.f_multi.sm3;
+	} else if( type == 4 ) {
+		obj = document.f_multi.sm4;
+	} else if( type == 5 ) {
+		obj = document.f_multi.sm5;
+	} else if( type == 6 ) {
+		obj = document.f_multi.sm6;
+	}
+	return obj;
+}
+
+function getBgCodeObject( type ){
+	var obj;
+	if( type == 1 ) {
+		obj = document.f_multi.bgCode1;
+	} else if( type == 2 ) {
+		obj = document.f_multi.bgCode2;
+	} else if( type == 3 ) {
+		obj = document.f_multi.bgCode3;
+	} else if( type == 4 ) {
+		obj = document.f_multi.bgCode4;
+	} else if( type == 5 ) {
+		obj = document.f_multi.bgCode5;
+	} else if( type == 6 ) {
+		obj = document.f_multi.bgCode6;
+	}
+	return obj;
+}
+
+function getSmCodeObject( type ){
+	var obj;
+	if( type == 1 ) {
+		obj = document.f_multi.smCode1;
+	} else if( type == 2 ) {
+		obj = document.f_multi.smCode2;
+	} else if( type == 3 ) {
+		obj = document.f_multi.smCode3;
+	} else if( type == 4 ) {
+		obj = document.f_multi.smCode4;
+	} else if( type == 5 ) {
+		obj = document.f_multi.smCode5;
+	} else if( type == 6 ) {
+		obj = document.f_multi.smCode6;
+	}
+	return obj;
+}
+
+
+function chgBg( type ) {
+
+	var bgSeleObj = getBgSelectObject( type );
+	var smSeleObj = getSmSelectObject( type );
+	var bgCodeObj = getBgCodeObject( type );
+	var smCodeObj = getSmCodeObject( type );
+
+	//小分類の初期化
+	initResearch( smSeleObj );
+
+	var bgCode = bgSeleObj.value;
+
+	//大分類コードが指定されていない場合。
+	if( bgCode == '' ) {
+		smSeleObj.options[0] = new Option( "                 ", "", "" );
+
+	//大分類コードが指定されている場合。
+	} else {
+		var smArray = sm[bgCode];
+		for ( var j=0; j<smArray.length; j++ ) {
+			smSeleObj.options[j] = new Option( smArray[j][0], smArray[j][1], "" );
+		}
+	}
+	//hidden項目に設定
+	bgCodeObj.value = bgSeleObj.value;
+	smCodeObj.value = smSeleObj.value;
+}
+
+function chgSm( type ) {
+
+	var smSeleObj = getSmSelectObject( type );
+	var smCodeObj = getSmCodeObject( type );
+	smCodeObj.value = smSeleObj.value;
+}
+
+function back() {
+	reSelect( 1 );
+	reSelect( 2 );
+	reSelect( 3 );
+	reSelect( 4 );
+	reSelect( 5 );
+	reSelect( 6 );
+}
+
+
+function reSelect( type ) {
+
+	var bgSeleObj = getBgSelectObject( type );
+	var smSeleObj = getSmSelectObject( type );
+	var bgCodeObj = getBgCodeObject( type );
+	var smCodeObj = getSmCodeObject( type );
+
+	//隠し項目から値を取得。
+	var bgCode = bgCodeObj.value
+	var smCode = smCodeObj.value
+
+	initResearch( smSeleObj );
+
+	//大分類コードが指定されていない場合。
+	if( bgCode == '' ) {
+		smSeleObj.options[0] = new Option( "                 ", "", "" );
+
+	//大分類コードが指定されている場合。
+	} else {
+	
+		for ( var j=0; ; j++ ) {
+			var bgOption = bgSeleObj.options[j];
+			if( bgOption == null ) break;
+			if( bgOption.value == bgCode ) {
+				bgSeleObj.selectedIndex = j;
+			}
+		}
+		var smArray = sm[bgCode];
+		for ( var j=0; j<smArray.length; j++ ) {
+			if( smCode == smArray[j][1] ) {
+				smSeleObj.options[j] = new Option( smArray[j][0], smArray[j][1], "", "selected" );
+			} else {
+				smSeleObj.options[j] = new Option( smArray[j][0], smArray[j][1], "" );
+			}
+		}
+	}
+	//hidden項目に設定
+	bgCodeObj.value = bgSeleObj.value;
+	smCodeObj.value = smSeleObj.value;
+}
+
+function initResearch( smSeleObj ) {
+	var len = smSeleObj.options.length;
+	for( var i=0; i<len; i++ ) {
+		smSeleObj.options[0] = null;
+	}
+}
+
+function checkArea( count ) {
+
+	var areaElement = "area_" + count;
+	var preElement  = "prefecture_" + count;
+	var searchObj   = document.f_multi;
+	var element     = searchObj.elements;
+	var areaCheckedFlg;
+
+	for ( var i=0;i<element.length; i++ ) {
+		var eleName = element[i].name;
+		var eleType = element[i].type;
+
+		if( eleType == "checkbox" && eleName == areaElement ) {
+			areaCheckedFlg = searchObj.elements[i].checked;
+		}
+
+		if( eleType == "checkbox" && eleName == preElement ) {
+			if( areaCheckedFlg ) {
+				searchObj.elements[i].checked = true;
+			} else {
+				searchObj.elements[i].checked = false;
+			}
+		}
+	}
+}
+
+function checkPrefecture( count ) {
+	var areaElement = "area_" + count;
+	var preElement  = "prefecture_" + count;
+
+	var searchObj   = document.f_multi;
+	var element     = searchObj.elements;
+
+	var prefectureAllCheckedFlg = false;
+
+	for ( var i=0;i<element.length; i++ ) {
+		var eleName = element[i].name;
+		var eleType = element[i].type;
+
+		if( eleType == "checkbox" && eleName == preElement ) {
+
+			if( searchObj.elements[i].checked ) {
+				prefectureAllCheckedFlg = true;
+			} else {
+				prefectureAllCheckedFlg = false;
+				break;
+			}
+		}
+	}
+
+	for ( var i=0;i<element.length; i++ ) {
+		var eleName = element[i].name;
+		var eleType = element[i].type;
+
+		if( eleType == "checkbox" && eleName == areaElement ) {
+			if( prefectureAllCheckedFlg ) {
+				searchObj.elements[i].checked = true;
+			} else {
+				searchObj.elements[i].checked = false;
+			}
+		}
+	}
+}
+
+function checkSearchCondition( checkFlag ) {
+
+	//条件設定フラグ
+	var setFlg = false;
+
+	//キーワード(すべてのキーワードを含む)のチェック
+	var searchObj = document.f_multi.keyword_and;
+	if( searchObj.value.length != 0 ) {
+//		setFlg = true;
+		//文字列長チェック(任意入力)
+		if( !checkLengthOptionalInput( searchObj.value, 200 ) ) {
+			alertLongInput( "キーワード(すべてのキーワードを含む)", "200" );
+			searchObj.focus();
+			return false;
+		}
+		
+		//全角文字チェック
+		if( !isFullWidthChar( searchObj.value, false ) ) {
+			alertValidInput( "キーワード(すべてのキーワードを含む)", 3 );
+			searchObj.focus();
+			return false;
+		}
+
+		// 全角空白、半角空白のみの場合は、無視する。(検索条件としない)
+		var convertStr = "";
+		convertStr = searchObj.value.replace(/ |　/g, "");
+		if( convertStr.length == 0 ){
+			 searchObj.value = "";
+			
+		}
+	}
+
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+
+	//キーワード(いずれかのキーワードを含む)のチェック
+	searchObj = document.f_multi.keyword_or;
+	if( searchObj.value.length != 0 ) {
+//		setFlg = true;
+		//文字列長チェック(任意入力)
+		if( !checkLengthOptionalInput( searchObj.value, 200 ) ) {
+			alertLongInput( "キーワード(いずれかのキーワードを含む)", "200" );
+			searchObj.focus();
+			return false;
+		}
+		
+		//全角文字チェック
+		if( !isFullWidthChar( searchObj.value, false ) ) {
+			alertValidInput( "キーワード(いずれかのキーワードを含む)", 3 );
+			searchObj.focus();
+			return false;
+		}
+
+		// 全角空白、半角空白のみの場合は、無視する。(検索条件としない)
+		var convertStr = "";
+		convertStr = searchObj.value.replace(/ |　/g, "");
+		if( convertStr.length == 0 ){
+			 searchObj.value = "";
+			
+		}
+	}
+
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+
+	//キーワード(キーワードを含めない)のチェック
+	searchObj = document.f_multi.keyword_not;
+	if( searchObj.value.length != 0 ) {
+//		setFlg = true;
+		//文字列長チェック(任意入力)
+		if( !checkLengthOptionalInput( searchObj.value, 200 ) ) {
+			alertLongInput( "キーワード(キーワードを含めない)", "200" );
+			searchObj.focus();
+			return false;
+		}
+		
+		//全角文字チェック
+		if( !isFullWidthChar( searchObj.value, false ) ) {
+			alertValidInput( "キーワード(キーワードを含めない)", 3 );
+			searchObj.focus();
+			return false;
+		}
+
+		// 全角空白、半角空白のみの場合は、無視する。(検索条件としない)
+		var convertStr = "";
+		convertStr = searchObj.value.replace(/ |　/g, "");
+
+		if( convertStr.length == 0 ){
+			 searchObj.value = "";
+			
+		}
+	}	
+
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+
+	
+	//研究分野(1.大分類)
+	//研究分野(1.小分類)
+	searchObj = document.f_multi.sm1;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+	
+	//研究分野(2.大分類)
+	//研究分野(2.小分類)
+	searchObj = document.f_multi.sm2;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}	
+
+	//研究分野(3.大分類)
+	//研究分野(3.小分類)
+	searchObj = document.f_multi.sm3;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+
+	//研究分野(4.大分類)
+	//研究分野(4.小分類)
+	searchObj = document.f_multi.sm4;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+	
+	//研究分野(5.大分類)
+	//研究分野(5.小分類)
+	searchObj = document.f_multi.sm5;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}	
+
+	//研究分野(6.大分類)
+	//研究分野(6.小分類)
+	searchObj = document.f_multi.sm6;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+
+	//地域
+	//都道府県
+	//機関種別
+	//職種
+	var element  = document.f_multi.elements;
+	var eleName = "";
+	for ( var i=0;i<element.length; i++ ) {
+		eleName = element[i].name;
+		if( eleName.match( /^prefecture_(\d+)$/ ) ||
+			eleName == "orgtype" || 
+			eleName == "jobkind" )
+		{
+			if( element[i].checked ) {
+				setFlg = true;
+				break;
+			}
+		}
+	}
+
+	//勤務形態
+	searchObj = document.f_multi.jobform;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+	
+	//任期
+	searchObj = document.f_multi.jobterm;
+	if( searchObj.value.length != 0 ) {
+		setFlg = true;
+	}
+	
+	//検索条件指定チェックを行なう場合
+	if( checkFlag && !setFlg ) {
+		alert( "検索条件を1項目以上入力してください。" );
+		return false;
+	}
+	
+	return true;
+}
+
+function chgSort( type ) {
+	resetCondition();
+	document.f_multi.action="SeekJorSearch";
+	document.f_multi.method="get";
+	document.f_multi.fn.value="1";
+	document.f_multi.dt.value="1";
+	document.f_multi.page.value="1";
+	document.f_multi.sort.value=type;
+	document.f_multi.submit();
+}
+
+function chgPage( page ) {
+	resetCondition();
+	document.f_multi.action="SeekJorSearch";
+	document.f_multi.method="get";
+	document.f_multi.fn.value="1";
+	document.f_multi.dt.value="2";
+	document.f_multi.page.value=page;
+	document.f_multi.sort.value="0";
+	document.f_multi.submit();
+}
+
+function search() {
+	document.f_multi.action="SeekJorSearch";
+	document.f_multi.method="get";
+	document.f_multi.fn.value="1";
+	document.f_multi.dt.value="3";
+	document.f_multi.page.value="1";
+	document.f_multi.sort.value="0";
+	return checkSearchCondition( true );
+}
+
+function resetCondition() {
+	document.f_multi.reset();
+	document.f_multi.bgCode1.value ="00005";
+	document.f_multi.bgCode2.value ="";
+	document.f_multi.bgCode3.value ="";
+	document.f_multi.bgCode4.value ="";
+	document.f_multi.bgCode5.value ="";
+	document.f_multi.bgCode6.value ="";
+	document.f_multi.smCode1.value =".....";
+	document.f_multi.smCode2.value ="";
+	document.f_multi.smCode3.value ="";
+	document.f_multi.smCode4.value ="";
+	document.f_multi.smCode5.value ="";
+	document.f_multi.smCode6.value ="";
+	
+	reSelect( 1 );
+	reSelect( 2 );
+	reSelect( 3 );
+	reSelect( 4 );
+	reSelect( 5 );
+	reSelect( 6 );
+}
+// -->
+</script>
+</head>
+
+<body onload="back()">
+<a name="top"></a>
+
+<!-- ********** Header Base Start ********** -->
+
+<div class="style-seek" id="logo-area">
+<table width="760" border="0" cellspacing="0" cellpadding="0">
+  <!-- Logo Base Start -->
+  <tr>
+    <td id="jreclogo">
+      <div><h1><a href="SeekTop"><img src="images/logo_jrecin.png" width="147" height="60" alt="JREC-IN Portal" border="0"></a></h1></div>
+    </td>
+    <!-- Global Navigatoin Base Start -->
+    <td id="globalnavi-area">
+    
+      <ul>
+        <li class="box-under-line">日本語&nbsp;／&nbsp;<a href="SeekTop?ln=1">English</a></li>
+        <li><a href="javascript:void(0)" onclick="window.open( 'job_hunter_help.html', 'newwin', 'width=670, height=700, scrollbars=yes, resizable=yes' )">ヘルプ</a></li>
+      </ul>
+    </td>
+    <!-- Global Navigatoin Base End -->
+    <td id="welcome">
+      <ul>&nbsp;</ul>
+      <ul class="float-clear">
+        <li class="action-button"><a href="SeekRegistMember">新規登録</a></li>
+        <li class="action-button"><a href="Login">ログイン</a></li>
+      </ul>
+    </td>
+    <td id="jstlogo">
+      <div><a href="http://www.jst.go.jp/" target="_blank"><img src="images/jst_logo.gif" width="170" height="32" alt="JST 独立行政法人 科学技術振興機構" border="0"></a></div>
+    </td>
+  </tr>
+  <!-- Logo Base End -->
+  
+</table>
+</div>
+
+
+<div id="body-bg">
+<!-- ********** Header Base End ********** -->
+
+<!-- ********** Contents Base Start ********** -->
+<table width="760" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <!-- Pan List Base Start -->
+    <td class="style-seek"><div id="panlist-area"><a href="SeekTop">トップ</a> &gt; 求人公募情報検索</div></td>
+    <!-- Pan List Base End -->
+    <!-- Center Margin Base Start -->
+    <td width="10" rowspan="3"><img src="images/spacer.gif" width="10" height="1" alt=""></td>
+    <!-- Center Margin Base End -->
+
+    <!-- Right Side Base Start -->
+    <td width="170" rowspan="3" valign="top" class="style-seek" id="navigation-side">
+      
+      <div class="navibanner-jo">
+        <ul>
+            <li><a href="../offer/OrgTop" target="orgtop"><img src="images/top_button_jo.png" alt="求人機関の皆様へ"></a></li>
+        </ul>
+      </div>
+      <div class="navititle-ja"><h3>ユーザメニュー</h3></div>
+      
+<script type="text/javascript">
+
+$(function(){
+    $('.sub_menu').hide();
+    $('.menu_group').click(function(){
+        $(this).toggleClass('open-menu').toggleClass('close-menu');
+        $('+ul.sub_menu',this).slideToggle();
+    });
+});
+</script>
+      <div class="navimain-ja">
+        <ul>
+          <li class="action-button"><a href="SeekRegistMember">新規登録</a></li>
+          <li class="action-button"><a href="Login">ログイン</a></li>
+        </ul>
+        <ul id="menu">
+        <li><div class="main_menu menu_group close-menu">求人機関へのアピール<br>(求職者情報)</div>
+        <ul class="sub_menu">
+        <li><a href="RegistJhi">登録・更新</a></li>
+        <li><a href="DeleteJhi">削除</a></li>
+        </ul></li>
+        
+        <li><div class="main_menu"><a href="javascript:statusMoveInquiry();">求人機関からの<br>求職者照会メール</a></div></li>
+        <li><div class="main_menu"><a href="RegistMatching">マッチングメール<br>設定</a></div></li>
+        <li><div class="main_menu"><a href="JorConsideration">検討フォルダ</a></div></li>
+
+        <li><div class="main_menu menu_group close-menu">応募書類作成ツール</div>
+        <ul class="sub_menu">
+        <li><a href="ApplicationFormList">履歴書</a></li>
+        <li><a href="AchievementsList">業績リスト</a></li>
+        </ul></li>
+
+        <li><div class="main_menu"><a href="JorEntryCheck">Web応募状況確認</a></div></li>
+
+        <li><div class="main_menu"><a href="LearningHistory">学習履歴の閲覧・<br>修了通知</a></div></li>
+
+        <li><div class="main_menu menu_group close-menu">アカウント情報</div>
+          <ul class="sub_menu">
+          <li><a href="RegistAddress">メールアドレス変更</a></li>
+          <li><a href="RegistPass">パスワード変更</a></li>
+          <li><a href="UpdateMember">基本情報変更</a></li>
+          </ul></li>
+        </ul>
+      </div>
+      <div class="navibanner">
+        <ul>
+          <li><a href="javascript:void(0)" onClick="chk('ELearning')"><img src="images/btn-elearning.png" alt="e-learning"></a></li> 
+          <li><a href="SeekVitaeInformation" target="vitae"><img src="images/vitae_banner.png" alt="Vitae Researcher Development Framework"></a></li> 
+        </ul>
+      </div>
+      <form id="f_e-learning" method="POST"><input type="hidden" name="2B777DA1" value="4400E0397D6614462E2ADA8095C12477">
+        <input type="hidden" name="fn" id="fn" value="0">
+        <input type="hidden" name="lg" id="lg" value="0">
+      </form>
+      <img src="images/spacer.gif" width="10" height="50" alt="">
+    </td>
+    <!-- Right Side Base End -->
+  </tr>
+  <tr>
+    <!-- Left Side Base Start -->
+    <td width="580" valign="top" class="style-base">
+    <div id="contents-side570">
+
+    <div id="contentstitle-ja"><h2>求人公募情報検索</h2></div>
+
+    <div class="float-clear"><img src="images/spacer.gif" width="1" height="10" alt=""><br></div>
+
+    <!-- Description Base Start -->
+    <table width="570" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+      <td height="25" bgcolor="#cccccc">&nbsp;&nbsp;
+      
+      
+      <strong>研究分野で探す - 検索結果</strong>
+      
+      
+      
+      
+      </td>
+      </tr>
+      <tr>
+        <td>
+        <div class="margin-02">
+        詳細情報を閲覧する場合は、一覧の「求人件名」をクリックしてください。
+        
+        </div>
+        </td>
+      </tr>
+    </table>
+    <!-- Description Base End -->
+
+    <img src="images/spacer.gif" width="1" height="10" alt=""><br>
+
+    <!-- Search Result List Base Start -->
+    <table width="570" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>
+        <div class="margin-01">検索結果：
+        
+        
+        544件が該当
+        
+        </div>
+        </td>
+        <td align="right"><div class="margin-01"><a href="#ssearch">絞込み検索へ</a></div></td>
+      </tr>
+    </table>
+    <table width="570" border="0" cellspacing="0" cellpadding="0">
+      <tr bgcolor="#dddddd">
+        <td><div class="margin-01">並び順&nbsp;：
+        
+        
+        更新日&nbsp;|&nbsp;<a href="javascript:chgSort(1)">募集終了日</a>
+        
+        
+        
+        </div></td>
+        <td align="right">
+        <div class="margin-01">
+        
+        
+        
+        <a href="javascript:chgPage(9)"><img src="images/arrow_sl_l.gif" width="14" height="13" alt="" border="0" align="absMiddle">&nbsp;前の50件</a>
+        
+        
+        |
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="javascript:chgPage(7)">7</a> |
+        
+        
+        
+        
+        <a href="javascript:chgPage(8)">8</a> |
+        
+        
+        
+        
+        <a href="javascript:chgPage(9)">9</a> |
+        
+        
+        
+        
+        
+        <strong>10</strong> |
+        
+        
+        
+        <a href="javascript:chgPage(11)">11</a> |
+        
+        
+        
+        
+        
+        
+         <a href="javascript:chgPage(11)">次の50件&nbsp;<img src="images/arrow_sr_l.gif" width="14" height="13" alt="" border="0" align="absMiddle"></a>
+        
+        
+        </div>
+        </td>
+      </tr>
+    </table>
+    <table width="570" border="0" cellspacing="1" cellpadding="0">
+      <tr bgcolor="#eeeeee">
+        
+        
+        <td><div class="margin-01">▼更新日</div></td>
+        <td><div class="margin-01">募集終了日</div></td>
+        
+        
+        
+        <td><div class="margin-01">求人件名、機関名[研究分野]、職種、勤務形態</div></td>
+      </tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月24日</div></td>
+        <td nowrap><div class="margin-01">2014年10月27日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071341&amp;ln_jor=0">
+        
+        
+        ヘリカル研究部高密度プラズマ物理研究系磁場閉じ込め応用研究部門&#x20;教授選考</a>
+        <br>
+        自然科学研究機構核融合科学研究所&nbsp;[工学-エネルギー工学]<br>
+        教授相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月24日</div></td>
+        <td nowrap><div class="margin-01">2014年10月27日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071342&amp;ln_jor=0">
+        
+        
+        ヘリカル研究部高密度プラズマ物理研究系磁場閉じ込め応用研究部門&#x20;准教授選考</a>
+        <br>
+        自然科学研究機構核融合科学研究所&nbsp;[工学-エネルギー工学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月24日</div></td>
+        <td nowrap><div class="margin-01">2014年10月27日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071343&amp;ln_jor=0">
+        
+        
+        ヘリカル研究部高温プラズマ物理研究系&#x20;エネルギー輸送研究部門&#x20;教授選考</a>
+        <br>
+        自然科学研究機構核融合科学研究所&nbsp;[工学-エネルギー工学]<br>
+        教授相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月24日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071345&amp;ln_jor=0">
+        
+        
+        ヘリカル研究部基礎物理シミュレーション研究系プラズマ複雑性シミュレーション研究部門&#x20;准教授選考</a>
+        <br>
+        自然科学研究機構核融合科学研究所&nbsp;[工学-エネルギー工学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月24日</div></td>
+        <td nowrap><div class="margin-01">2014年11月28日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071351&amp;ln_jor=0">
+        
+        
+        群馬工業高等専門学校　機械工学科&#x20;助教の公募</a>
+        <br>
+        群馬工業高等専門学校&nbsp;[工学-機械工学]<br>
+        助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月23日</div></td>
+        <td nowrap><div class="margin-01">2014年12月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114040230&amp;ln_jor=0">
+        
+        
+        ナノ構造研究所　研究員募集</a>
+        <br>
+        一般財団法人ファインセラミックスセンター&nbsp;[工学-電子顕微鏡分野]<br>
+        研究員・ポスドク相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月23日</div></td>
+        <td nowrap><div class="margin-01">2014年11月07日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071207&amp;ln_jor=0">
+        
+        
+        電気・電子情報工学系　機能電気システム分野　助教</a>
+        <br>
+        豊橋技術科学大学&nbsp;[工学-全て]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月23日</div></td>
+        <td nowrap><div class="margin-01">2014年10月20日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071212&amp;ln_jor=0">
+        
+        
+        兼任講師の公募（設計製図科目）</a>
+        <br>
+        明治大学&nbsp;[工学-機械工学]<br>
+        非常勤講師相当<br>非常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071074&amp;ln_jor=0">
+        
+        
+        福岡工業大学&#x20;教員公募（電子工学関連分野）</a>
+        <br>
+        福岡工業大学&nbsp;[工学-電気電子工学]<br>
+        教授相当、准教授・常勤専任講師相当、助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070885&amp;ln_jor=0">
+        
+        
+        電気通信大学&#x20;大学院情報理工学研究科　准教授の公募（機械システムの最適設計学分野）</a>
+        <br>
+        電気通信大学&nbsp;[工学-機械工学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070998&amp;ln_jor=0">
+        
+        
+        鹿児島大学大学院理工学研究科&#x20;電気電子工学専攻&#x20;&#x20;教授</a>
+        <br>
+        鹿児島大学&nbsp;[工学-電気電子工学]<br>
+        教授相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月18日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071023&amp;ln_jor=0">
+        
+        
+        特別研究員（1号）募集（メタンハイドレート研究センター：　募集区分H2-PD1&#x20;）&#x20;</a>
+        <br>
+        独立行政法人産業技術総合研究所&nbsp;[工学-土木工学]<br>
+        研究員・ポスドク相当<br>非常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071042&amp;ln_jor=0">
+        
+        
+        教授の公募</a>
+        <br>
+        九州大学&nbsp;[工学-総合工学]<br>
+        教授相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月20日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071043&amp;ln_jor=0">
+        
+        
+        助教の公募（計算材料加工科学分野）</a>
+        <br>
+        電気通信大学&nbsp;[工学-機械工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2015年01月18日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071072&amp;ln_jor=0">
+        
+        
+        任期制契約職員の募集（集約）（知財集約グループ）</a>
+        <br>
+        独立行政法人科学技術振興機構&nbsp;[その他-知的財産、特許に関する業務]<br>
+        調査員、あるいは、主任調査員<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月18日</div></td>
+        <td nowrap><div class="margin-01">2014年10月24日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114071076&amp;ln_jor=0">
+        
+        
+        准教授または助教の公募（環境都市デザイン工学科(土木工学））</a>
+        <br>
+        高知工業高等専門学校&nbsp;[工学-土木工学]<br>
+        准教授・常勤専任講師相当、助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月17日</div></td>
+        <td nowrap><div class="margin-01">2014年10月24日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114030832&amp;ln_jor=0">
+        
+        
+        産総研特別研究員募集（フレキシブル化学コーティング研究グループ：14-1-06）</a>
+        <br>
+        独立行政法人産業技術総合研究所&nbsp;[化学-材料化学]<br>
+        研究員・ポスドク相当<br>非常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月17日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070840&amp;ln_jor=0">
+        
+        
+        【正社員（技師職）】材料・部品の強度・疲労の研究における実験実務</a>
+        <br>
+        株式会社豊田中央研究所&nbsp;[工学-機械工学]<br>
+        研究開発・技術者相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月17日</div></td>
+        <td nowrap><div class="margin-01">2014年10月20日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070907&amp;ln_jor=0">
+        
+        
+        徳島大学大学院ソシオテクノサイエンス研究部ライフシステム部門生命機能工学大講座&#x20;准教授または講師の公募</a>
+        <br>
+        徳島大学&nbsp;[工学-応用微生物学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月17日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070919&amp;ln_jor=0">
+        
+        
+        安全システム建設工学科（コンクリート工学分野）の准教授の公募</a>
+        <br>
+        香川大学&nbsp;[工学-土木工学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月16日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070843&amp;ln_jor=0">
+        
+        
+        助教の公募（京都大学&#x20;防災研究所&#x20;地盤研究グループ&#x20;地盤災害研究部門&#x20;地盤防災解析研究分野）</a>
+        <br>
+        京都大学&nbsp;[工学-土木工学]<br>
+        助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月16日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070844&amp;ln_jor=0">
+        
+        
+        臨床研究コーディネーター（CRC）任期付き常勤職員の募集について</a>
+        <br>
+        独立行政法人国立がん研究センター&nbsp;[化学-全て]<br>
+        研究管理者相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月15日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070723&amp;ln_jor=0">
+        
+        
+        教員の公募（機械工学科　熱力学分野）</a>
+        <br>
+        秋田工業高等専門学校&nbsp;[工学-機械工学]<br>
+        助教相当、准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月15日</div></td>
+        <td nowrap><div class="margin-01">2014年10月15日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070745&amp;ln_jor=0">
+        
+        
+        助教の公募(数理電子情報部門&#x20;情報領域&#x20;情報システム工学分野）</a>
+        <br>
+        埼玉大学&nbsp;[工学-情報システム工学/情報工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月15日</div></td>
+        <td nowrap><div class="margin-01">2014年12月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070772&amp;ln_jor=0">
+        
+        
+        「研究員募集(理工学・保全分野)」</a>
+        <br>
+        株式会社IIU&nbsp;[総合理工-応用物理学]<br>
+        研究員・ポスドク相当、研究開発・技術者相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月14日</div></td>
+        <td nowrap><div class="margin-01">2014年11月04日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070644&amp;ln_jor=0">
+        
+        
+        呉工業高等専門学校　教授,，准教授，講師または助教の公募（環境都市工学分野）　【公募番号：ＫＮＣＴ－１４０３】</a>
+        <br>
+        呉工業高等専門学校&nbsp;[工学-土木工学]<br>
+        教授相当、准教授・常勤専任講師相当、助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月12日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070643&amp;ln_jor=0">
+        
+        
+        島根大学&#x20;総合理工学研究科&#x20;物理・材料科学領域&#x20;助教の公募</a>
+        <br>
+        島根大学&nbsp;[工学-材料工学]<br>
+        助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月12日</div></td>
+        <td nowrap><div class="margin-01">2014年11月15日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070648&amp;ln_jor=0">
+        
+        
+        助教の公募（土木構造分野）</a>
+        <br>
+        宇都宮大学&nbsp;[工学-土木工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月12日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070685&amp;ln_jor=0">
+        
+        
+        教員公募　電気電子システム工学科（電子材料、電子デバイスに関する分野）講師または助教</a>
+        <br>
+        長岡工業高等専門学校&nbsp;[工学-電気電子工学]<br>
+        准教授・常勤専任講師相当、助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月12日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070701&amp;ln_jor=0">
+        
+        
+        &#x20;東京海洋大学大学院海洋工学系海洋電子機械工学部門（海洋サイバネティクス講座）助教の公募</a>
+        <br>
+        東京海洋大学&nbsp;[工学-総合工学]<br>
+        助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月11日</div></td>
+        <td nowrap><div class="margin-01">2014年10月17日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070531&amp;ln_jor=0">
+        
+        
+        理工学部機械工学科助教3名公募（材質制御工学、材料強度学分野）</a>
+        <br>
+        立命館大学&nbsp;[工学-機械工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月11日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070545&amp;ln_jor=0">
+        
+        
+        理工学部&#x20;建築都市デザイン学科（建築材料分野または建築生産分野）任期制助教の公募</a>
+        <br>
+        立命館大学&nbsp;[工学-土木工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月11日</div></td>
+        <td nowrap><div class="margin-01">2014年12月05日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070589&amp;ln_jor=0">
+        
+        
+        教員の公募（電気情報工学科　電力工学，エネルギーシステム工学関連分野）</a>
+        <br>
+        秋田工業高等専門学校&nbsp;[工学-電気電子工学]<br>
+        助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月11日</div></td>
+        <td nowrap><div class="margin-01">2014年10月17日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070592&amp;ln_jor=0">
+        
+        
+        理工学部ロボティクス学科教員公募（助教）</a>
+        <br>
+        立命館大学&nbsp;[工学-機械工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月10日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070480&amp;ln_jor=0">
+        
+        
+        教員公募（准教授；電気エネルギー工学分野）</a>
+        <br>
+        岩手大学&nbsp;[工学-電気電子工学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月10日</div></td>
+        <td nowrap><div class="margin-01">2015年01月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070518&amp;ln_jor=0">
+        
+        
+        特定有期雇用研究員募集(原子力発電所の確率論的リスク評価（レベル3&#x20;PRA）手法の整備・評価)</a>
+        <br>
+        一般財団法人電力中央研究所&nbsp;[環境学-全て]<br>
+        研究員・ポスドク相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月10日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070519&amp;ln_jor=0">
+        
+        
+        生命科学部　生物工学科（生物を対象とした有機化学的アプローチに基づく生物工学関連分野）教授または准教授募集</a>
+        <br>
+        立命館大学&nbsp;[生物学-全て]<br>
+        教授相当、准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月10日</div></td>
+        <td nowrap><div class="margin-01">2014年10月14日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070521&amp;ln_jor=0">
+        
+        
+        生命科学部　生物工学科（生物を対象とした物理化学的アプローチに基づく生物工学関連分野）教授または准教授募集</a>
+        <br>
+        立命館大学&nbsp;[生物学-全て]<br>
+        教授相当、准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月10日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070526&amp;ln_jor=0">
+        
+        
+        秋田県立大学&#x20;システム科学技術学部&#x20;機械知能システム学科&#x20;熱・流体工学講座または生体知能工学講座&#x20;助教募集要項</a>
+        <br>
+        秋田県立大学&nbsp;[工学-機械工学]<br>
+        助教相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月09日</div></td>
+        <td nowrap><div class="margin-01">2015年02月03日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114060128&amp;ln_jor=0">
+        
+        
+        ①専任教員（診療放射線学科、臨床工学科）</a>
+        <br>
+        東京電子専門学校&nbsp;[工学-全て]<br>
+        専門学校・小中高等の教員相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月08日</div></td>
+        <td nowrap><div class="margin-01">2015年07月08日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070230&amp;ln_jor=0">
+        
+        
+        テクニカルスタッフⅡ募集（創発分子機能研究グループ）</a>
+        <br>
+        独立行政法人理化学研究所&nbsp;[化学-材料化学]<br>
+        研究・教育補助者相当<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月08日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070266&amp;ln_jor=0">
+        
+        
+        和歌山工業高等専門学校&#x20;環境都市工学科&#x20;助教、准教授または教授の公募（測量学等）</a>
+        <br>
+        和歌山工業高等専門学校&nbsp;[工学-土木工学]<br>
+        助教相当、准教授・常勤専任講師相当、教授相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月08日</div></td>
+        <td nowrap><div class="margin-01">2014年10月17日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070347&amp;ln_jor=0">
+        
+        
+        教授または准教授の公募（防災・環境地盤工学分野）</a>
+        <br>
+        茨城大学&nbsp;[工学-土木工学]<br>
+        教授相当、准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月08日</div></td>
+        <td nowrap><div class="margin-01">2014年12月28日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070391&amp;ln_jor=0">
+        
+        
+        システムエンジニア（マーケティング分野）</a>
+        <br>
+        シナジーマーケティング株式会社&nbsp;[情報学-全て]<br>
+        研究開発・技術者相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月08日</div></td>
+        <td nowrap><div class="margin-01">2015年01月08日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070406&amp;ln_jor=0">
+        
+        
+        任期制契約職員の募集（調査）(知財集約グループ)</a>
+        <br>
+        独立行政法人科学技術振興機構&nbsp;[工学-機械工学]<br>
+        調査員、主任調査員<br>常勤(任期あり)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月07日</div></td>
+        <td nowrap><div class="margin-01">2014年10月20日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070073&amp;ln_jor=0">
+        
+        
+        大学院理工学研究科生産環境工学専攻機械工学講座　教授公募</a>
+        <br>
+        愛媛大学&nbsp;[工学-機械工学]<br>
+        教授相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月05日</div></td>
+        <td nowrap><div class="margin-01">2014年10月17日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070279&amp;ln_jor=0">
+        
+        
+        情報システム構築論等担当教員（准教授）の募集</a>
+        <br>
+        小樽商科大学&nbsp;[工学-情報工学]<br>
+        准教授・常勤専任講師相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月05日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070302&amp;ln_jor=0">
+        
+        
+        教員公募　機械工学科（機械力学・工学力学等の関連分野）准教授または助教</a>
+        <br>
+        長岡工業高等専門学校&nbsp;[工学-機械工学]<br>
+        准教授・常勤専任講師相当、助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月05日</div></td>
+        <td nowrap><div class="margin-01">2014年10月31日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070307&amp;ln_jor=0">
+        
+        
+        教員公募　環境都市工学科（防災計画、防災工学いずれかの分野）准教授または助教</a>
+        <br>
+        長岡工業高等専門学校&nbsp;[工学-土木工学]<br>
+        准教授・常勤専任講師相当、助教相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+      <tr>
+        <td nowrap><div class="margin-01">2014年07月04日</div></td>
+        <td nowrap><div class="margin-01">2015年01月02日</div></td>
+        <td>
+        <div class="margin-01">
+
+<!--
+        
+-->
+        
+        
+        
+        
+
+        
+        
+        
+          
+          <a href="SeekJorDetail?fn=1&amp;id=D114070084&amp;ln_jor=0">
+        
+        
+        流体解析、ナノシミュレーションなどのシミュレーションソフト開発技術者の募集</a>
+        <br>
+        アドバンスソフト株式会社&nbsp;[工学-全て]<br>
+        准教授・常勤専任講師相当、研究開発・技術者相当<br>常勤(任期なし)
+        </div>
+        </td>
+      </tr>
+      <tr><td colspan="3" background="images/line_dot.gif"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      
+    </table>
+    <table width="570" border="0" cellspacing="0" cellpadding="0">
+      <tr bgcolor="#dddddd">
+        <td><div class="margin-01">並び順&nbsp;：
+        
+        
+        更新日&nbsp;|&nbsp;<a href="javascript:chgSort(1)">募集終了日</a>
+        
+        
+        
+        </div></td>
+        <td align="right">
+        <div class="margin-01">
+        
+        
+        
+        <a href="javascript:chgPage(9)"><img src="images/arrow_sl_l.gif" width="14" height="13" alt="" border="0" align="absMiddle">&nbsp;前の50件</a>
+        
+        
+        |
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <a href="javascript:chgPage(7)">7</a> |
+        
+        
+        
+        
+        <a href="javascript:chgPage(8)">8</a> |
+        
+        
+        
+        
+        <a href="javascript:chgPage(9)">9</a> |
+        
+        
+        
+        
+        
+        <strong>10</strong> |
+        
+        
+        
+        <a href="javascript:chgPage(11)">11</a> |
+        
+        
+        
+        
+        
+        
+         <a href="javascript:chgPage(11)">次の50件&nbsp;<img src="images/arrow_sr_l.gif" width="14" height="13" alt="" border="0" align="absMiddle"></a>
+        
+        
+        </div>
+        </td>
+      </tr>
+    </table>
+    <!-- Search Result List Base End -->
+
+    <img src="images/spacer.gif" width="1" height="20" alt=""><br>
+
+    <!-- Search Main Start -->
+    <table width="570" border="0" cellspacing="0" cellpadding="0">
+    <form name="f_multi" method="get" action="SeekJorSearch" target="_self" onSubmit="return search()"><input type="hidden" name="2B777DA1" value="D42DA7AA6A552E08E19DC9FBBCCC1939">
+    <input type="hidden" name="fn" value="1">
+    <input type="hidden" name="dt" value="3">
+    <input type="hidden" name="page" value="10">
+    <input type="hidden" name="sort" value="0">
+      <tr><td width="570" height="1" colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+      <tr>
+        <td width="1" align="center" valign="top" bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td>
+        <td width="568" align="center" valign="top">
+
+        <table width="550" border="0" cellspacing="7" cellpadding="0">
+          <tr><td><img src="images/spacer.gif" width="1" height="5" alt=""></td></tr>
+          <tr><td valign="middle">&nbsp;<a name="ssearch"><strong>絞込み検索条件</strong></a></td></tr>
+          <tr><td background="images/line_dot.gif"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+        </table>
+
+        <table width="550" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td rowspan="4" nowrap><div class="margin-01">キーワード</div></td>
+            <td colspan="2"><div class="margin-01">※キーワードはスペースで区切ってください。</div></td>
+          </tr>
+          <tr>
+            <td nowrap><div class="margin-01">すべてのキーワードを含む</div></td>
+            <td><div class="margin-01"><input type="text" size="35" name="keyword_and" class="input35" value="" maxlength="200"></div></td>
+          </tr>
+          <tr>
+            <td nowrap><div class="margin-01">いずれかのキーワードを含む</div></td>
+            <td><div class="margin-01"><input type="text" size="35" name="keyword_or" class="input35" value="" maxlength="200"></div></td>
+          </tr>
+          <tr>
+            <td nowrap><div class="margin-01">キーワードを含めない</div></td>
+            <td><div class="margin-01"><input type="text" size="35" name="keyword_not" class="input35" value="" maxlength="200"></div></td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+          <tr>
+            <td><div class="margin-01">機関種別</div></td>
+            <td colspan="2">
+            <div class="margin-01">
+            
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh1" value="00001">
+                <label for="kh1">国立大学</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh2" value="00002">
+                <label for="kh2">公立大学</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh3" value="00003">
+                <label for="kh3">私立大学</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh4" value="00004">
+                <label for="kh4">短期大学</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh5" value="00005">
+                <label for="kh5">高等専門学校</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh6" value="00006">
+                <label for="kh6">専門学校（専修学校専門課程）</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh7" value="00007">
+                <label for="kh7">その他教育機関</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh8" value="00008">
+                <label for="kh8">大学共同利用機関法人・独立行政法人・国立研究機関・省庁等</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh9" value="00009">
+                <label for="kh9">公設試験研究機関・地方自治体等</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh10" value="00010">
+                <label for="kh10">特殊法人・認可法人</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh11" value="00011">
+                <label for="kh11">公益法人</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh12" value="00012">
+                <label for="kh12">民間企業</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh13" value="00013">
+                <label for="kh13">海外研究機関</label>
+                </td>
+              
+              
+              
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh14" value="00014">
+                <label for="kh14">国際機関</label>
+                </td>
+              </tr>
+              
+              <tr>
+                <td width="50%" valign="top">
+                <input type="checkbox" name="orgtype" id="kh15" value="99999">
+                <label for="kh15">その他機関</label>
+                </td>
+              </tr>
+              
+            </table>            
+              
+            </div>
+            </td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+          <tr>
+            <td><div class="margin-01">研究分野</div></td>
+            <td colspan="2">
+            <!-- 01 Start -->
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr>
+                <td width="5" rowspan="2"><div class="margin-01">1.</div></td>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">大分類</div></td>
+                <td><div class="margin-01">
+                <select name="bg1" onchange="chgBg(1)">
+                 <option value="">指定しない</option>
+                
+                 <option value="00012">総合人文社会</option>
+                
+                 <option value="00001">人文学</option>
+                
+                 <option value="00002">社会科学</option>
+                
+                 <option value="00013">総合理工</option>
+                
+                 <option value="00003">数物系科学</option>
+                
+                 <option value="00004">化学</option>
+                
+                 <option value="00005">工学</option>
+                
+                 <option value="00014">総合生物</option>
+                
+                 <option value="00006">生物学</option>
+                
+                 <option value="00007">農学</option>
+                
+                 <option value="00008">医歯薬学</option>
+                
+                 <option value="00015">情報学</option>
+                
+                 <option value="00016">環境学</option>
+                
+                 <option value="00017">複合領域</option>
+                
+                 <option value="99999">その他</option>
+                
+                </select>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">小分類</div></td>
+                <td><div class="margin-01"><select name="sm1" onchange="chgSm(1)"><option value="">&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;</option></select></td>
+              </tr>
+            </table>
+            <!-- 01 End -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#dddddd"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr></table>
+            <!-- 02 Start -->
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr>
+                <td width="5" rowspan="2"><div class="margin-01">2.</div></td>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">大分類</div></td>
+                <td><div class="margin-01">
+                <select name="bg2" onchange="chgBg(2)">
+                 <option value="">指定しない</option>
+                
+                 <option value="00012">総合人文社会</option>
+                
+                 <option value="00001">人文学</option>
+                
+                 <option value="00002">社会科学</option>
+                
+                 <option value="00013">総合理工</option>
+                
+                 <option value="00003">数物系科学</option>
+                
+                 <option value="00004">化学</option>
+                
+                 <option value="00005">工学</option>
+                
+                 <option value="00014">総合生物</option>
+                
+                 <option value="00006">生物学</option>
+                
+                 <option value="00007">農学</option>
+                
+                 <option value="00008">医歯薬学</option>
+                
+                 <option value="00015">情報学</option>
+                
+                 <option value="00016">環境学</option>
+                
+                 <option value="00017">複合領域</option>
+                
+                 <option value="99999">その他</option>
+                
+                </select>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">小分類</div></td>
+                <td><div class="margin-01"><select name="sm2" onchange="chgSm(2)"><option value="">&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;</option></select></div></td>
+              </tr>
+            </table>
+            <!-- 02 End -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#dddddd"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr></table>
+            <!-- 03 Start -->
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr>
+                <td width="5" rowspan="2"><div class="margin-01">3.</div></td>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">大分類</div></td>
+                <td><div class="margin-01">
+                <select name="bg3" onchange="chgBg(3)">
+                 <option value="">指定しない</option>
+                
+                 <option value="00012">総合人文社会</option>
+                
+                 <option value="00001">人文学</option>
+                
+                 <option value="00002">社会科学</option>
+                
+                 <option value="00013">総合理工</option>
+                
+                 <option value="00003">数物系科学</option>
+                
+                 <option value="00004">化学</option>
+                
+                 <option value="00005">工学</option>
+                
+                 <option value="00014">総合生物</option>
+                
+                 <option value="00006">生物学</option>
+                
+                 <option value="00007">農学</option>
+                
+                 <option value="00008">医歯薬学</option>
+                
+                 <option value="00015">情報学</option>
+                
+                 <option value="00016">環境学</option>
+                
+                 <option value="00017">複合領域</option>
+                
+                 <option value="99999">その他</option>
+                
+                </select>
+                </div></td>
+              </tr>
+              <tr>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">小分類</div></td>
+                <td><div class="margin-01"><select name="sm3" onchange="chgSm(3)"><option value="">&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;</option></select></div></td>
+              </tr>
+            </table>
+            <!-- 03 End -->
+            <!-- 04 Start -->
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr>
+                <td width="5" rowspan="2"><div class="margin-01">4.</div></td>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">大分類</div></td>
+                <td><div class="margin-01">
+                <select name="bg4" onchange="chgBg(4)">
+                 <option value="">指定しない</option>
+                
+                 <option value="00012">総合人文社会</option>
+                
+                 <option value="00001">人文学</option>
+                
+                 <option value="00002">社会科学</option>
+                
+                 <option value="00013">総合理工</option>
+                
+                 <option value="00003">数物系科学</option>
+                
+                 <option value="00004">化学</option>
+                
+                 <option value="00005">工学</option>
+                
+                 <option value="00014">総合生物</option>
+                
+                 <option value="00006">生物学</option>
+                
+                 <option value="00007">農学</option>
+                
+                 <option value="00008">医歯薬学</option>
+                
+                 <option value="00015">情報学</option>
+                
+                 <option value="00016">環境学</option>
+                
+                 <option value="00017">複合領域</option>
+                
+                 <option value="99999">その他</option>
+                
+                </select>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">小分類</div></td>
+                <td><div class="margin-01"><select name="sm4" onchange="chgSm(4)"><option value="">&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;</option></select></div></td>
+              </tr>
+            </table>
+            <!-- 04 End -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#dddddd"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr></table>
+            <!-- 05 Start -->
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr>
+                <td width="5" rowspan="2"><div class="margin-01">5.</div></td>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">大分類</div></td>
+                <td><div class="margin-01">
+                <select name="bg5" onchange="chgBg(5)">
+                 <option value="">指定しない</option>
+                
+                 <option value="00012">総合人文社会</option>
+                
+                 <option value="00001">人文学</option>
+                
+                 <option value="00002">社会科学</option>
+                
+                 <option value="00013">総合理工</option>
+                
+                 <option value="00003">数物系科学</option>
+                
+                 <option value="00004">化学</option>
+                
+                 <option value="00005">工学</option>
+                
+                 <option value="00014">総合生物</option>
+                
+                 <option value="00006">生物学</option>
+                
+                 <option value="00007">農学</option>
+                
+                 <option value="00008">医歯薬学</option>
+                
+                 <option value="00015">情報学</option>
+                
+                 <option value="00016">環境学</option>
+                
+                 <option value="00017">複合領域</option>
+                
+                 <option value="99999">その他</option>
+                
+                </select>
+                </div>
+                </td>
+              </tr>
+              <tr>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">小分類</div></td>
+                <td><div class="margin-01"><select name="sm5" onchange="chgSm(5)"><option value="">&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;</option></select></div></td>
+              </tr>
+            </table>
+            <!-- 05 End -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#dddddd"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr></table>
+            <!-- 06 Start -->
+            <table width="100%" border="0" cellspacing="1" cellpadding="0">
+              <tr>
+                <td width="5" rowspan="2"><div class="margin-01">6.</div></td>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">大分類</div></td>
+                <td><div class="margin-01">
+                <select name="bg6" onchange="chgBg(6)">
+                 <option value="">指定しない</option>
+                
+                 <option value="00012">総合人文社会</option>
+                
+                 <option value="00001">人文学</option>
+                
+                 <option value="00002">社会科学</option>
+                
+                 <option value="00013">総合理工</option>
+                
+                 <option value="00003">数物系科学</option>
+                
+                 <option value="00004">化学</option>
+                
+                 <option value="00005">工学</option>
+                
+                 <option value="00014">総合生物</option>
+                
+                 <option value="00006">生物学</option>
+                
+                 <option value="00007">農学</option>
+                
+                 <option value="00008">医歯薬学</option>
+                
+                 <option value="00015">情報学</option>
+                
+                 <option value="00016">環境学</option>
+                
+                 <option value="00017">複合領域</option>
+                
+                 <option value="99999">その他</option>
+                
+                </select>
+                </div></td>
+              </tr>
+              <tr>
+                <td width="50" bgcolor="#eeeeee" align="right"><div class="margin-01">小分類</div></td>
+                <td><div class="margin-01"><select name="sm6" onchange="chgSm(6)"><option value="">&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;</option></select></div></td>
+              </tr>
+            </table>
+            <!-- 06 End -->
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td bgcolor="#dddddd"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr></table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td align="right">
+            <div class="margin-01"><a href="javascript:void(0)" onClick="openWin( 'fields.html', 'newwin', 620, 600 )">研究分野一覧</a></div>
+            <input type="hidden" name="bgCode1" value="00005">
+            <input type="hidden" name="smCode1" value=".....">
+            <input type="hidden" name="bgCode2" value="">
+            <input type="hidden" name="smCode2" value="">
+            <input type="hidden" name="bgCode3" value="">
+            <input type="hidden" name="smCode3" value="">
+            <input type="hidden" name="bgCode4" value="">
+            <input type="hidden" name="smCode4" value="">
+            <input type="hidden" name="bgCode5" value="">
+            <input type="hidden" name="smCode5" value="">
+            <input type="hidden" name="bgCode6" value="">
+            <input type="hidden" name="smCode6" value="">
+            </td></tr></table>
+            </td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+          <tr>
+            <td><div class="margin-01">勤務地</div></td>
+            <td colspan="2">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+             
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_1" value="00001" id="area_00001" onclick="checkArea(1)"><label for="area_00001"><strong>【北海道】</strong></label><br>
+                <div class="dspnone">
+               
+                <input type="checkbox" name="prefecture_1" value="00001" id="pre_00001" onclick="checkPrefecture(1)"><label for="pre_00001">北海道</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_2" value="00002" id="area_00002" onclick="checkArea(2)"><label for="area_00002"><strong>【東北】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_2" value="00002" id="pre_00002" onclick="checkPrefecture(2)"><label for="pre_00002">青森県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_2" value="00003" id="pre_00003" onclick="checkPrefecture(2)"><label for="pre_00003">岩手県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_2" value="00004" id="pre_00004" onclick="checkPrefecture(2)"><label for="pre_00004">宮城県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_2" value="00005" id="pre_00005" onclick="checkPrefecture(2)"><label for="pre_00005">秋田県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_2" value="00006" id="pre_00006" onclick="checkPrefecture(2)"><label for="pre_00006">山形県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_2" value="00007" id="pre_00007" onclick="checkPrefecture(2)"><label for="pre_00007">福島県</label>
+                
+                 <br>
+                 
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_3" value="00003" id="area_00003" onclick="checkArea(3)"><label for="area_00003"><strong>【関東】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_3" value="00008" id="pre_00008" onclick="checkPrefecture(3)"><label for="pre_00008">茨城県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_3" value="00009" id="pre_00009" onclick="checkPrefecture(3)"><label for="pre_00009">栃木県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_3" value="00010" id="pre_00010" onclick="checkPrefecture(3)"><label for="pre_00010">群馬県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_3" value="00011" id="pre_00011" onclick="checkPrefecture(3)"><label for="pre_00011">埼玉県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_3" value="00012" id="pre_00012" onclick="checkPrefecture(3)"><label for="pre_00012">千葉県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_3" value="00013" id="pre_00013" onclick="checkPrefecture(3)"><label for="pre_00013">東京都</label>
+                
+                 <br>
+                 
+                
+               
+                <input type="checkbox" name="prefecture_3" value="00014" id="pre_00014" onclick="checkPrefecture(3)"><label for="pre_00014">神奈川県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_4" value="00004" id="area_00004" onclick="checkArea(4)"><label for="area_00004"><strong>【北陸・甲信越】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_4" value="00015" id="pre_00015" onclick="checkPrefecture(4)"><label for="pre_00015">新潟県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_4" value="00016" id="pre_00016" onclick="checkPrefecture(4)"><label for="pre_00016">富山県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_4" value="00017" id="pre_00017" onclick="checkPrefecture(4)"><label for="pre_00017">石川県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_4" value="00018" id="pre_00018" onclick="checkPrefecture(4)"><label for="pre_00018">福井県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_4" value="00019" id="pre_00019" onclick="checkPrefecture(4)"><label for="pre_00019">山梨県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_4" value="00020" id="pre_00020" onclick="checkPrefecture(4)"><label for="pre_00020">長野県</label>
+                
+                 <br>
+                 
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_5" value="00005" id="area_00005" onclick="checkArea(5)"><label for="area_00005"><strong>【東海】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_5" value="00021" id="pre_00021" onclick="checkPrefecture(5)"><label for="pre_00021">岐阜県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_5" value="00022" id="pre_00022" onclick="checkPrefecture(5)"><label for="pre_00022">静岡県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_5" value="00023" id="pre_00023" onclick="checkPrefecture(5)"><label for="pre_00023">愛知県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_5" value="00024" id="pre_00024" onclick="checkPrefecture(5)"><label for="pre_00024">三重県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_6" value="00006" id="area_00006" onclick="checkArea(6)"><label for="area_00006"><strong>【近畿】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_6" value="00025" id="pre_00025" onclick="checkPrefecture(6)"><label for="pre_00025">滋賀県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_6" value="00026" id="pre_00026" onclick="checkPrefecture(6)"><label for="pre_00026">京都府</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_6" value="00027" id="pre_00027" onclick="checkPrefecture(6)"><label for="pre_00027">大阪府</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_6" value="00028" id="pre_00028" onclick="checkPrefecture(6)"><label for="pre_00028">兵庫県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_6" value="00029" id="pre_00029" onclick="checkPrefecture(6)"><label for="pre_00029">奈良県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_6" value="00030" id="pre_00030" onclick="checkPrefecture(6)"><label for="pre_00030">和歌山県</label>
+                
+                 <br>
+                 
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_7" value="00007" id="area_00007" onclick="checkArea(7)"><label for="area_00007"><strong>【中国】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_7" value="00031" id="pre_00031" onclick="checkPrefecture(7)"><label for="pre_00031">鳥取県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_7" value="00032" id="pre_00032" onclick="checkPrefecture(7)"><label for="pre_00032">島根県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_7" value="00033" id="pre_00033" onclick="checkPrefecture(7)"><label for="pre_00033">岡山県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_7" value="00034" id="pre_00034" onclick="checkPrefecture(7)"><label for="pre_00034">広島県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_7" value="00035" id="pre_00035" onclick="checkPrefecture(7)"><label for="pre_00035">山口県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_8" value="00008" id="area_00008" onclick="checkArea(8)"><label for="area_00008"><strong>【四国】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_8" value="00036" id="pre_00036" onclick="checkPrefecture(8)"><label for="pre_00036">徳島県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_8" value="00037" id="pre_00037" onclick="checkPrefecture(8)"><label for="pre_00037">香川県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_8" value="00038" id="pre_00038" onclick="checkPrefecture(8)"><label for="pre_00038">愛媛県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_8" value="00039" id="pre_00039" onclick="checkPrefecture(8)"><label for="pre_00039">高知県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_9" value="00009" id="area_00009" onclick="checkArea(9)"><label for="area_00009"><strong>【九州・沖縄】</strong></label><br>
+                <div>
+               
+                <input type="checkbox" name="prefecture_9" value="00040" id="pre_00040" onclick="checkPrefecture(9)"><label for="pre_00040">福岡県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00041" id="pre_00041" onclick="checkPrefecture(9)"><label for="pre_00041">佐賀県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00042" id="pre_00042" onclick="checkPrefecture(9)"><label for="pre_00042">長崎県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00043" id="pre_00043" onclick="checkPrefecture(9)"><label for="pre_00043">熊本県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00044" id="pre_00044" onclick="checkPrefecture(9)"><label for="pre_00044">大分県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00045" id="pre_00045" onclick="checkPrefecture(9)"><label for="pre_00045">宮崎県</label>
+                
+                 <br>
+                 
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00046" id="pre_00046" onclick="checkPrefecture(9)"><label for="pre_00046">鹿児島県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                <input type="checkbox" name="prefecture_9" value="00047" id="pre_00047" onclick="checkPrefecture(9)"><label for="pre_00047">沖縄県</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+              
+              <tr><td bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td></tr>
+              
+              <tr>
+                <td>
+                <div class="margin-01">
+                <input type="checkbox" name="area_10" value="99999" id="area_99999" onclick="checkArea(10)"><label for="area_99999"><strong>【その他】</strong></label><br>
+                <div class="dspnone">
+               
+                <input type="checkbox" name="prefecture_10" value="00048" id="pre_00048" onclick="checkPrefecture(10)"><label for="pre_00048">その他</label>
+                
+                 
+                 &nbsp;
+                
+               
+                </div>
+                </div>
+                </td>
+              </tr>
+              
+            </table>
+            </td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+          <tr>
+            <td><div class="margin-01">職種</div></td>
+            <td colspan="2"><div class="margin-01">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00011" id="jobkind_00011">
+               <label for="jobkind_00011">機関の長相当</label>
+               </div>
+               </td>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00012" id="jobkind_00012">
+               <label for="jobkind_00012">教授相当</label>
+               </div>
+               </td>
+             
+              </tr>
+              <tr>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00013" id="jobkind_00013">
+               <label for="jobkind_00013">准教授・常勤専任講師相当</label>
+               </div>
+               </td>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00014" id="jobkind_00014">
+               <label for="jobkind_00014">助教相当</label>
+               </div>
+               </td>
+             
+              </tr>
+              <tr>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00015" id="jobkind_00015">
+               <label for="jobkind_00015">研究員・ポスドク相当</label>
+               </div>
+               </td>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00016" id="jobkind_00016">
+               <label for="jobkind_00016">非常勤講師相当</label>
+               </div>
+               </td>
+             
+              </tr>
+              <tr>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00017" id="jobkind_00017">
+               <label for="jobkind_00017">研究・教育補助者相当</label>
+               </div>
+               </td>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00018" id="jobkind_00018">
+               <label for="jobkind_00018">研究管理者相当</label>
+               </div>
+               </td>
+             
+              </tr>
+              <tr>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00019" id="jobkind_00019">
+               <label for="jobkind_00019">研究開発・技術者相当</label>
+               </div>
+               </td>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00020" id="jobkind_00020">
+               <label for="jobkind_00020">専門学校・小中高等の教員相当</label>
+               </div>
+               </td>
+             
+              </tr>
+              <tr>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="00021" id="jobkind_00021">
+               <label for="jobkind_00021">コミュニケーター相当</label>
+               </div>
+               </td>
+             
+            
+               <td width="50%" valign="top">
+               <input type="checkbox" name="jobkind" value="99999" id="jobkind_99999">
+               <label for="jobkind_99999">その他</label>
+               </div>
+               </td>
+             
+              </tr>
+              <tr>
+             
+            
+              </tr>
+              <tr><td align="right" colspan="3"><div class="margin-01"><a href="javascript:void(0)" onClick="openWin( 'jobs.html', 'newwin',620, 600 )">職種一覧</a></div></td></tr>
+            </table>
+            </div></td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+          <tr>
+            <td><div class="margin-01">勤務形態</div></td>
+            <td colspan="2">
+            <div class="margin-01">
+            <select name="jobform">
+              <option value="">指定しない</option>
+            
+              <option value="0">常勤</option>
+            
+              <option value="1">非常勤</option>
+            
+            </select>
+            &nbsp;&nbsp;任期
+            <select name="jobterm">
+              <option value="">指定しない</option>
+            
+              <option value="0">任期あり</option>
+            
+              <option value="1">任期なし</option>
+            
+              <option value="3">テニュアトラック</option>
+            
+            </select>
+            </div>
+            </td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+          <tr>
+            <td><div class="margin-01">表示件数</div></td>
+            <td colspan="2">
+            <div class="margin-01">
+            <select name="dispcount">
+            
+              <option value="10">10件</option>
+            
+              <option value="20">20件</option>
+            
+              <option value="50" selected>50件</option>
+            
+            </select>
+            </div>
+            </td>
+          </tr>
+          <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="548" height="1" alt=""></td></tr>
+        </table>
+        <img src="images/spacer.gif" width="1" height="10" alt=""><br>
+        <table width="550" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="25%" align="center">&nbsp;</td>
+            <td width="25%" align="left"><input type="submit" value="&nbsp;&nbsp;検&nbsp;索&nbsp;&nbsp;"></td>
+            <td width="25%" align="right"><input type="button" value="&nbsp;&nbsp;リセット&nbsp;&nbsp;" onclick="resetCondition()"></td>
+            <td width="25%" align="center">&nbsp;</td>
+          </tr>
+        </table>
+        <img src="images/spacer.gif" width="1" height="15" alt=""><br>
+
+        </td>
+        <td width="1" align="center" valign="top" bgcolor="#cccccc"><img src="images/spacer.gif" width="1" height="1" alt=""></td>
+      </tr>
+      <tr><td colspan="3" bgcolor="#cccccc"><img src="images/spacer.gif" width="568" height="1" alt=""></td></tr>
+    </form>
+    </table>
+    <!-- Search Base End -->
+
+    <div id="toppage"><a href="#top">上に戻る&nbsp;<img src="images/arrow_top.gif" width="11" height="11" alt="" border="0" align="absMiddle"></a></div>
+
+    </div>
+    </td>
+    <!-- Left Side Base End -->
+  </tr>
+  <tr>
+    <td valign="bottom" class="style-seek"><div id="page-top"><a href="#top">上に戻る</a></div></td>
+  </tr>
+</table>
+<!-- ********** Contents Base End ********** -->
+
+
+</div>
+
+<script type="text/javascript">
+ <!--
+  function statusMoveInquiry() {
+    document.f_inquiry.submit();
+  }
+ // -->
+</script>
+<form action="Inquiry" name="f_inquiry" method="post" target="_self" onsubmit="return false;"><input type="hidden" name="2B777DA1" value="B51665F6A308130F9ECC74E0B062EE72">
+  <input type="hidden" name="currentPage" value="1">
+  <input type="hidden" name="inquiryMailCount" value="0">
+</form>
+<div class="style-seek">
+<div id="footer-menu">
+<table cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="160">
+            <div class="navititle-ja"><h3 style="font-size:97%">JREC-IN Portal について</h3></div>
+      <div class="navimain-ja">
+        <ul>
+          <li><a href="SeekDescription?id=001">事業概要</a></li>
+          <li><a href="SeekDescription?id=013">ご利用方法</a></li>
+          <li><a href="SeekDescription?id=002">ご利用にあたって</a></li>
+          <li><a href="SeekDescription?id=003">個人情報保護ポリシー</a></li>
+          <li><a href="SeekDescription?id=004">よくあるご質問</a></li>
+          <li><a href="SeekDescription?id=005">研究分野一覧表</a></li>
+          <li><a href="SeekDescription?id=012">職種一覧表</a></li>
+          <li><a href="SeekDescription?id=006">各種データ</a></li>
+          <li><a href="SeekDescription?id=007">連絡先</a></li>
+          <li><a href="SeekDescription?id=008">関連リンク</a></li>
+          <li><a href="SeekDescription?id=009">サイトマップ</a></li>
+        </ul>
+      </div>
+    </td>
+    <td>
+      
+      <div class="navititle-ja"><h3 style="font-size:100%">ユーザメニュー</h3></div>
+      <div class="navimain-ja">
+        <ul>
+          <li>求人機関へのアピール<br>(求職者情報)
+            <ul>
+              <li><a href="RegistJhi">登録・更新</a></li>
+              <li><a href="DeleteJhi">削除</a></li>
+            </ul>
+          </li>
+
+          <li><a href="javascript:statusMoveInquiry();">求人機関からの求職者照会メール</a></li>
+          <li><a href="RegistMatching">マッチングメール設定</a></li>
+          <li><a href="JorConsideration">検討フォルダ</a></li>
+
+          <li>応募書類作成ツール
+            <ul>
+              <li><a href="ApplicationFormList">履歴書</a></li>
+              <li><a href="AchievementsList">業績リスト</a></li>
+            </ul>
+          </li>
+
+          <li><a href="JorEntryCheck">Web応募状況確認</a></li>
+          <li><a href="LearningHistory">学習履歴の閲覧・修了通知</a></li>
+
+          <li>アカウント情報
+            <ul>
+              <li><a href="RegistAddress">メールアドレス変更</a></li>
+              <li><a href="RegistPass">パスワード変更</a></li>
+              <li><a href="UpdateMember">基本情報変更</a></li>
+            </ul>
+          </li>
+          <li><a href="Withdrawal">退会</a></li>
+          <li><a href="javascript:void(0)" onclick="window.open( 'job_hunter_help.html', 'newwin', 'width=670, height=700, scrollbars=yes, resizable=yes' )">ヘルプ</a></li>
+        </ul>
+      </div>
+
+    </td>
+    <td width="160">
+            <div class="navibanner">
+      </div>
+    </td>
+    <td width="160">
+            <div class="navibanner">
+        <ul>
+          <li><a href="http://sti.jst.go.jp/" target="_blank"><img src="images/banner/0_Banner_joho.gif" width="145" height="33" alt="科学技術情報流通促進事業(JST)" border="0"></a></li>
+          <li><a href="http://jglobal.jst.go.jp/" target="_blank"><img src="images/banner/jglobal_log.png" width="145" height="33" alt="J-GLOBAL 科学技術総合リンクセンター" border="0"></a></li>
+          <li><a href="http://researchmap.jp/" target="_blank"><img src="images/banner/researchmap130.gif" width="145" height="33" alt="researchmap" border="0" title="researchmap"/></a></li>
+          <li><a href="http://www.jst.go.jp/phd-career/" target="_blank"><img src="images/banner/banner_tt_on.gif" width="145" height="33" alt="博士人材キャリア開発サイト" border="0"></a></li>
+          <li><a href="http://www.sangakukan.jp/" target="_blank"><img src="images/banner/sgkr_banner_c.gif" width="145" height="33" alt="産学官の道しるべ" border="0"></a></li>
+          <li><a href="http://scienceportal.jp" target="_blank"><img src="images/banner/scienceportal_banner.gif" width="145" height="33" alt="サイエンスポータル" border="0"></a></li>
+          <li><a href="http://www.jst.go.jp/gender/" target="_blank"><img src="images/banner/gender.gif" width="145" height="33" alt="男女共同参画" border="0"></a></li>
+          <li><a href="http://j-net21.smrj.go.jp/expand/sbir/" target="_blank"><img src="images/banner/bnr_SBIR02.jpg" width="145" height="33" alt="SBIR［中小企業技術革新制度］" border="0"></a></li>
+
+          <li><a href="http://www.jst.go.jp/researchintegrity/" target="_blank"><img src="images/banner/kenkyurinri.jpg" width="145" height="33" alt="研究倫理" border="0"></a></li>
+          <li><a href="http://www.mext.go.jp/a_menu/kansa/houkoku/1350200.htm" target="_blank"><img src="images/banner/compliance.jpg" width="145" height="33" alt="コンプライアンス" border="0"></a></li>
+
+        </ul>
+      </div>
+    </td>
+  </tr>
+</table>
+</div>
+<!-- ********** Footer Base Start ********** -->
+<table id="footer-area" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+    <div>
+      <div id="copy">Copyright &copy; Japan Science and Technology Agency. All Rights Reserved.</div>
+    </div>
+    </td>
+  </tr>
+</table>
+<!-- ********** Footer Base End ********** -->
+</div>
+
+</body>
+</html>

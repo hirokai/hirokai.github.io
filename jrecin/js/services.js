@@ -11,7 +11,7 @@ function formatDate(d){
 
 phonecatServices.factory('Phone', ['$resource',
   function($resource){
-	var data_id = '141007_01';
+	var data_id = '141010_01';
     return $resource('data/'+data_id+'/:phoneId.json', {}, {
       query: {method:'GET', params:{phoneId:'list'}, isArray:true,
       			transformResponse: function(str){

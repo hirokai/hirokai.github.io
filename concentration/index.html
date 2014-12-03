@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Concentration with cells</title>
+	<style type="text/css">
+	#box {
+		height: 600px;
+		width: 600px;
+		background: url('bg.jpg');
+	}
+	img {
+		width: 100%;
+	}
+	img.card {
+		display: none;
+	}
+	img.card.open {
+		display: block;
+	}
+	.cell:not(.notyet) img.card{
+		display: block;
+	}
+	.cell:not(.notyet) {
+//		visibility: hidden;
+	}
+.cell{
+	float: left;
+	width: 120px;
+	height: 120px;
+	background: #888;
+	margin: 10px;
+	-webkit-box-shadow: 7px 7px 39px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 7px 39px 0px rgba(0,0,0,0.75);
+box-shadow: 7px 7px 39px 0px rgba(0,0,0,0.75);
+}
+.clear{
+	clear: both;
+}
+
+#msg{
+	font-size: 24px;
+	font-family: Helvetica, Sans-serif;
+	}
+	#timer{
+	font-size: 24px;
+	font-family: Helvetica, Sans-serif;
+	}
+	</style>
+</head>
+<body>
+<script type="text/javascript" src='jquery-2.1.1.min.js'></script>
+
+<script type="text/javascript" src='underscore-min.js'></script>
+<script type="text/javascript" src='main.js'></script>
+<div id='box'>
+<div>
+<div class='cell notyet' id='cell1'></div>
+<div class='cell notyet' id='cell2'></div>
+<div class='cell notyet' id='cell3'></div>
+<div class='cell notyet' id='cell4'></div>
+<div class='clear'></div>
+</div>
+<div>
+<div class='cell notyet' id='cell5'></div>
+<div class='cell notyet' id='cell6'></div>
+<div class='cell notyet' id='cell7'></div>
+<div class='cell notyet' id='cell8'></div>
+<div class='clear'></div>
+</div>
+<div>
+<div class='cell notyet' id='cell9'></div>
+<div class='cell notyet' id='cell10'></div>
+<div class='cell notyet' id='cell11'></div>
+<div class='cell notyet' id='cell12'></div>
+<div class='clear'></div>
+</div>
+<div>
+<div class='cell notyet' id='cell13'></div>
+<div class='cell notyet' id='cell14'></div>
+<div class='cell notyet' id='cell15'></div>
+<div class='cell notyet' id='cell16'></div>
+<div class='clear'></div>
+</div>
+</div>
+<div id='timer'></div>
+<div id='msg'></div>
+</body>
+</html>

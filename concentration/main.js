@@ -10,8 +10,7 @@ $(function(){
 	var totalCount = 0;
 	var totalClickCount = 0;
 
-	var img = 'cells/1.jpg';
-	var idx = _.take(_.shuffle(_.range(1,13)),8);
+	var idx = _.take(_.shuffle(_.range(1,17)),8);
 	idx = idx.concat(idx);
 	idx = _.shuffle(idx);
 	for(var i=0;i<16;i++){

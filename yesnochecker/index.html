@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app='cellCountApp'>
+<head>
+    <title>Cell image check</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style type="text/css">
+        .countbutton {
+        / / float : left;
+        }
+    </style>
+
+</head>
+<body ng-controller='CellCountCtrl'>
+<div class='container'>
+
+    <div class='row'>
+        <pre>{{numlist()}}</pre>
+        <div class="col-md-2 col-sm-2" ng-repeat="col in [0,1,2,3,4,5]">
+            <div class='countbutton' ng-repeat='image in images.slice(25*col,25*(col+1))'>
+                {{image.num}}
+                <div class="btn-group">
+                    <label ng-class="{btn: true, 'btn-default': true, 'btn-warning': image.state==1}" ng-model="image.state"
+                           btn-radio="1" uncheckable>Yes</label>
+                    <label ng-class="{btn: true, 'btn-default': true, 'btn-success': image.state==0}" ng-model="image.state"
+                           btn-radio="0" uncheckable>No</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src='./bower_components/underscore/underscore-min.js'></script>
+<script type="text/javascript" src='./bower_components/angular/angular.min.js'></script>
+<script type="text/javascript" src='./bower_components/angular-bootstrap/ui-bootstrap.min.js'></script>
+<script type="text/javascript" src='main.js'></script>
+
+</body>
+</html>

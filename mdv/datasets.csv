@@ -1,0 +1,6 @@
+uuid,name,folder,metaset,images,positions,frames,channels,slices,metasetdim
+metaset_6066e610e9882f8e30a34d8086f643ad3f5bffe2d1214b3e1906496f1e855ec1,Confocal,6066e610e9882f8e30a34d8086f643ad3f5bffe2d1214b3e1906496f1e855ec1,1,150,6,1,2,15,pos
+a25f36bd-e87a-4996-8fed-3621410d0821,Live cell,/Volumes/Macintosh HD/Google Drive/Groves/Scope 7/20141219 T cells on pattern LAT-EGFP unsorted/01 FC1/cells_1,0,1076,16,68,1,1,
+396e8b1e-8f2b-42b0-93bb-3433a7e20b47,fixed cells,/Volumes/GrovesNAS2/Hiro/Scope7/2014/20141219 T cells on pattern LAT-EGFP unsorted/03 FC2 fixed/tirf_pos_1,0,64,16,1,4,1,
+f1af83d9-0965-451f-a642-eb1987ccf7fe,fixed cells 2,/Volumes/GrovesNAS2/Hiro/Scope7/2014/20141219 T cells on pattern LAT-EGFP unsorted/06 FC4 fixed/cells_4ch_more_1,0,576,144,1,4,1,
+metaset_1669dc2183c26a0f675879730160a8e800ed9b4939f78b6a763f612d64ac21d7,"multiple positions, multiple channels",1669dc2183c26a0f675879730160a8e800ed9b4939f78b6a763f612d64ac21d7,1,720,144,1,3,1,ch

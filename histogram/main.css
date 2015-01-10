@@ -1,0 +1,36 @@
+
+body {
+    font: 14px sans-serif;
+}
+
+.bar rect {
+    shape-rendering: crispEdges;
+}
+
+.bar text {
+    fill: #000;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.data {
+    width: 80px;
+    height: 500px;
+}
+
+#data-div > div {
+    float: left;
+}
+
+#graph {
+    margin: 30px 30px;
+    font-size: 10px;
+}
+
+#xmin, #xmax, #numBin {
+    width: 100px;
+}

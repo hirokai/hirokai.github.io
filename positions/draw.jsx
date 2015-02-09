@@ -167,6 +167,7 @@ var SvgPanel = React.createClass({
                 return 'rotate(' + (-self.props.bgImageAngle) + ')';
             })
             .attr('xlink:href', this.props.bgImage)
+            .style('display', this.props.showBgImage ? 'block' : 'none')
             .attr({width: 252, height: 200, opacity: 0.3})
             .attr('x', function (d) {
                 return d[0] + self.props.bgImageOffset[0];
@@ -300,6 +301,7 @@ var SvgPanel = React.createClass({
             .attr('transform', function (d) {
                 return 'rotate(' + (-self.props.bgImageAngle) + ')';
             })
+            .style('display', this.props.showBgImage ? 'block' : 'none')
             .attr('xlink:href', 'testpositions.png')
             .attr({width: 252, height: 200, opacity: 0.3})
             .attr('x', function (d) {

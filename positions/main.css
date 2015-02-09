@@ -3,6 +3,32 @@ body {
     width: 960px;
 }
 
+h1 {
+    font-size: 22px;
+}
+
+td {
+    width: 150px;
+    text-align: right;
+}
+
+#imgshowlabel {
+    width: 200px;
+    text-align: left;
+}
+
+#imgshowlabel input {
+    text-align: left;
+    width: 20px;
+}
+
+
+input {
+    width: 50px;
+    margin-left: 7px;
+    text-align: right;
+}
+
 svg {
     font: 10px sans-serif;
     shape-rendering: crispEdges;

@@ -105,8 +105,8 @@ var Content = React.createClass({
                 onImgAngleChange={this.onImgAngleChange}
             />
             <div style={{'font-size': 12}}>
-                <span className='blue'>Drag background:</span>
-                Scroll, mouse wheel to zoom.
+                <span className='blue'>Drag and mouse wheel on background:</span>
+                Scroll and zoom.
                 <br/>
                 <span className='blue'>Drag rectangles:</span>
                 Move positions.

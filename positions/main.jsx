@@ -94,7 +94,6 @@ var Content = React.createClass({
             <div style={{"margin-left": 670}}>
               {overRange ? <span style={{color: 'red'}}>(Positions over range)</span> : <a download={'' + (this.state.numRows * this.state.numCols) + ' positions.pos'} href={jsondata}>Download .pos file</a>}
             </div>
-            <br/>
             <SvgPanel positions={this.state.positions} scale={this.state.scale} translate={this.state.translate}
                 showBgImage={this.state.showBgImage}
                 bgImage='testpositions.png' bgImageAngle={this.state.bgImageAngle}
@@ -105,6 +104,23 @@ var Content = React.createClass({
                 onImgOffsetChange={this.onImgOffsetChange}
                 onImgAngleChange={this.onImgAngleChange}
             />
+            <div style={{'font-size': 12}}>
+                <span className='blue'>Drag background:</span>
+                Scroll, mouse wheel to zoom.
+                <br/>
+                <span className='blue'>Drag rectangles:</span>
+                Move positions.
+                <br/>
+                <span className='blue'>Alt-drag rectangles:</span>
+                Rotate positions.
+                <br/>
+                <span className='blue'>Shift + drag template images:</span>
+                Move template images.
+                <br/>
+                <span className='blue'>Shift + alt + drag template images:</span>
+                Rotate template images.
+                <br/>
+            </div>
         </div>;
     },
     changeShowImg(ev) {

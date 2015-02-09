@@ -233,7 +233,7 @@ var SvgPanel = React.createClass({
         svg.append('clipPath')
             .attr('id', 'wholearea-clip')
             .append('rect')
-            .attr({width: 1200, height: 450});
+            .attr({width: 1200, height: 410});
 
         svg.select('g.container').attr('clip-path', 'url(#wholearea-clip)');
 
@@ -358,7 +358,7 @@ var SvgPanel = React.createClass({
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 460 - margin.top - margin.bottom;
 
 var factor = 20;
 var x = d3.scale.linear()

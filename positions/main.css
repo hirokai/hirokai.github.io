@@ -71,10 +71,14 @@ body {
 
 svg {
     width: 800px;
-    height: 600px;
 }
 
 text {
     font-family: Helvetica, Sans-Serif;
     font-size: 12px;
+}
+
+span.blue {
+    color: #0000a0;
+    margin-right: 10px;
 }

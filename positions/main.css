@@ -1,0 +1,54 @@
+body {
+    position: relative;
+    width: 960px;
+}
+
+svg {
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+    cursor: normal;
+}
+
+rect {
+    fill: pink;
+    vector-effect: non-scaling-stroke;
+}
+
+.pos > rect {
+    cursor: pointer;
+    opacity: 0.5;
+}
+.pos > text {
+    cursor: pointer;
+}
+
+g.border > rect {
+    fill: #ddd;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #fff;
+    stroke-opacity: 0.7;
+}
+
+button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Sans-Serif;
+}
+
+svg {
+    width: 800px;
+    height: 600px;
+}
+
+text {
+    font-family: Helvetica, Sans-Serif;
+    font-size: 12px;
+}

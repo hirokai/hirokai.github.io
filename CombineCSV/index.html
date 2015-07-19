@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combine CSV files</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <style type="text/css">
+        #drop_zone {
+            margin-top: 10px;
+            color: #ccc;
+            border-style: dashed;
+            border-color: #ccc;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        #drop_zone.hovered {
+            background: #cce;
+            color: #333;
+        }
+
+        #result {
+            width: 100%;
+            height: 800px;
+            font-size: 14px;
+        }
+
+        #skip_rows {
+            width: 50px;
+        }
+
+        #used_columns {
+            width: 100px;
+        }
+
+        #has_header_label, #skip_rows, #used_columns {
+            margin-right: 20px;
+        }
+
+        #options {
+            margin: 8px 0;
+        }
+    </style>
+
+</head>
+<body>
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-8 col-md-offset-2'>
+
+            <div id="drop_zone">Drop files here</div>
+            <div id="options">
+                <!--<label for="delimiter">Delimiter</label>-->
+                <!--<div id='delimiter' class="btn-group" role="group" aria-label="...">-->
+                <!--<button type="button" class="btn btn-default">Comma</button>-->
+                <!--<button type="button" class="btn btn-default">Space</button>-->
+                <!--<button type="button" class="btn btn-default">Tab</button>-->
+                <!--</div>-->
+                <input type="checkbox" id="has_header" checked/>
+                <label id='has_header_label' for="has_header">Has header</label>
+                <label for="skip_rows">Skip rows</label>
+                <input type="text" id="skip_rows" value="14"/>
+                <label for="skip_rows">Columns</label>
+                <input type="text" id="used_columns" value="1,2"/>
+                <span id="info"></span>
+            </div>
+            <div>
+                <a href="" class="btn btn-primary" id="download">Download CSV</a>
+                <a href="" class="btn btn-danger" id="clear">Clear</a>
+            </div>
+            <output id="list"></output>
+            <textarea id='result'></textarea>
+
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript"
+        src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js'></script>
+<script src="papaparse.min.js"></script>
+<script src="main.js"></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-47555853-1', 'hirokai.github.io');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

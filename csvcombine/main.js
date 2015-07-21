@@ -16,7 +16,16 @@ function readCSV(txt, skip_rows, has_header, column_indices) {
             return d;
         })
     }
-    return {data: dat, header: has_header ? dat2[0] : null};
+    return {data: dat, header: has_header ? extractIndices(dat2[skip_rows || 0], column_indices) : null};
+}
+
+function extractIndices(arr, ns) {
+    var rs = [];
+    _.map(ns, function (n) {
+        rs.push(arr[n]);
+    });
+
+    return rs;
 }
 
 function basename(name) {
@@ -74,7 +83,7 @@ function handleFileSelect(evt) {
         reader.onload = (function (theFile) {
             return function (e) {
                 // Render thumbnail.
-                var name = basename(theFile.name);
+                var name = basename(theFile.name).replace(/\s/g, ' ');
                 filenames.push(name);
                 var has_header = $('#has_header').prop('checked');
                 var column_indices = _.map($('#used_columns').val().split(","), function (s) {
@@ -83,9 +92,11 @@ function handleFileSelect(evt) {
                 console.log(column_indices);
                 var skip_rows = parseInt($('#skip_rows').val());
                 var dat = readCSV(e.target.result, skip_rows, has_header, column_indices);
+                console.log(dat.header);
                 var hc = _.map((has_header ? dat.header : _.map(column_indices, function (i) {
                     return '' + (i + 1);
                 })), function (c) {
+                    console.log(c);
                     return name + "_" + c;
                 });
                 header_columns = header_columns.concat(hc);
@@ -133,4 +144,16 @@ $('#clear').on(function () {
     header_columns = [];
     $('#info').html('' + filenames.length + ' files loaded.');
     downloadBlob = null;
+});
+
+$(function () {
+    $('#skip_rows').on('change', function (ev) {
+        localStorage.setItem('csvcombine:skip_rows', $(ev.target).val());
+    });
+
+    $('#used_columns').on('change', function (ev) {
+        localStorage.setItem('csvcombine:used_columns', $(ev.target).val());
+    });
+    $('#skip_rows').val(localStorage['csvcombine:skip_rows'] || '14');
+    $('#used_columns').val(localStorage['csvcombine:used_columns'] || '1,2');
 });

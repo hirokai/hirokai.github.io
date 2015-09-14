@@ -28,7 +28,7 @@ function pad(n, width, z) {
 function initializePlot() {
     var svg = d3.select('#svg-container')
         .append('svg')
-        .style({width: size.width, height: size.height});
+        .style({width: ''+size.width+'px', height: ''+size.height+'px'});
 
     var imgs = d3.select('body')
         .append('div')

@@ -21,3 +21,23 @@
     -moz-box-shadow: none !important;
     box-shadow: none !important;
 }
+.bar rect {
+    fill: steelblue;
+    opacity: 0.7;
+    shape-rendering: crispEdges;
+    border: gray 1px solid;
+}
+
+.bar text {
+    fill: #fff;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.rect {
+    fill: pink;
+}

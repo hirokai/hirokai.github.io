@@ -25,33 +25,9 @@ function pad(n, width, z) {
     return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-function initializePlot() {
-    var svg = d3.select('#svg-container')
-        .append('svg')
-        .style({width: ''+size.width+'px', height: ''+size.height+'px'});
 
-    var imgs = d3.select('body')
-        .append('div')
-        .style({display: 'none'})
-        .selectAll('img')
-        .data(_.range(0, 73))
-        .enter()
-        .append('img')
-        .attr('src', function (n) {
-            return 'img/PDMS collagen4_7' + pad(n, 4) + '.jpg'
-        });
-
-    svg.append('image').attr({
-        'xlink:href': 'img/PDMS collagen4_70000.jpg',
-        'x': margin.width,
-        'y': margin.height,
-        'height': drawing.height,
-        'width': drawing.width
-    });
-    svg.append('text').attr({id: 'info', x: margin.width + 20, y: margin.height + 20})
-        .style({'font-family': 'Sans-Serif'});
-
-    d3.select('#slider')
+function init_slider(div_selector) {
+    d3.select(div_selector)
         .selectAll('line')
         .data(_.range(0, 80, 10)).enter()
         .append('line')
@@ -72,12 +48,42 @@ function initializePlot() {
             'stroke-width': 2,
             opacity: 0.5
         });
-    d3.select('#slider').append('circle')
+    d3.select(div_selector).append('circle')
         .attr({r: 5, fill: 'red'})
         .attr({
             cx: x_slider(0),
             cy: 10
         });
+}
+
+function initializePlot() {
+    var svg = d3.select('#img-container')
+        .append('svg')
+        .style({width: '' + size.width + 'px', height: '' + size.height + 'px'});
+
+    var imgs = d3.select('body')
+        .append('div')
+        .style({display: 'none'})
+        .selectAll('img')
+        .data(_.range(0, 73))
+        .enter()
+        .append('img')
+        .attr('src', function (n) {
+            return 'img/' + basename + pad(n, 4) + '.jpg'
+        });
+
+    svg.append('image').attr({
+        'xlink:href': 'img/PDMS collagen4_70000.jpg',
+        'x': margin.width,
+        'y': margin.height,
+        'height': drawing.height,
+        'width': drawing.width
+    });
+    svg.append('text').attr({id: 'info', x: margin.width + 20, y: margin.height + 20})
+        .style({'font-family': 'Sans-Serif'});
+
+
+    init_slider('#slider');
 
     return svg;
 }
@@ -92,31 +98,172 @@ function printTable(arr_of_hash) {
     })
 }
 
+function mkHist(vs, range, num_ticks, color, label) {
+    return function (elem) {
+        _mkHist(elem, vs, range, num_ticks, color, label)
+    };
+}
+
+
+function _mkHist(elem, vs, range, num_ticks, color, label) {
+
+    var height = 200, width = 300;
+
+    var x = d3.scale.linear()
+        .domain(range)
+        .range([0, width]);
+
+// Generate a histogram using twenty uniformly-spaced bins.
+    var data = d3.layout.histogram()
+        .bins(x.ticks(num_ticks))(vs);
+
+    var y = d3.scale.linear()
+        .domain([0, d3.max(data, function (d) {
+            return d.y;
+        })])
+        .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom");
+
+    var svg = elem
+        .attr('class', 'hist')
+        .attr("width", width)
+        .attr("height", height)
+        .append("g")
+        .attr("transform", "translate(" + margin.width + "," + margin.height + ")");
+
+    var bar = svg.selectAll(".bar")
+        .data(data)
+        .enter().append("g")
+        .attr("class", "bar")
+        .attr("transform", function (d) {
+            return "translate(" + x(d.x) + "," + y(d.y) + ")";
+        });
+
+    bar.append("rect")
+        .attr("x", 1)
+        .attr("width", function (d) {
+            return x(d.dx) - x(0);
+        })
+        .attr("height", function (d) {
+            return height - y(d.y);
+        })
+        .style("fill", color);
+
+    var formatCount = d3.format(",.0f");
+
+    bar.append("text")
+        .attr("dy", ".75em")
+        .attr("y", 6)
+        .attr("x", (x(data[0].dx)-x(0)) / 2)
+        .attr("text-anchor", "middle")
+        .text(function (d) {
+            return formatCount(d.y);
+        });
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("transform", "translate("+(width/2)+"," + height + ")")
+        .attr("transform", "translate("+width+",20)")
+        .append('text')
+        .attr('text-anchor', 'end')
+        .text(label);
+}
+
+function plotVelocityHistograms(vs) {
+    var rectGrid = d3.layout.grid()
+        .bands()
+        .size([size.width, size.height])
+        .padding([0.1, 0.1]).cols(2).rows(2);
+
+    var rects = [{}, {}, {}, {}];
+
+    d3.select('svg.hists').remove();
+
+    d3.select('#hists-container').append('svg').attr({
+        'class': 'hists',
+        'width': '' + size.width + 'px',
+        'height': '' + size.height + 'px'
+    });
+
+    var gs = d3.select('svg.hists').selectAll("g.section")
+        .data(rectGrid(rects));
+
+    var v_xs = vs.map(function (v) {
+        return v[0];
+    });
+
+    var v_ys = vs.map(function (v) {
+        return v[1];
+    });
+
+    var v_angles = vs.map(function (v) {
+        return angle(v) * 180 / Math.PI;
+    });
+
+    var v_norms = vs.map(function (v) {
+        return norm(v);
+    });
+
+    function mkHists(sel) {
+        d3.selectAll('svg.hist').remove();
+
+        d3.select(sel[0][0]).call(mkHist(v_xs, [-100, 100], 21, 'steelblue', 'X velocity [pixel]'));
+        d3.select(sel[0][1]).call(mkHist(v_ys, [-100, 100], 21, 'steelblue', 'Y velocity [pixel]'));
+        d3.select(sel[0][2]).call(mkHist(v_angles, [-90, 270], 13, 'blue', 'Velocity angle [deg]'));
+        d3.select(sel[0][3]).call(mkHist(v_norms, [0, 100], 21, 'orange', 'Speed (velocity norm) [pixel]'));
+    }
+
+    gs.enter().append("g")
+        .attr("class", "section")
+        .attr("width", rectGrid.nodeSize()[0])
+        .attr("height", rectGrid.nodeSize()[1])
+        .attr("transform", function (d) {
+            return "translate(" + (d.x + 10) + "," + d.y + ")";
+        })
+        .call(mkHists);
+
+}
+
 function setData(svg, coords, frame, conns) {
     var info = svg.select('#info').text('Frame ' + frame);
 
-    var g = svg.selectAll('g').data(coords[frame].values, function (d) {
+
+    var conn = conns[frame] ? conns[frame].values : [];
+    var conn_prev = conns[frame-1] ? conns[frame-1].values : [];
+    var coord = coords[frame] ? coords[frame].values : [];
+    var coord_prev = coords[frame-1] ? coords[frame-1].values : [];
+
+    var g = svg.selectAll('g').data(coord, function (d) {
         return d.id;
     });
+    console.log(g);
 
     g.enter()
         .append('g')
         .append('circle')
-        .style('opacity', 0)
-        .attr({r: 2, fill: 'blue'})
+        .style('opacity', 1)
+        .attr({
+            r: 3, fill: function (d) {
+                return _.findWhere(conn, {to: d.id}) ? 'blue' : 'pink';
+            }
+        })
         .attr({
             cx: function (d) {
                 return x(d.x);
             }, cy: function (d) {
                 return y(d.y);
             }
-        })
-        .transition().duration(100).style('opacity', 1);
-    g.exit().transition().duration(500).style('opacity', 0).remove();
-    //
-    //printTable(coords);
-    //printTable(conn);
+        });
+//        .transition().duration(100).style('opacity', 1);
 
+    g.exit().transition().duration(500).style('opacity', 0).remove();
 
     function calcLine(conn, frame) {
         return conn.map(function (c) {
@@ -147,8 +294,6 @@ function setData(svg, coords, frame, conns) {
         }).style('opacity', opacity);
     }
 
-    var conn = conns[frame].values;
-    var conn_prev = conns[frame - 1].values;
     var lines = calcLine(conn, frame);
     var lines2 = calcLine(conn_prev, frame - 1);
 
@@ -159,7 +304,7 @@ function setData(svg, coords, frame, conns) {
         return d.id;
     });
 
-    svg.selectAll('image').attr('xlink:href', 'img/PDMS collagen4_7' + pad(frame - 1, 4) + '.jpg');
+    svg.selectAll('image').attr('xlink:href', 'img/' + basename + pad(frame - 1, 4) + '.jpg');
 
     ls.enter().call(mkLine, 'last', 1);
     ls2.enter().call(mkLine, 'last2', 0.5);
@@ -172,6 +317,10 @@ function setData(svg, coords, frame, conns) {
             cx: x_slider(frame),
             cy: 10
         });
+
+    var vectors = calc_vectors(coord,coord_prev, conn);
+
+    plotVelocityHistograms(vectors);
 }
 
 var coordinates;
@@ -180,7 +329,10 @@ var connections;
 var currentFrame;
 var svg;
 
-d3.csv('coords.csv', function (d) {
+var basename = 'PDMS collagen4_7';
+//var basename = 'test';
+
+d3.csv(basename + '_coords.csv', function (d) {
     return {
         slice: +d['Slice'],
         x: +d['XM'],
@@ -189,7 +341,7 @@ d3.csv('coords.csv', function (d) {
     };
 }, function (coord) {
 
-    d3.csv('connection.csv', function (d) {
+    d3.csv(basename + '_connections_v2.csv', function (d) {
             return {from: +d.from, to: +d.to, from_frame: +d.from_frame, to_frame: +d.to_frame, id: +d.id};
         }, function (conn) {
 
@@ -210,15 +362,14 @@ d3.csv('coords.csv', function (d) {
 
             svg = initializePlot();
 
-            var frameCount = 0;
-            setCurrentFrame(0);
+            setCurrentFrame(1);
         }
     );
 });
 
 function updateButtonStatus() {
-    if (currentFrame <= 0) {
-        currentFrame = 0;
+    if (currentFrame <= 1) {
+        currentFrame = 1;
         $('#prev').prop('disabled', true);
     } else {
         $('#prev').prop('disabled', false);
@@ -237,12 +388,10 @@ function updateButtonStatus() {
 
 $('#prev').click(function () {
     setCurrentFrame(currentFrame - 1);
-    updateButtonStatus();
 });
 
 $('#next').click(function () {
     setCurrentFrame(currentFrame + 1);
-    updateButtonStatus();
 });
 
 
@@ -290,11 +439,9 @@ $('#play').click(function () {
             setCurrentFrame(fr);
         }, 200);
     }
-})
-
+});
 
 var x_slider = d3.scale.linear().range([0, 400]).domain([0, 73]);
-
 
 $('#slider').click(function (ev) {
     var x = ev.offsetX;

@@ -41,3 +41,15 @@
 .rect {
     fill: pink;
 }
+
+.metric-name {
+    width: 400px;
+}
+
+#img-container {
+    float: left;
+}
+#img-container > img {
+    vertical-align: top;
+    margin-top: 0px;
+}

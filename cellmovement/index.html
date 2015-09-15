@@ -1,28 +1,41 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Coordinates</title>
-    <script src="jquery-2.1.4.min.js"></script>
-    <script src="underscore-min.js"></script>
-    <script src="d3.min.js"></script>
-    <script src="d3-grid.js"></script>
-    <script src="bootstrap.min.js"></script>
-    <link rel="stylesheet" href="bootstrap.min.css"/>
+    <title>Cell migration</title>
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/lodash.min.js"></script>
+    <script src="lib/d3.min.js"></script>
+    <script src="lib/d3-grid.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/numeral.js"></script>
+    <link rel="stylesheet" href="lib/bootstrap.min.css"/>
     <link rel="stylesheet" href="main.css"/>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
+            <h1>Cell migration visualizer</h1>
+            <p>Display resolution of 1280×720 or higher is recommended.</p>
             <div>
+                <label for="data-list">Data</label>
+                <select name="" id="data-list">
+                </select>
                 <button class='btn btn-default noglow' id="prev">&lt;</button>
                 <button class='btn btn-default noglow' id="next">&gt;</button>
                 <button class='btn btn-default noglow' id="play">Play/Pause</button>
-
             </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Trajectories</h3>
+
             <div>
                 <svg id="slider" class="noselect"></svg>
 
@@ -32,14 +45,69 @@
             </div>
             <div id="hists-container">
                 <h3>Statistics per frame</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="metric-name">Metric</th>
+                            <th>Value (Mean &plusmn; s.e.m.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="metric-name">
+                            X velocity [pixel/frame]
+
+                        </td>
+                        <td id="value-vx"></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-name">
+                            Y velocity [pixel/frame]
+
+                        </td>
+                        <td id="value-vy"></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-name">
+                            Velocity angle (-90 to 270) [deg]
+
+                        </td>
+                        <td id="value-angle"></td>
+                    </tr>
+                    <tr>
+                        <td class="metric-name">
+                            Speed [pixel/frame]
+
+                        </td>
+                        <td id="value-speed"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
             </div>
 
         </div>
-
+        <div class="col-md-6">
+            <h3>Statistics of step size from all frames</h3>
+            <p>Mean &plusmn; standard error of mean is shown in each graph.</p>
+            <div id="hist-alltime-container1">
+                <h4>1 frame</h4>
+            </div>
+            <div id="hist-alltime-container5">
+                <h4>5 frames</h4>
+            </div>
+            <h3>Time course of step size</h3>
+            <p>Semi-transparent bands indicate standard error of mean.</p>
+            <div id="hist-timecourse-container1">
+                <h4>1 frame</h4>
+            </div>
+            <div id="hist-timecourse-container5">
+                <h4>5 frames</h4>
+            </div>
+        </div>
     </div>
-</div>
 
-<script src="calc.js"></script>
-<script src="main.js"></script>
+    <script src="calc.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -669,7 +669,7 @@ function updateDataset(d){
     basename = d.name;
     all_vectors_1 = null;
     all_vectors_5 = null;
-    d3.selectAll('svg').remove();
+//    d3.selectAll('svg').remove();
 
     d3.csv('data/'+basename + '_coords.csv', function (d) {
         return {

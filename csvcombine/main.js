@@ -72,50 +72,8 @@ function handleFileSelect(evt) {
     evt.stopPropagation();
     evt.preventDefault();
 
-    var files = evt.dataTransfer.files; // FileList object.
-
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-        var reader = new FileReader();
-
-        // Closure to capture the file information.
-        reader.onload = (function (theFile) {
-            return function (e) {
-                // Render thumbnail.
-                var name = basename(theFile.name).replace(/\s/g, ' ');
-                filenames.push(name);
-                var has_header = $('#has_header').prop('checked');
-                var column_indices = _.map($('#used_columns').val().split(","), function (s) {
-                    return parseInt(s) - 1;
-                });
-                console.log(column_indices);
-                var skip_rows = parseInt($('#skip_rows').val());
-                var dat = readCSV(e.target.result, skip_rows, has_header, column_indices);
-                console.log(dat.header);
-                var hc = _.map((has_header ? dat.header : _.map(column_indices, function (i) {
-                    return '' + (i + 1);
-                })), function (c) {
-                    console.log(c);
-                    return name + "_" + c;
-                });
-                header_columns = header_columns.concat(hc);
-                allData = concatCSV(allData, dat.data);
-                var content = formatCSV(allData, header_columns);
-                console.log(header_columns);
-                downloadBlob = new Blob([content]);
-                $('#download').attr({
-                    href: URL.createObjectURL(downloadBlob),
-                    download: 'Combined CSV.csv'
-                });
-                $('#result').html(content);
-                $('#info').html('' + filenames.length + ' files loaded.');
-            };
-        })(f);
-
-        // Read in the image file as a data URL.
-        reader.readAsText(f);
-    }
+    var data = ev.dataTransfer.getData("text");
+    console.log(data);
     $('#list').html('<ul>' + output.join('') + '</ul>');
 }
 

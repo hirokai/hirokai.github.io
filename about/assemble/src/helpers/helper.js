@@ -1,11 +1,10 @@
 module.exports.paper = function (paper)  {
 	var res = paper.citation;
 	if(paper.pubmed){
-		res += '[PubMed ID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/'+paper.pubmed+'">'+paper.pubmed+'</a>]&nbsp;';
+		res += '&nbsp;[PubMed ID: <a href="http://www.ncbi.nlm.nih.gov/pubmed/'+paper.pubmed+'">'+paper.pubmed+'</a>]';
 	}
 	if(paper.journal){
-		res += '[<a href="'+paper.journal+'">Journal</a>]&nbsp;';	
+		res += '&nbsp;[<a href="'+paper.journal+'">Journal</a>]';
 	}
 	return res;
 };
-

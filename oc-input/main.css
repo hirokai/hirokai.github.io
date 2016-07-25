@@ -1,0 +1,48 @@
+#q-area {
+    width: 1019px;
+    height: 722px;
+    background-image: url('img/questionnaire.png');
+}
+
+#q-area2 {
+    width: 800px;
+    height: 1523px;
+    background-image: url('img/q2-3.png');
+    background-repeat: no-repeat;
+}
+
+circle.point {
+    cursor: pointer;
+}
+.check {
+    font-size: 25px;
+    color: red ! important;
+}
+
+rect {
+    cursor: pointer;
+}
+
+text.num {
+    font-size: 20px;
+    fill: gray;
+}
+
+text.num.selected {
+    font-size: 20px;
+    font-weight: bold;
+    fill: red;
+}
+
+.remove-history {
+    cursor: pointer;
+}
+
+#genre-other {
+    font-size: 15px;
+}
+
+#free-comment {
+    width: 500px;
+    height: 200px;
+}

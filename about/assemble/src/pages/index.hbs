@@ -10,6 +10,11 @@ name: index
             overflow-x: hidden;
         }
 
+        .photo-annotation {
+            text-align: right;
+            margin-top: -20px;
+        }
+
     </style>
 </head>
 
@@ -24,8 +29,9 @@ name: index
     <div class="row">
         <div class="col-md-12">
             <img src="img/welcome.jpg" width='105%' style="margin: -20px -50px 0px -20px;"><br>
+            <div class="photo-annotation">View from Santorini, Greece.</div>
             <section class="lead">
-                Welcome to Hiro Kai's website!<br>I'm a biophysical chemist with an engineer's mind.
+                Welcome to Hiro Kai's website!<br>Taking advantage of materials chemistry, I develop a wearable patch that interacts with living skin.
             </section>
             <section id='affiliation'>
                 <h3>Current affiliation</h3>
@@ -54,35 +60,14 @@ name: index
                     <li>2002-2006: Department of Chemistry and Biotechnology, The University of Tokyo (Bachelor of Engineering)</li>
                 </ul>
             </section>
-            <section id='publication'>
-                <h3>Publication</h3>
-                <ul class='researcher-id'>
-                  <li>
-                    ORCID: <a href="http://orcid.org/0000-0002-3544-9196">0000-0002-3544-9196</a>
-                  </li>
-                  <li>
-                    ResearcherID: <a href="http://www.researcherid.com/rid/H-8704-2015">H-8704-2015</a>
-                    <span id='badgeCont794084' style='width:26px'><script src='http://labs.researcherid.com/mashlets?el=badgeCont794084&mashlet=badge&showTitle=false&className=a&rid=H-8704-2015&size=small'></script></span>
-                  </li>
-                  <li>
-                    Scopus Author ID: <a href="http://www.scopus.com/authid/detail.uri?authorId=56763601000">56763601000</a>
-                  </li>
-                </ul>
-                <span style='margin-left: 20px;'>(&#x2021; indicates equal contribution.)</span>
-                <ol class='publication' reversed>
-                    {{#each publication}}
-                    <li>{{{paper .}}}</li>
-                    {{/each}}
+
+            <section id='grant'>
+                <h3>Research grants</h3>
+                <ol class='grant' reversed>
+                    <li>2017-2018 JSPS Grant-in-Aid for Young Scientists (B) &quot;Development of multiplexed microneedle array for vital senging on skin&quot;</li>
+                    <li>2017 COI research grant for collaborative research</li>
                 </ol>
-            </section>
-            <section id='presentation'>
-                <h3>Presentations</h3>
-                <ol class='publication' reversed>
-                    {{#each presentation}}
-                    <li>{{{.}}}</li>
-                    {{/each}}
-                </ol>
-            </section>
+            </section>            
         </div>
     </div>
 </div>

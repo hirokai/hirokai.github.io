@@ -1,0 +1,41 @@
+---
+title: Publication - Hiro
+layout: default.hbs
+name: publication
+---
+<div class="content-header">
+    <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        Hiroyuki Kai <span style='font-size: 21px'>甲斐 洋行</span>
+    </h1>
+</div>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+             <section id='publication'>
+                <h3>Publication</h3>
+                <ul class='researcher-id'>
+                  <li>
+                    ORCID: <a href="http://orcid.org/0000-0002-3544-9196">0000-0002-3544-9196</a>
+                  </li>
+                  <li>
+                    ResearcherID: <a href="http://www.researcherid.com/rid/H-8704-2015">H-8704-2015</a>
+                    <span id='badgeCont794084' style='width:26px'><script src='http://labs.researcherid.com/mashlets?el=badgeCont794084&mashlet=badge&showTitle=false&className=a&rid=H-8704-2015&size=small'></script></span>
+                  </li>
+                  <li>
+                    Scopus Author ID: <a href="http://www.scopus.com/authid/detail.uri?authorId=56763601000">56763601000</a>
+                  </li>
+                </ul>
+                <span style='margin-left: 20px;'>(&#x2021; indicates equal contribution. <sup>*</sup> indicates a corresponding author.)</span>
+                <ol class='publication' reversed>
+                    {{#each publication}}
+                    <li>{{{paper .}}}</li>
+                    {{/each}}
+                </ol>
+            </section>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,27 @@
+---
+title: 学会発表 - 甲斐洋行
+layout: default.ja.hbs
+name: presentation
+---
+<div class="content-header">
+    <h1>
+        <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
+        Hiroyuki Kai <span style='font-size: 21px'>甲斐 洋行</span>
+    </h1>
+</div>
+<!-- Keep all page content within the page-content inset div! -->
+<div class="page-content inset">
+    <div class="row">
+        <div class="col-md-12">
+         <h3>学会発表</h3>
+         <p>自分で行った発表のみを表記。</p>
+        <ol class='publication' reversed>
+            {{#each presentation}}
+            <li>{{.}}</li>
+            {{/each}}
+        </ol>
+        </div>
+    </div>
+</div>
+
+

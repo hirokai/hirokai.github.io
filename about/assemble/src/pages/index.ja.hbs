@@ -3,6 +3,21 @@ title: 甲斐洋行
 layout: default.ja.hbs
 name: index
 ---
+<head>
+    <style type="text/css">
+        body {
+            overflow-x: hidden;
+        }
+
+        .photo-annotation {
+            text-align: right;
+            margin-top: -20px;
+        }
+
+    </style>
+</head>
+
+
 <div class="content-header">
     <h1>
         <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
@@ -14,20 +29,20 @@ name: index
     <div class="row">
         <div class="col-md-12">
             <img src="img/welcome.jpg" width='105%' style="margin: -20px -50px 0px -20px;"><br>
-            <p class="lead">生体応用を志向した材料科学者です。幅広いバックグラウンドを持ち、材料・情報・生物の分野融合研究に興味があります。</p>
+            <div class="photo-annotation">ギリシャ サントリーニ島からの眺め</div>
+            <p class="lead">材料化学をベースにし、皮膚と密接に相互作用するウェアラブルデバイスへと展開しています。</p>
 
             <h3>現在の所属</h3>
             東北大学工学研究科機械・知能系　西澤・梶研究室　特任助教（2015年4月より）<br>
 
             <h3>現在の研究</h3>
-                電気化学・材料科学をベースとした、皮膚貼り付け型センサ等の開発
+                電気化学・材料科学をベースとした、皮膚貼り付け型センサ・治療デバイスの開発
 
             <h3>過去の研究</h3>
             <ul>
                 <li>ナノ加工した材料を用いる、T細胞シグナリングの時空間制御のイメージング研究</li>
                 <li>分子の動きを遠隔に伝える超分子機械の作製</li>
-                <li>熱可塑性樹脂の機械特性を向上させる自己組織化ナノフィラーの開発</li>
-                <li>セルロースとカルダノールからなる熱可塑性樹脂の開発</li>
+                <li>高強度バイオプラスチックと自己組織化添加剤の開発</li>
             </ul>
 
             <h3>経歴</h3>
@@ -38,31 +53,13 @@ name: index
                 <li>2006-2008: 東京大学大学院工学系研究科化学生命工学専攻　修士課程（指導教官：相田卓三教授）</li>
                 <li>2002-2006: 東京大学工学部化学生命工学科　学士課程</li>
             </ul>
-            <h3>査読付き論文</h3>
-            <ul class='researcher-id'>
-              <li>
-                ORCID: <a href="http://orcid.org/0000-0002-3544-9196">0000-0002-3544-9196</a>
-              </li>
-              <li>
-                ResearcherID: <a href="http://www.researcherid.com/rid/H-8704-2015">H-8704-2015</a>
-                <span id='badgeCont794084' style='width:26px'><script src='http://labs.researcherid.com/mashlets?el=badgeCont794084&mashlet=badge&showTitle=false&className=a&rid=H-8704-2015&size=small'></script></span>                  </li>
-              </li>
-              <li>
-                Scopus Author ID: <a href="http://www.scopus.com/authid/detail.uri?authorId=56763601000">56763601000</a>
-              </li>
-            </ul>
-            <span style='margin-left: 20px;'>（&#x2021;は共同筆頭著者）</span>
-            <ol class='publication' reversed>
-                {{#each publication}}
-                <li>{{{paper .}}}</li>
-                {{/each}}
-            </ol>
-            <h3>学会発表</h3>
-            <ol class='publication' reversed>
-                {{#each presentation}}
-                <li>{{.}}</li>
-                {{/each}}
-            </ol>
+            <section id='grant'>
+                <h3>競争的研究資金</h3>
+                <ol class='grant' reversed>
+                    <li>2017-2018年度 科研費 若手(B)「皮膚生体情報のマルチモーダル計測のための微小針アレイの開発」</li>
+                    <li>2017年度 COI若手連携研究ファンド「細胞外ATPを指標とする皮膚がん診断・薬剤投与パッチの開発」</li>
+                </ol>
+            </section>            
         </div>
     </div>
 </div>

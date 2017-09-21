@@ -1,9 +1,13 @@
 [
     {
-        "citation": "Hiroyuki Kai, Takeshi Yamauchi, Yudai Ogawa, Ayaka Tsubota, Takahiro Magome, Takeo Miyake, Kenshi Yamasaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Accelerated wound healing on skin by electrical stimulation with a bioelectric plaster.&quot; <i>Advanced Healthcare Materials</i>, <i>in press</i> (2017)."
+        "citation": "Hiroyuki Kai, Takeshi Yamauchi, Yudai Ogawa, Ayaka Tsubota, Takahiro Magome, Takeo Miyake, Kenshi Yamasaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Accelerated wound healing on skin by electrical stimulation with a bioelectric plaster.&quot; <i>Advanced Healthcare Materials</i>, <i>in press</i> (2017).",
+        "journal": "http://onlinelibrary.wiley.com/doi/10.1002/adhm.201700465/full",
+        "pubmed": "28929631"
     },
     {
-        "citation": "Kuniaki Nagamine, Jun Kubota, Hiroyuki Kai, Yoshinobu Ono, Matsuhiko Nishizawa<sup>*</sup>; &quot;An Array of Porous Microneedles for Transdermal Monitoring of Intercellular Swelling.&quot; <i>Biomedical Microdevices</i>, <i>in press</i> (2017)."
+        "citation": "Kuniaki Nagamine, Jun Kubota, Hiroyuki Kai, Yoshinobu Ono, Matsuhiko Nishizawa<sup>*</sup>; &quot;An Array of Porous Microneedles for Transdermal Monitoring of Intercellular Swelling.&quot; <i>Biomedical Microdevices</i>, <b>19</b>, 68 (2017).",
+        "journal": "https://link.springer.com/article/10.1007/s10544-017-0207-y",
+        "pubmed": "28776235"
     },
     {
         "citation": "Li-Jiun Chen, Shuntaro Ito, Hiroyuki Kai, Kuniaki Nagamine, Nobuhiro Nagai, Matsuhiko Nishizawa, Toshiaki Abe, Hirokazu Kaji<sup>*</sup>; &quot;Microfluidic co-cultures of retinal pigment epithelial cells and vascular endothelial cells to investigate choroidal angiogenesis.&quot; <i>Scientific Reports</i>,  <b>7,</b> 3538 (2017).",
@@ -15,51 +19,51 @@
         "journal": "http://pubs.acs.org/doi/abs/10.1021/acsami.7b03124",
         "pubmed": "28530794"
     },
-	{
-		"citation": "Kuniaki Nagamine, Shun Chihara, Hiroyuki Kai, Hirokazu Kaji, Matsuhiko Nishizawa<sup>*</sup>; &quot;Totally shape-conformable electrode/hydrogel composite for on-skin electrophysiological measurements.&quot; <i>Sensors and Actuators B: Chemical</i>, <b>237,</b> 49-53 (2016).",
-		"journal": "http://www.sciencedirect.com/science/article/pii/S0925400516309285"
-	},
-	{
-		"citation": "Yuina Abe, Kuniaki Nagamine, Mayu Nakabayashi, Hiroyuki Kai, Hirokazu Kaji, Takeshi Yamauchi, Kenshi Yamasaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Minimally-invasive transepidermal potentiometry with microneedle salt bridge.&quot; <i>Biomedical Microdevices</i>, <b>18,</b> 55 (2016).",
-		"pubmed": "27294487",
-		"journal": "http://link.springer.com/article/10.1007/s10544-016-0080-0"
-	},
-	{
-		"citation": "Liming Liu, Hiroyuki Kai<sup>*</sup>, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa<sup>*</sup>; &quot;Porous polymer microneedles with interconnecting microchannels for rapid fluid transport.&quot; <i>RSC Advances</i>, <b>6,</b> 48630-48635 (2016).",
-		"journal": "http://dx.doi.org/10.1039/C6RA07882F"
-	},
-	{
-		"citation": "Il-Hyung Lee, Hiroyuki Kai, Lars-Anders Carlson, Jay T. Groves, James H. Hurley<sup>*</sup>; &quot;Negative membrane curvature catalyzes nucleation of endosomal sorting complex required for transport (ESCRT)-III assembly.&quot; <i>PNAS</i>, <b>112,</b> 15892-15897 (2015).",
-		"pubmed": "26668364",
-		"journal": "http://dx.doi.org/10.1073/pnas.1518765113"
-	},
-	{
-		"citation": "Yudai Ogawa, Yuki Takai, Yuto Kato, Hiroyuki Kai, Takeo Miyake, Matsuhiko Nishizawa<sup>*</sup>; &quot;Stretchable biofuel cell with enzyme-modified conductive textiles.&quot; <i>Biosensors and Bioelectronics</i>, <b>74,</b> 947-952 (2015).",
-		"pubmed": "26257187",
-		"journal": "http://dx.doi.org/10.1016/j.bios.2015.07.063"
-	},
-	{
-		"citation": "Kuniaki Nagamine, Yuina Abe, Hiroyuki Kai, Hirokazu Kaji, Matsuhiko Nishizawa<sup>*</sup>; &quot;Highly Stretchable Cell-Cultured Hydrogel Sheet.&quot; <i>RSC Advances</i>, <b>5,</b> 66334-66338 (2015).",
-		"journal": "http://dx.doi.org/10.1039/C5RA11059A"
-	},
-	{
-		"citation": "Adrienne C Greene&#x2021;, Samuel J Lord&#x2021;, Aiwei Tian, Christopher Rhodes, Hiroyuki Kai, Jay T Groves<sup>*</sup>; &quot;Spatial organization of EphA2 at the cell-cell interface modulates trans-endocytosis of ephrinA1.&quot; <i>Biophysical Journal</i>, <b>106,</b> 2196-205 (2014).",
-		"pubmed": "24853748",
-		"journal": "http://www.sciencedirect.com/science/article/pii/S0006349514003464"
-	},
-	{
-		"citation": "Niña G Caculitan&#x2021;, Hiroyuki Kai&#x2021;, Eulanca Y Liu&#x2021;, Nicole Fay, Yan Yu, Theobald Lohmüller, Geoff P O'Donoghue, Jay T Groves<sup>*</sup>; &quot;Size-based chromatography of signaling clusters in a living cell membrane.&quot; <i>Nano Letters</i>, <b>14,</b> 2293-8 (2014).",
-		"pubmed": "24655064",
-		"journal": "http://pubs.acs.org/doi/abs/10.1021/nl404514e"
-	},
-	{
-		"citation": "Masatoshi Iji, Naoki Morishita, Hiroyuki Kai, &quot;Self-assembling siloxane nanoparticles with three phases that increase tenacity of poly L-lactic acid&quot;, <i>Polymer Journal</i>, <b>43,</b> 101-104 (2011). ",
+    {
+      "citation": "Kuniaki Nagamine, Shun Chihara, Hiroyuki Kai, Hirokazu Kaji, Matsuhiko Nishizawa<sup>*</sup>; &quot;Totally shape-conformable electrode/hydrogel composite for on-skin electrophysiological measurements.&quot; <i>Sensors and Actuators B: Chemical</i>, <b>237,</b> 49-53 (2016).",
+      "journal": "http://www.sciencedirect.com/science/article/pii/S0925400516309285"
+  },
+  {
+      "citation": "Yuina Abe, Kuniaki Nagamine, Mayu Nakabayashi, Hiroyuki Kai, Hirokazu Kaji, Takeshi Yamauchi, Kenshi Yamasaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Minimally-invasive transepidermal potentiometry with microneedle salt bridge.&quot; <i>Biomedical Microdevices</i>, <b>18,</b> 55 (2016).",
+      "pubmed": "27294487",
+      "journal": "http://link.springer.com/article/10.1007/s10544-016-0080-0"
+  },
+  {
+      "citation": "Liming Liu, Hiroyuki Kai<sup>*</sup>, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa<sup>*</sup>; &quot;Porous polymer microneedles with interconnecting microchannels for rapid fluid transport.&quot; <i>RSC Advances</i>, <b>6,</b> 48630-48635 (2016).",
+      "journal": "http://dx.doi.org/10.1039/C6RA07882F"
+  },
+  {
+      "citation": "Il-Hyung Lee, Hiroyuki Kai, Lars-Anders Carlson, Jay T. Groves, James H. Hurley<sup>*</sup>; &quot;Negative membrane curvature catalyzes nucleation of endosomal sorting complex required for transport (ESCRT)-III assembly.&quot; <i>PNAS</i>, <b>112,</b> 15892-15897 (2015).",
+      "pubmed": "26668364",
+      "journal": "http://dx.doi.org/10.1073/pnas.1518765113"
+  },
+  {
+      "citation": "Yudai Ogawa, Yuki Takai, Yuto Kato, Hiroyuki Kai, Takeo Miyake, Matsuhiko Nishizawa<sup>*</sup>; &quot;Stretchable biofuel cell with enzyme-modified conductive textiles.&quot; <i>Biosensors and Bioelectronics</i>, <b>74,</b> 947-952 (2015).",
+      "pubmed": "26257187",
+      "journal": "http://dx.doi.org/10.1016/j.bios.2015.07.063"
+  },
+  {
+      "citation": "Kuniaki Nagamine, Yuina Abe, Hiroyuki Kai, Hirokazu Kaji, Matsuhiko Nishizawa<sup>*</sup>; &quot;Highly Stretchable Cell-Cultured Hydrogel Sheet.&quot; <i>RSC Advances</i>, <b>5,</b> 66334-66338 (2015).",
+      "journal": "http://dx.doi.org/10.1039/C5RA11059A"
+  },
+  {
+      "citation": "Adrienne C Greene&#x2021;, Samuel J Lord&#x2021;, Aiwei Tian, Christopher Rhodes, Hiroyuki Kai, Jay T Groves<sup>*</sup>; &quot;Spatial organization of EphA2 at the cell-cell interface modulates trans-endocytosis of ephrinA1.&quot; <i>Biophysical Journal</i>, <b>106,</b> 2196-205 (2014).",
+      "pubmed": "24853748",
+      "journal": "http://www.sciencedirect.com/science/article/pii/S0006349514003464"
+  },
+  {
+      "citation": "Niña G Caculitan&#x2021;, Hiroyuki Kai&#x2021;, Eulanca Y Liu&#x2021;, Nicole Fay, Yan Yu, Theobald Lohmüller, Geoff P O'Donoghue, Jay T Groves<sup>*</sup>; &quot;Size-based chromatography of signaling clusters in a living cell membrane.&quot; <i>Nano Letters</i>, <b>14,</b> 2293-8 (2014).",
+      "pubmed": "24655064",
+      "journal": "http://pubs.acs.org/doi/abs/10.1021/nl404514e"
+  },
+  {
+      "citation": "Masatoshi Iji, Naoki Morishita, Hiroyuki Kai, &quot;Self-assembling siloxane nanoparticles with three phases that increase tenacity of poly L-lactic acid&quot;, <i>Polymer Journal</i>, <b>43,</b> 101-104 (2011). ",
 
-		"journal": "http://www.nature.com/pj/journal/v43/n1/abs/pj2010107a.html"
-	},
-	{
-		"citation": "Hiroyuki Kai, Shinji Nara, Kazushi Kinbara<sup>*</sup>, Takuzo Aida<sup>*</sup>; &quot;Toward long-distance mechanical communication: studies on a ternary complex interconnected by a bridging rotary module.&quot; <i>J. Am. Chem. Soc.</i>, <b>130,</b> 6725-7 (2008).",
-		"pubmed": "18447353",
-		"journal": "http://pubs.acs.org/doi/abs/10.1021/ja801646b"
-	}
+      "journal": "http://www.nature.com/pj/journal/v43/n1/abs/pj2010107a.html"
+  },
+  {
+      "citation": "Hiroyuki Kai, Shinji Nara, Kazushi Kinbara<sup>*</sup>, Takuzo Aida<sup>*</sup>; &quot;Toward long-distance mechanical communication: studies on a ternary complex interconnected by a bridging rotary module.&quot; <i>J. Am. Chem. Soc.</i>, <b>130,</b> 6725-7 (2008).",
+      "pubmed": "18447353",
+      "journal": "http://pubs.acs.org/doi/abs/10.1021/ja801646b"
+  }
 ]

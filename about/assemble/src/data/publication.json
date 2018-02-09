@@ -1,6 +1,16 @@
 [
     {
-        "citation": "Hiroyuki Kai, Takeshi Yamauchi, Yudai Ogawa, Ayaka Tsubota, Takahiro Magome, Takeo Miyake, Kenshi Yamasaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Accelerated wound healing on skin by electrical stimulation with a bioelectric plaster.&quot; <i>Advanced Healthcare Materials</i>, <i>in press</i> (2017).",
+        "citation": "Kuniaki Nagamine, Hirotaka Sato, Hiroyuki Kai, Hirokazu Kaji, Makoto Kanzaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Contractile Skeletal Muscle Cells Cultured with a Conducting Soft Wire for Effective, Selective Stimulation.&quot; <i>Scientific Reports</i>, <b>8</b>, 2253 (2018).",
+        "journal": "https://www.nature.com/articles/s41598-018-20729-y",
+        "pubmed": "29396483"
+    },
+    {
+        "citation": "Atsuki Kobayashi, Kei Ikeda, Yudai Ogawa, Hiroyuki Kai, Matsuhiko Nishizawa, Kazuo Nakazato, Kiichi Niitsu; &quot;Design and Experimental Verification of a 0.19 v 53 μw 65 nm CMOS Integrated Supply-Sensing Sensor with a Supply-Insensitive Temperature Sensor and an Inductive-Coupling Transmitter for a Self-Powered Bio-sensing System Using a Biofuel Cell.&quot; <i>IEEE Transactions on Biomedical Circuits and Systems</i>, <b>11</b>, 1313 (2017).",
+        "journal": "http://ieeexplore.ieee.org/document/8080162/",
+        "pubmed": "29293424"
+    },
+    {
+        "citation": "Hiroyuki Kai, Takeshi Yamauchi, Yudai Ogawa, Ayaka Tsubota, Takahiro Magome, Takeo Miyake, Kenshi Yamasaki, Matsuhiko Nishizawa<sup>*</sup>; &quot;Accelerated wound healing on skin by electrical stimulation with a bioelectric plaster.&quot; <i>Advanced Healthcare Materials</i>, <b>6</b>, 1700465 (2017).",
         "journal": "http://onlinelibrary.wiley.com/doi/10.1002/adhm.201700465/full",
         "pubmed": "28929631"
     },

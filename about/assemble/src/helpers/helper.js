@@ -15,3 +15,15 @@ module.exports.paper = function (paper)  {
 	}
 	return res;
 };
+
+module.exports.presentation = function (presentation)  {
+	var res = "";
+	if(presentation.authors){
+		res += presentation.authors + "<br/>";
+		res += presentation.title + "<br/>";
+		res += presentation.conference + " (" + presentation.date + "; " + presentation.place + ")<br/>";
+	}else{
+		res += presentation;
+	}
+	return res;
+};

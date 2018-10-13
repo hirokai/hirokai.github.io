@@ -16,7 +16,7 @@ name: presentation
          <p>自分で行った発表のみを表記。</p>
         <ol class='publication' reversed>
             {{#each presentation_ja}}
-            <li>{{.}}</li>
+            <li>{{{presentation .}}}</li>
             {{/each}}
         </ol>
         </div>

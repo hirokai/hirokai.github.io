@@ -2,7 +2,7 @@ module.exports.paper = function (paper)  {
 	var res = "";
 	if(paper.authors){
 		res += paper.authors + "; "
-		res += "&quot;" + paper.title + "&quot;; "
+		res += "&quot;" + paper.title + "&quot; "
 		res += paper.journal_cit + ".";
 	}else{
 		res += paper.citation;

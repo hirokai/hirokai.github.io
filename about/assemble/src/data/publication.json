@@ -1,16 +1,16 @@
 [
     {
-        "authors": "Hiroyuki Kai<sup>*</sup>, Yuto Kato, Ryoma Toyosato, Matsuhiko Nishizawa<sup>*</sup>",
-        "title": "Fluid-permeable enzymatic lactate sensors for micro-volume specimen.",
-        "journal_cit": "<i>Analyst</i>, in press (2018)",
-        "journal": "https://doi.org/10.1039/C8AN00979A"
-    },
-    {
         "authors": "Hiroyuki Kai, Wataru Suda, Shotaro Yoshida, Matsuhiko Nishizawa<sup>*</sup>",
         "title": "Organic Electrochromic Timer for Enzymatic Skin Patches.",
-        "journal_cit": "<i>Biosensors and Bioelectronics</i>, in press (2018)",
+        "journal_cit": "<i>Biosensors and Bioelectronics</i>, <b>123</b>, 108-113 (2019)",
         "journal": "https://doi.org/10.1016/j.bios.2018.07.013"
     },    
+    {
+        "authors": "Hiroyuki Kai<sup>*</sup>, Yuto Kato, Ryoma Toyosato, Matsuhiko Nishizawa<sup>*</sup>",
+        "title": "Fluid-permeable enzymatic lactate sensors for micro-volume specimen.",
+        "journal_cit": "<i>Analyst</i>, <b>143</b>, 5545-5551 (2018)",
+        "journal": "https://doi.org/10.1039/C8AN00979A"
+    },
     {
         "authors": "Hiroyuki Kai<sup>*</sup>, Ryoma Toyosato, Matsuhiko Nishizawa<sup>*</sup>",
         "title": "Space-filling open microfluidic channels designed to collect water droplets.",

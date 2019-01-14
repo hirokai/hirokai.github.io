@@ -1,0 +1,100 @@
+[
+	{
+		"authors": "甲斐洋行, 加藤悠人，豊里涼馬, 西澤松彦",
+		"date": "2018/12/19",
+		"title": "貼付型乳酸センサの作製と皮膚模倣環境での評価",
+		"conference": "第28回日本MRS年次大会",
+		"place": "北九州国際会議場"
+	},
+	{
+		"authors": "甲斐洋行，熊田裕希，西澤松彦",
+		"date": "2018/12/18",
+		"title": "蛍光グルコースセンサを一体化した多孔質樹脂マイクロニードル",
+		"conference": "第28回日本MRS年次大会",
+		"place": "北九州国際会議場"
+	},
+	{
+		"authors": "甲斐洋行",
+		"date": "2018/11/30",
+		"title": "体液の効率的な取得・分析を目指したウェアラブル材料・デバイスの開発",
+		"conference": "COIリトリート in 川崎",
+		"place": "川崎生命科学・環境研究センター"
+	},
+	{
+		"authors": "Hiroyuki Kai, Hiroki Kumata, Matsuhiko Nishizawa",
+		"title": "Porous Polymer Microneedles for the Sensing of Subcutaneous Interstitial Fluid",
+		"conference": "MRS Fall 2018 Meeting",
+		"place": "Boston, USA",
+		"date": "2018/11/28"
+	},
+	{
+		"authors": "甲斐洋行",
+		"title": "JREC-IN の公募情報の自動化した取得と解析",
+		"conference": "第1回COI学会",
+		"place": "大阪",
+		"date": "2018/10/26"
+	},
+	{
+		"authors": "甲斐洋行",
+		"title": "皮膚間質液センシングのための多孔質マイクロニードルの開発",
+		"conference": "第1回COI学会",
+		"place": "大阪",
+		"date": "2018/10/25"
+	},
+	{
+		"authors": "甲斐洋行, 須田亘, 吉田昭太郎, 西澤松彦",
+		"title": "PEDOT:PTSとポリウレタンの複合体による 伸縮性エレクトロクロミック表示素子",
+		"conference": "応用物理学会 2018年秋季学術講演会",
+		"place": "名古屋",
+		"date": "2018/9/20"
+	},
+	{
+		"authors": "甲斐洋行, 熊田裕希, 西澤松彦",
+		"title": "皮膚間質液分析のための多孔質マイクロニードルの開発",
+		"conference": "日本分析化学会 第67回年会",
+		"place": "仙台",
+		"date": "2018/9/12"
+	},
+	{
+		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
+		"title": "フラクタル枝分かれの開放型流路による液滴収集機構",
+		"conference": "第4回東北大学若手研究者アンサンブルワークショップ",
+		"place": "仙台",
+		"date": "2018/7/4"
+	},
+	{
+		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
+		"title": "フラクタル空間充填木構造の開放型流路による液滴収集",
+		"conference": "第85回形の科学シンポジウム",
+		"place": "仙台",
+		"date": "2018/6/22"
+	},
+	{
+		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
+		"title": "階層的枝分かれ構造を持つ開放型流路による液滴収集機構",
+		"conference": "化学とマイクロ・ナノシステム学会 第37回研究会",
+		"place": "つくば",
+		"date": "2018/5/22"
+	},
+    "Hiroyuki Kai, Ryoma Toyosato, Matsuhiko Nishizawa ““Mathematical microfluidics” – fractal, space-filling open microfluidic channels for the efficient collection of water droplets.“, CEMSupra 2018, Tokyo, Japan (2018).",
+    "Hiroyuki Kai, Hiroki Kumata, Jun Kubota, Shinya Kusama, Kuniaki Nagamine, Matsuhiko Nishizawa “Development of porous polymer microneedles and their applications to transdermal interfaces“, 27th Annual Meeting of MRS-J, Yokohama, Japan (2017).",
+    "Hiroyuki Kai, Hiroki Kumata, Jun Kubota, Matsuhiko Nishizawa “Porous microneedle array made of a polymer monolith for the analysis of interstitial fluid“, 66th Symposium on Macromolecules, Matsuyama, Japan (2017).",
+    "Hiroyuki Kai, Ryoma Toyosato, Matsuhiko Nishizawa “Water collection by hierarchical patterning of surface wettability“, The 78th JSAP Autumn Meeting, Fukuoka, Japan (2017).",
+    "Hiroyuki Kai “Development of wearable sweat sensor patches made of organic and polymer materials“ (Invited), ISPAC 2017, Ho Chi Minh City, Vietnam (2017).",
+    "Hiroyuki Kai, Ayaka Tsubota, Yudai Ogawa, Matsuhiko Nishizawa “Accelerated would healing by an enzymatic biofuel cell plaster“ (Invited), 26th Annual Meeting of MRS-J, Yokohama, Japan (2016).",
+    "Hiroyuki Kai “Development of enzymatic biofuel cells toward epidermal electronics” (Invited), Semi-Conference, Aomori, Japan (2016).",
+    "Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa “Porous Polymer Microneedles with Interconnecting Microchannels Toward Efficient Sensing of Interstitial Fluid”, PRiME 2016, Honolulu, HI, USA (2016).",
+	"Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa “Porous polymer microneedles toward the efficient interface with skin”, ICFPE 2016, Yonezawa, Japan (2016).",
+	"Hiroyuki Kai, Kuniaki Nagamine, Matsuhiko Nishizawa “Stretchable Patches and Devices Toward Electronics on the Skin” (Invited), IEEE Nano 2016, Sendai, Japan (2016).",
+	"Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa “Polymer microneedle arrays with continuous pores for minimally invasive monitoring of interstitial fluid”, The 83rd Meeting of the Electrochemical Society of Japan, Osaka, Japan (2016).",
+	"M. Nishizawa, K. Nagamine, H. Kai “Organic skin patch with built-in enzymatic battery”, MEMS 2016, Shanghai, China (2016).",
+	"H. Kai, S. Chihara, D. Okabe, K. Nagamine and M. Nishizawa “Electrode-Hydrogel Hybrids for Biocompatible, Stretchable Electronics”, 25th Annual Meeting of MRS-J, Yokohama, Japan (2015)",
+	"H. Kai, N. Caculitan, T. Lohmüller, E. Liu, N. Fay, Y. Yu, J. T. Groves “Dynamic behavior of TCR microclusters on a live cell investigated by a gold nanoparticle array”, Biophysical Society 58th Annual Meeting, San Francisco, CA (2014).",
+	"H. Kai, N. Caculitan, T. Lohmüller, E. Liu, N. Fay, Y. Yu, J. T. Groves “Investigating the Dynamic Behavior of TCR Microclusters by a Gold Nanoparticle Array”, Biophysical Society 57th Annual Meeting, Philadelphia, PA (2013).",
+	"H. Kai, N. Morishita, M. Iji “Self-assembled nanoparticles with three functional layers for toughening of brittle thermoplastic”, The 18th Polymer Materials Forum, Funabori, Japan (2009).",
+	"H. Kai, K. Kinbara, T. Aida “Design of Supramolecular Machines:  A Mechanism for Power Transmission to a Spatially Remote Place”, The 88th Annual Meeting of the Chemical Society of Japan, Tokyo, Japan (2008).",
+	"H. Kai, K. Kinbara, T. Aida “Design of Supramolecular Machines for Remote Transmission of Mechanical Motions”, The 87th Annual Meeting of the Chemical Society of Japan, Osaka, Japan (2007).",
+	"H. Kai, K. Kinbara, T. Aida “Design of Supramolecular Machines for Remote Control of Molecules”, The 56th Japan Society of Coordination Chemistry Annual Meeting, Hiroshima, Japan (2006).",
+	"H. Kai, K. Kinbara, T. Aida “Supramolecular Machine for Conformational Remote Control of Chiral Molecules”, 18th International Symposium on Chirality, Busan, South Korea (2006).",
+	"H. Kai, S. Nara, M. Muraoka, K. Kinbara, T. Aida “Molecular Design of a Light-Driven Supramolecular Machine”, The 86th Annual Meeting of the Chemical Society of Japan, Funabashi, Japan (2006)."
+]

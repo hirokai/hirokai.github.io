@@ -1,5 +1,5 @@
 module.exports = (grunt)->
-  grunt.loadNpmTasks 'assemble'
+  grunt.loadNpmTasks 'grunt-assemble'
   grunt.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.initConfig

@@ -1,4 +1,6 @@
 .DS_Store
 about/assemble/node_modules/
 about/img/__src
-
+bower_components
+._*
+.idea

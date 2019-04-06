@@ -16,14 +16,15 @@ module.exports.paper = function (paper)  {
 	return res;
 };
 
-module.exports.presentation = function (presentation)  {
+module.exports.presentation = function (p)  {
 	var res = "";
-	if(presentation.authors){
-		res += presentation.authors + "<br/>";
-		res += presentation.title + "<br/>";
-		res += presentation.conference + " (" + presentation.date + "; " + presentation.place + ")<br/>";
+	if(p.authors){
+		res += "<span class='authors'>" + p.authors + "<br/></span>";
+		res += "<span class='title'>" + p.title + (p.invited ? "<strong>（招待講演）</strong>" : "") + "<br/></span>";
+		res += "<span class='conference'>" + (p.url ? ("<a href='"+p.url+"'>"+p.conference+"</a>") : p.conference);
+		res += " (" + p.date + "; " + p.place + ")<br/></span>";
 	}else{
-		res += presentation;
+		res += p;
 	}
 	return res;
 };

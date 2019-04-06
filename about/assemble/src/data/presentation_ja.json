@@ -2,106 +2,265 @@
 	{
 		"authors": "甲斐洋行",
 		"date": "2019/3/4",
-		"title": "新たな経皮インターフェイスのための高分子材料・デバイス（招待講演）",
+		"title": "新たな経皮インターフェイスのための高分子材料・デバイス",
 		"conference": "平成30年度東北地区先端高分子セミナー",
-		"place": "仙台秋保温泉岩沼屋"
+		"place": "秋保温泉岩沼屋, 仙台",
+		"invited": true,
+		"url": "http://res.tagen.tohoku.ac.jp/~polymer/event/19ev01.html"
 	},
 	{
 		"authors": "甲斐洋行, 加藤悠人，豊里涼馬, 西澤松彦",
 		"date": "2018/12/19",
 		"title": "貼付型乳酸センサの作製と皮膚模倣環境での評価",
 		"conference": "第28回日本MRS年次大会",
-		"place": "北九州国際会議場"
+		"place": "北九州国際会議場, 北九州",
+		"url": "https://www.mrs-j.org/meeting2018/jp/prg/programList_oral.php?id=B-5"
 	},
 	{
 		"authors": "甲斐洋行，熊田裕希，西澤松彦",
-		"date": "2018/12/18",
+		"date": "2018/12/19",
 		"title": "蛍光グルコースセンサを一体化した多孔質樹脂マイクロニードル",
 		"conference": "第28回日本MRS年次大会",
-		"place": "北九州国際会議場"
+		"place": "北九州国際会議場, 北九州",
+		"url": "https://www.mrs-j.org/meeting2018/jp/prg/programList_oral.php?id=F-3"
 	},
 	{
 		"authors": "甲斐洋行",
 		"date": "2018/11/30",
 		"title": "体液の効率的な取得・分析を目指したウェアラブル材料・デバイスの開発",
 		"conference": "COIリトリート in 川崎",
-		"place": "川崎生命科学・環境研究センター"
+		"place": "川崎生命科学・環境研究センター, 川崎",
+		"url": "https://iconm.kawasaki-net.ne.jp/event/coi_retreat/speaker.html"
 	},
 	{
 		"authors": "Hiroyuki Kai, Hiroki Kumata, Matsuhiko Nishizawa",
 		"title": "Porous Polymer Microneedles for the Sensing of Subcutaneous Interstitial Fluid",
 		"conference": "MRS Fall 2018 Meeting",
 		"place": "Boston, USA",
-		"date": "2018/11/28"
+		"date": "2018/11/28",
+		"url": "https://www.mrs.org/docs/default-source/meetings-events/fall-meetings/2018/symposium-session-pdfs/symposium-bm08.pdf?sfvrsn=8d6fbb10_3"
 	},
 	{
 		"authors": "甲斐洋行",
 		"title": "JREC-IN の公募情報の自動化した取得と解析",
 		"conference": "第1回COI学会",
-		"place": "大阪",
-		"date": "2018/10/26"
+		"place": "大阪大学中之島センター, 大阪",
+		"date": "2018/10/26",
+		"url": "https://coi-conference.github.io/program.pdf"
 	},
 	{
 		"authors": "甲斐洋行",
 		"title": "皮膚間質液センシングのための多孔質マイクロニードルの開発",
 		"conference": "第1回COI学会",
-		"place": "大阪",
-		"date": "2018/10/25"
+		"place": "大阪大学中之島センター, 大阪",
+		"date": "2018/10/25",
+		"url": "https://coi-conference.github.io/program.pdf"
 	},
 	{
 		"authors": "甲斐洋行, 須田亘, 吉田昭太郎, 西澤松彦",
 		"title": "PEDOT:PTSとポリウレタンの複合体による 伸縮性エレクトロクロミック表示素子",
 		"conference": "応用物理学会 2018年秋季学術講演会",
 		"place": "名古屋",
-		"date": "2018/9/20"
+		"date": "2018/9/20",
+		"url": "https://confit.atlas.jp/guide/event/jsap2018a/subject/20p-PA2-25/detail?lang=ja"
 	},
 	{
 		"authors": "甲斐洋行, 熊田裕希, 西澤松彦",
 		"title": "皮膚間質液分析のための多孔質マイクロニードルの開発",
 		"conference": "日本分析化学会 第67回年会",
-		"place": "仙台",
-		"date": "2018/9/12"
+		"place": "東北大学川内キャンパス, 仙台",
+		"date": "2018/9/12",
+		"url": "http://www.jsac.or.jp/nenkai/nenkai67/program/program_flash.html#ZP"
 	},
 	{
 		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
 		"title": "フラクタル枝分かれの開放型流路による液滴収集機構",
 		"conference": "第4回東北大学若手研究者アンサンブルワークショップ",
-		"place": "仙台",
-		"date": "2018/7/4"
+		"place": "東北大学新青葉山キャンパス, 仙台",
+		"date": "2018/7/4",
+		"url": "http://web.tohoku.ac.jp/aric/news/events/data/2018_ensembleWS_program_ver20180702.pdf"
 	},
 	{
 		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
 		"title": "フラクタル空間充填木構造の開放型流路による液滴収集",
 		"conference": "第85回形の科学シンポジウム",
-		"place": "仙台",
-		"date": "2018/6/22"
+		"place": "東北大学青葉山キャンパス, 仙台",
+		"date": "2018/6/22",
+		"url": "https://katachi-jp.com/sympo85"
 	},
 	{
 		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
 		"title": "階層的枝分かれ構造を持つ開放型流路による液滴収集機構",
 		"conference": "化学とマイクロ・ナノシステム学会 第37回研究会",
-		"place": "つくば",
-		"date": "2018/5/22"
+		"place": "産業技術総合研究所つくばセンター, つくば",
+		"date": "2018/5/22",
+		"url": "http://micro-nano.chips.jp/37/wp-content/uploads/2018/05/Program_for_WEB_180514.pdf"
 	},
-	"Hiroyuki Kai, Ryoma Toyosato, Matsuhiko Nishizawa ““Mathematical microfluidics” – fractal, space-filling open microfluidic channels for the efficient collection of water droplets.“, CEMSupra 2018, Tokyo, Japan (2018).",
-	"Hiroyuki Kai, Hiroki Kumata, Jun Kubota, Shinya Kusama, Kuniaki Nagamine, Matsuhiko Nishizawa “Development of porous polymer microneedles and their applications to transdermal interfaces“, 27th Annual Meeting of MRS-J, Yokohama, Japan (2017).",
-	"Hiroyuki Kai, Hiroki Kumata, Jun Kubota, Matsuhiko Nishizawa “Porous microneedle array made of a polymer monolith for the analysis of interstitial fluid“, 66th Symposium on Macromolecules, Matsuyama, Japan (2017).",
-	"Hiroyuki Kai, Ryoma Toyosato, Matsuhiko Nishizawa “Water collection by hierarchical patterning of surface wettability“, The 78th JSAP Autumn Meeting, Fukuoka, Japan (2017).",
-	"Hiroyuki Kai “Development of wearable sweat sensor patches made of organic and polymer materials“ (Invited), ISPAC 2017, Ho Chi Minh City, Vietnam (2017).",
-	"Hiroyuki Kai, Ayaka Tsubota, Yudai Ogawa, Matsuhiko Nishizawa “Accelerated would healing by an enzymatic biofuel cell plaster“ (Invited), 26th Annual Meeting of MRS-J, Yokohama, Japan (2016).",
-	"Hiroyuki Kai “Development of enzymatic biofuel cells toward epidermal electronics” (Invited), Semi-Conference, Aomori, Japan (2016).",
-	"Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa “Porous Polymer Microneedles with Interconnecting Microchannels Toward Efficient Sensing of Interstitial Fluid”, PRiME 2016, Honolulu, HI, USA (2016).",
-	"Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa “Porous polymer microneedles toward the efficient interface with skin”, ICFPE 2016, Yonezawa, Japan (2016).",
-	"Hiroyuki Kai, Kuniaki Nagamine, Matsuhiko Nishizawa “Stretchable Patches and Devices Toward Electronics on the Skin” (Invited), IEEE Nano 2016, Sendai, Japan (2016).",
-	"Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa “Polymer microneedle arrays with continuous pores for minimally invasive monitoring of interstitial fluid”, The 83rd Meeting of the Electrochemical Society of Japan, Osaka, Japan (2016).",
-	"M. Nishizawa, K. Nagamine, H. Kai “Organic skin patch with built-in enzymatic battery”, MEMS 2016, Shanghai, China (2016).",
-	"H. Kai, S. Chihara, D. Okabe, K. Nagamine and M. Nishizawa “Electrode-Hydrogel Hybrids for Biocompatible, Stretchable Electronics”, 25th Annual Meeting of MRS-J, Yokohama, Japan (2015)",
-	"H. Kai, N. Caculitan, T. Lohmüller, E. Liu, N. Fay, Y. Yu, J. T. Groves “Dynamic behavior of TCR microclusters on a live cell investigated by a gold nanoparticle array”, Biophysical Society 58th Annual Meeting, San Francisco, CA (2014).",
-	"H. Kai, N. Caculitan, T. Lohmüller, E. Liu, N. Fay, Y. Yu, J. T. Groves “Investigating the Dynamic Behavior of TCR Microclusters by a Gold Nanoparticle Array”, Biophysical Society 57th Annual Meeting, Philadelphia, PA (2013).",
-	"H. Kai, N. Morishita, M. Iji “Self-assembled nanoparticles with three functional layers for toughening of brittle thermoplastic”, The 18th Polymer Materials Forum, Funabori, Japan (2009).",
-	"H. Kai, K. Kinbara, T. Aida “Design of Supramolecular Machines:  A Mechanism for Power Transmission to a Spatially Remote Place”, The 88th Annual Meeting of the Chemical Society of Japan, Tokyo, Japan (2008).",
-	"H. Kai, K. Kinbara, T. Aida “Design of Supramolecular Machines for Remote Transmission of Mechanical Motions”, The 87th Annual Meeting of the Chemical Society of Japan, Osaka, Japan (2007).",
-	"H. Kai, K. Kinbara, T. Aida “Design of Supramolecular Machines for Remote Control of Molecules”, The 56th Japan Society of Coordination Chemistry Annual Meeting, Hiroshima, Japan (2006).",
-	"H. Kai, K. Kinbara, T. Aida “Supramolecular Machine for Conformational Remote Control of Chiral Molecules”, 18th International Symposium on Chirality, Busan, South Korea (2006).",
-	"H. Kai, S. Nara, M. Muraoka, K. Kinbara, T. Aida “Molecular Design of a Light-Driven Supramolecular Machine”, The 86th Annual Meeting of the Chemical Society of Japan, Funabashi, Japan (2006)."
+	{
+		"authors": "Hiroyuki Kai, Ryoma Toyosato, Matsuhiko Nishizawa",
+		"title": "“Mathematical microfluidics” – fractal, space-filling open microfluidic channels for the efficient collection of water droplets.",
+		"conference": "CEMSupra 2018",
+		"place": "The University of Tokyo, Tokyo, Japan",
+		"date": "2018/1/9",
+		"url": "http://empoly.riken.jp/CEMSupra2018/pdf/Poster_List.pdf"
+	},
+	{
+		"authors": "Hiroyuki Kai, Hiroki Kumata, Jun Kubota, Shinya Kusama, Kuniaki Nagamine, Matsuhiko Nishizawa",
+		"title": "Development of porous polymer microneedles and their applications to transdermal interfaces",
+		"conference": "27th Annual Meeting of MRS-J",
+		"place": "Yokohama, Japan",
+		"date": "2017/12/7",
+		"url": "https://www.mrs-j.org/meeting2017/jp/prg/programList_oral.php?id=J"
+	},
+	{
+		"authors": "甲斐洋行, 熊田裕希, 久保田淳, 西澤松彦",
+		"title": "高分子モノリスからなる皮膚間質液分析のためのマイクロニードルアレイ",
+		"conference": "第66回高分子討論会",
+		"place": "愛媛大学城北キャンパス, 松山",
+		"date": "2017/9/22",
+		"url": "http://main.spsj.or.jp/tohron/66tohron/oral_ja.pdf"
+	},
+	{
+		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
+		"title": "表面濡れ性の階層的パターニングによる基板上の水収集",
+		"conference": "第78回応用物理学会秋季学術講演会",
+		"place": "福岡国際センター, 福岡",
+		"date": "2017/9/6",
+		"url": "https://confit.atlas.jp/guide/event/jsap2017a/subject/6a-C11-2/detail?lang=ja"
+	},
+	{
+		"authors": "Hiroyuki Kai",
+		"title": "Development of wearable sweat sensor patches made of organic and polymer materials",
+		"conference": "ISPAC 2017",
+		"place": "Hotel Continental Saigon, Ho Chi Minh City, Vietnam",
+		"date": "2017/6/10",
+		"invited": true
+	},
+	{
+		"authors": "Hiroyuki Kai, Ayaka Tsubota, Yudai Ogawa, Matsuhiko Nishizawa",
+		"title": "Accelerated would healing by an enzymatic biofuel cell plaster",
+		"conference": "26th Annual Meeting of MRS-J",
+		"place": "Yokohama, Japan",
+		"date": "2016/12/19",
+		"invited": true,
+		"url": "https://www.mrs-j.org/meeting2016/jp/"
+	},
+	{
+		"authors": "甲斐洋行",
+		"title": "皮膚エレクトロニクスを志向した酵素電池の開発（依頼講演）",
+		"conference": "電気化学会第29回東北若手の会",
+		"place": "浅虫温泉, 青森",
+		"date": "2016/11/25",
+		"url": "http://tohoku.electrochem.jp/semicon2016.html"
+	},
+	{
+		"authors": "Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa",
+		"title": "Porous Polymer Microneedles with Interconnecting Microchannels Toward Efficient Sensing of Interstitial Fluid",
+		"conference": "PRiME 2016",
+		"place": "Hawai'i Convention Center, Honolulu, HI, USA",
+		"date": "2016/10/4",
+		"url": "http://ma.ecsdl.org/content/MA2016-02/44/3234.abstract"
+	},
+	{
+		"authors": "Hiroyuki Kai, Liming Liu, Kuniaki Nagamine, Yudai Ogawa, Matsuhiko Nishizawa",
+		"title": "Porous polymer microneedles toward the efficient interface with skin",
+		"conference": "ICFPE 2016",
+		"place": "Yamagata University, Yonezawa, Japan",
+		"date": "2016/9/7",
+		"url": "http://2016icfpe.yz.yamagata-u.ac.jp/program.html"
+	},
+	{
+		"authors": "Hiroyuki Kai, Kuniaki Nagamine, Matsuhiko Nishizawa",
+		"title": "Stretchable Patches and Devices Toward Electronics on the Skin",
+		"conference": "IEEE Nano 2016",
+		"place": "Sendai International Center, Sendai, Japan",
+		"date": "2016/8/25",
+		"url": "https://ieeexplore.ieee.org/document/7751571",
+		"invited": true
+	},
+	{
+		"authors": "甲斐洋行, 劉利明, 長峯邦明, 小川雄大, 西澤松彦",
+		"title": "体液の低侵襲的なセンシングを目指した連続的な細孔構造を持つポリマーマイクロニードルの開発",
+		"conference": "第83回電気化学会大会",
+		"place": "大阪大学, 大阪",
+		"date": "2016/3/29",
+		"url": "https://www.electrochem.jp/post_convention/2016spring_meeting/room_u/"
+	},
+	{
+		"authors": "Matsuhiko Nishizawa, Kuniaki Nagamine, Hiroyuki Kai",
+		"title": "Organic skin patch with built-in enzymatic battery",
+		"conference": "MEMS 2016",
+		"place": "Shanghai International Conference Center, Shanghai, China",
+		"date": "2016/1/27",
+		"url": "https://ieeexplore.ieee.org/document/7421672"
+	},
+	{
+		"authors": "甲斐洋行, 長峯邦明, 西澤松彦",
+		"title": "生体適合性の柔軟エレクトロニクスを目指した電極・ハイドロゲル複合体の創製",
+		"conference": "第25回日本MRS年次大会",
+		"place": "横浜情報文化センター, 横浜",
+		"date": "2015/12/9",
+		"url": "https://www.mrs-j.org/meeting2015/jp/"
+	},
+	{
+		"authors": "Hiroyuki Kai, Niña Caculitan, Theobald Lohmüller, Eulanca Liu, Nicole Fay, Yan Yu, Jay T. Groves",
+		"title": "Dynamic behavior of TCR microclusters on a live cell investigated by a gold nanoparticle array",
+		"conference": "Biophysical Society 58th Annual Meeting",
+		"place": "San Francisco, CA",
+		"date": "2014/2/18",
+		"url": "https://www.biophysics.org/Portals/0/EasyDNNnews/Uploads/2174/2014_Program_Guide.pdf"
+	},
+	{
+		"authors": "Hiroyuki Kai, Niña Caculitan, Theobald Lohmüller, Eulanca Liu, Nicole Fay, Yan Yu, Jay T. Groves",
+		"title": "Investigating the Dynamic Behavior of TCR Microclusters by a Gold Nanoparticle Array",
+		"conference": "Biophysical Society 57th Annual Meeting",
+		"place": "Philadelphia, PA, USA",
+		"date": "Feb, 2013"
+	},
+	{
+		"authors": "甲斐洋行, 森下直樹, 位地正年",
+		"title": "樹脂強靱化用の自己組織型３層構造ナノ粒子の開発",
+		"conference": "第18回ポリマー材料フォーラム",
+		"place": "タワーホール船堀, 東京",
+		"date": "2009/11/26",
+		"url": "http://main.spsj.or.jp/c8/pmf/18pmf/index.html"
+	},
+	{
+		"authors": "甲斐洋行, 金原数, 相田卓三",
+		"title": "超分子機械の設計：動力の遠距離伝達への挑戦",
+		"conference": "日本化学会第88春季年会",
+		"place": "立教大学池袋キャンパス, 東京",
+		"date": "2008/3/26",
+		"url": "http://csj.jp/nenkai/88haru/data/prog-88.html#K4"
+	},
+	{
+		"authors": "甲斐洋行, 金原数, 相田卓三",
+		"title": "機械的動きの遠距離伝達を実現する超分子機械の設計",
+		"conference": "日本化学会第87春季年会",
+		"place": "関西大学千里山キャンパス, 大阪",
+		"date": "2007/3/28",
+		"url": "http://www.csj.jp/nenkai/87haru/data/prog-87.html#E4"
+	},
+	{
+		"authors": "甲斐洋行, 金原数, 相田卓三",
+		"title": "分子の遠隔操作のための超分子機械の設計",
+		"conference": "錯体化学会第56回討論会",
+		"place": "広島大学, 広島",
+		"date": "Sep, 2007"
+	},
+	{
+		"authors": "Hiroyuki Kai, Kazushi Kinbara, Takuzo Aida",
+		"title": "Supramolecular Machine for Conformational Remote Control of Chiral Molecules",
+		"conference": "18th International Symposium on Chirality",
+		"place": "Busan, South Korea",
+		"date": "June, 2006"
+	},
+	{
+		"authors": "甲斐洋行, 奈良真治, 村岡貴博, 金原数, 相田卓三",
+		"title": "光駆動超分子機械の分子設計",
+		"conference": "日本化学会第86春季年会",
+		"place": "日本大学船橋キャンパス, 船橋",
+		"date": "2006/3/30",
+		"url": "http://www.csj.jp/nenkai/86haru/prog-86.html#K3"
+	}
 ]

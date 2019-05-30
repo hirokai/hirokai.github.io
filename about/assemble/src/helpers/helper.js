@@ -17,7 +17,7 @@ module.exports.paper = function (paper)  {
 };
 
 module.exports.presentation = function (p)  {
-	var res = "";
+	var res = "<li data-kind='"+(p.kind || '')+"'>";
 	if(p.authors){
 		res += "<span class='authors'>" + p.authors + "<br/></span>";
 		res += "<span class='title'>" + p.title + (p.invited ? "<strong>（招待講演）</strong>" : "") + "<br/></span>";
@@ -26,5 +26,6 @@ module.exports.presentation = function (p)  {
 	}else{
 		res += p;
 	}
+	res += '</li>'
 	return res;
 };

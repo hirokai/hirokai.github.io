@@ -21,9 +21,14 @@ name: presentation
 
             <h3>発表</h3>
             <p>自分で行った発表のみを表記。</p>
+            <div>
+                <button class='btn btn-sm btn-default active' data-toggle="button" id='oral'>口頭発表</button>
+                <button class='btn btn-sm btn-default active' data-toggle="button" id='poster'>ポスター発表</button>
+                <button class='btn btn-sm btn-default active' data-toggle="button" id='outreach'>展示会・アウトリーチ</button>
+            </div>
             <ol class='publication' reversed>
                 {{#each presentation_ja}}
-                <li>{{{presentation .}}}</li>
+                {{{presentation .}}}
                 {{/each}}
             </ol>
         </div>

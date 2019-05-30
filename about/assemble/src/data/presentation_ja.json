@@ -1,6 +1,24 @@
 [
 	{
 		"authors": "甲斐洋行",
+		"date": "2019/5/30",
+		"title": "新規構造マイクロニードルによる疾患診断・治療デバイス",
+		"conference": "JSTセンター・オブ・イノベーション（COI）プログラム　新技術説明会　～ヘルスケア関連～",
+		"place": "JST東京本部別館1Fホール",
+		"invited": false,
+		"url": "https://shingi.jst.go.jp/kobetsu/COI/2019_coi.html"
+	},
+	{
+		"authors": "甲斐洋行",
+		"date": "2019/5/27",
+		"title": "任意の凸多角形を充填するフラクタル開放型流路の設計",
+		"conference": "第３９回 化学とマイクロ・ナノシステム学会",
+		"place": "金沢大学 宝町・鶴間キャンパス, 金沢",
+		"invited": false,
+		"url": "http://micro-nano.chips.jp/39/?post_type=program"
+	},
+	{
+		"authors": "甲斐洋行",
 		"date": "2019/3/4",
 		"title": "新たな経皮インターフェイスのための高分子材料・デバイス",
 		"conference": "平成30年度東北地区先端高分子セミナー",

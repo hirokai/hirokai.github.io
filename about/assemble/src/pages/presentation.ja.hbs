@@ -16,7 +16,9 @@ name: presentation
             <h3 id='plan'>発表予定</h3>
             <p>自分で行う発表のみを表記。</p>
             <ul class='publication' reversed>
-                <li>To be announced.</li>
+                {{#each presentation_future_ja}}
+                {{{presentation_future_ja .}}}
+                {{/each}}
             </ul>
 
             <h3>発表</h3>

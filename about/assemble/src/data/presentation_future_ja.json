@@ -1,0 +1,40 @@
+[
+	{
+		"authors": "甲斐洋行",
+		"date": "2019年9月22日",
+		"time": "11:45-12:15",
+		"title": "Development of microfluidic materials toward biosensing on a living body",
+		"conference": "2019年度化学系学協会東北大会",
+		"place": "山形大学小白川キャンパス",
+		"invited": true,
+		"kind": "oral",
+		"special_kind": "依頼講演",
+		"url": "https://tohoku.chemistry.or.jp/taikai.html",
+		"program_url": "https://tohoku.chemistry.or.jp/R01denki-p.pdf"
+	},
+	{
+		"authors": "甲斐洋行",
+		"date": "2019年9月22日",
+		"time": "11:45-12:15",
+		"title": "Development of microfluidic materials toward biosensing on a living body",
+		"conference": "2019年度化学系学協会東北大会",
+		"place": "山形大学小白川キャンパス",
+		"invited": true,
+		"kind": "oral",
+		"special_kind": "依頼講演",
+		"url": "https://tohoku.chemistry.or.jp/taikai.html",
+		"program_url": "https://tohoku.chemistry.or.jp/R01denki-p.pdf"
+	},
+	{
+		"authors": "Hiroyuki Kai",
+		"date": "2019年10月29日",
+		"time": "14:00-16:30",
+		"title": "POROUS MICRONEEDLE ELECTRODES FOR THE ELECTROCHEMICAL SENSING ON SKIN",
+		"conference": "µTAS 2019",
+		"place": "Congress Center Basel, Basel, Switzerland",
+		"invited": false,
+		"kind": "poster",
+		"url": "https://microtas2019.org/",
+		"program_url": "https://microtas2019.org/program/MicroTAS2019_PreliminaryProgram.pdf"
+	}
+]

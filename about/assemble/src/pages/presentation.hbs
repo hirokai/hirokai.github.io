@@ -13,15 +13,13 @@ name: presentation
 <div class="page-content inset">
     <div class="row">
         <div class="col-md-12">
-          <section id='presentation'>
-            <ol class='publication' reversed>
-                {{#each presentation}}
-                <li>{{{presentation .}}}</li>
-                {{/each}}
-            </ol>
-          </section>
+            <section id='presentation'>
+                <ol class='publication' reversed>
+                    {{#each presentation}}
+                    {{{presentation_en .}}}
+                    {{/each}}
+                </ol>
+            </section>
         </div>
     </div>
 </div>
-
-

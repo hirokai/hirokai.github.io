@@ -1,6 +1,18 @@
 [
 	{
 		"authors": "甲斐洋行",
+		"date": "2019年9月5日",
+		"time": "10:10-10:30",
+		"title": "皮膚組織液センサのための多孔質マイクロニードル電極",
+		"conference": "第13回バイオ関連化学シンポジウム2019",
+		"place": "東北大学青葉山東キャンパス",
+		"invited": false,
+		"kind": "oral",
+		"url": "http://www.knt.co.jp/ec/2019/biojointsympo/index.html",
+		"program_url": "http://www.knt.co.jp/ec/2019/biojointsympo/pdf/program_day2.pdf"
+	},
+	{
+		"authors": "甲斐洋行",
 		"date": "2019/5/30",
 		"title": "新規構造マイクロニードルによる疾患診断・治療デバイス",
 		"conference": "JSTセンター・オブ・イノベーション（COI）プログラム　新技術説明会　～ヘルスケア関連～",

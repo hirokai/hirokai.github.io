@@ -20,7 +20,7 @@ module.exports.presentation = function (p) {
 	var res = "<li data-kind='" + (p.kind || '') + "'>";
 	if (p.authors) {
 		res += "<span class='authors'>" + p.authors + "<br/></span>";
-		res += "<span class='title'>" + p.title + (p.invited ? "<strong>（招待講演）</strong>" : "") + "<br/></span>";
+		res += "<span class='title'>" + p.title + (p.special_kind ? "<strong>（" + p.special_kind + "）</strong>" : p.invited ? "<strong>（招待講演）</strong>" : "") + "<br/></span>";
 		res += "<span class='conference'>" + (p.url ? ("<a href='" + p.url + "'>" + p.conference + "</a>") : p.conference);
 		res += " (" + p.date + "; " + p.place + ")<br/></span>";
 	} else {
@@ -34,7 +34,8 @@ module.exports.presentation_en = function (p) {
 	var res = "<li data-kind='" + (p.kind || '') + "'>";
 	if (p.authors) {
 		res += "<span class='authors'>" + p.authors + "<br/></span>";
-		res += "<span class='title'>" + p.title + (p.invited ? "<strong>（招待講演）</strong>" : "") + "<br/></span>";
+		res += "<span class='title'>" + p.title + (p.special_kind ? "<strong>（" + p.special_kind + "）</strong>" : p.invited ? "<strong>（invited）</strong>" : "") + "<br/></span>";
+
 		res += "<span class='conference'>" + (p.url ? ("<a href='" + p.url + "'>" + p.conference + "</a>") : p.conference);
 		res += " (" + p.date + "; " + p.place + ")<br/></span>";
 	} else {

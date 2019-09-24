@@ -1,30 +1,5 @@
 [
 	{
-		"authors": "甲斐洋行",
-		"date": "2019年9月19日",
-		"time": "16:10-17:40",
-		"title": "水滴を効率よく収集するフラクタル開放型流路の設計",
-		"conference": "第2回COI学会",
-		"place": "日本科学未来館",
-		"invited": false,
-		"kind": "poster",
-		"url": "https://coi-conference.github.io/2019/index.html",
-		"program_url": "https://coi-conference.github.io/2019/abstract.html"
-	},
-	{
-		"authors": "甲斐洋行",
-		"date": "2019年9月22日",
-		"time": "11:45-12:15",
-		"title": "Development of microfluidic materials toward biosensing on a living body",
-		"conference": "2019年度化学系学協会東北大会",
-		"place": "山形大学小白川キャンパス",
-		"invited": true,
-		"kind": "oral",
-		"special_kind": "依頼講演",
-		"url": "https://tohoku.chemistry.or.jp/taikai.html",
-		"program_url": "https://tohoku.chemistry.or.jp/R01denki-p.pdf"
-	},
-	{
 		"authors": "Hiroyuki Kai",
 		"date": "2019年10月29日",
 		"time": "14:00-16:30",

@@ -15,12 +15,13 @@
 		"authors": "甲斐洋行，Kebere Legesse，井上雄太，田中利和",
 		"date": "2019年11月19-21日",
 		"time": "",
-		"title": "（演題公開予定）",
+		"title": "地下足袋型ウェアラブルセンサのプロトタイピング",
 		"conference": "第36回「センサ・マイクロマシンと応用システム」シンポジウム",
 		"place": "アクトシティ浜松",
 		"invited": false,
 		"kind": "poster",
-		"url": "http://www.sensorsymposium.org/index_j.html"
+		"url": "http://www.sensorsymposium.org/index_j.html",
+		"program_url": "http://www.sensorsymposium.org/SS36_Program_Schedule_20191105.pdf"
 	},
 	{
 		"authors": "甲斐洋行",

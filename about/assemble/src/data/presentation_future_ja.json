@@ -10,29 +10,5 @@
 		"kind": "oral",
 		"url": "https://www.mrs-j.org/meeting2019/jp/",
 		"program_url": "https://www.mrs-j.org/meeting2019/jp/prg/programList_oral.php?id=I"
-	},
-	{
-		"authors": "甲斐洋行，Kebere Legesse，井上雄太，田中利和",
-		"date": "2019年11月19-21日",
-		"time": "",
-		"title": "地下足袋型ウェアラブルセンサのプロトタイピング",
-		"conference": "第36回「センサ・マイクロマシンと応用システム」シンポジウム",
-		"place": "アクトシティ浜松",
-		"invited": false,
-		"kind": "poster",
-		"url": "http://www.sensorsymposium.org/index_j.html",
-		"program_url": "http://www.sensorsymposium.org/SS36_Program_Schedule_20191105.pdf"
-	},
-	{
-		"authors": "甲斐洋行",
-		"date": "2019年11月20日",
-		"time": "12:50-14:20",
-		"title": "多孔質マイクロニードル電極の開発と電気化学センサへの応用",
-		"conference": "CHEMINAS 40",
-		"place": "アクトシティ浜松",
-		"invited": false,
-		"kind": "poster",
-		"url": "http://micro-nano.chips.jp/40/",
-		"program_url": "http://micro-nano.chips.jp/40/wp-content/uploads/2019/07/93d63c711cb031e4130f498c79da471b-1.pdf"
 	}
 ]

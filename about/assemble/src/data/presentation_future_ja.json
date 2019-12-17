@@ -1,26 +1,3 @@
 [
-	{
-		"authors": "Hiroyuki Kai",
-		"date": "2019年12月9日",
-		"time": "18:00-20:10",
-		"title": "Space-filling open microfluidics for collecting water droplets: hierarchical transport by fractal branching",
-		"conference": "CEMSupra 2019",
-		"place": "東京大学 伊藤謝恩ホール",
-		"invited": false,
-		"kind": "poster",
-		"url": "http://www.cemsupra2019.jp/",
-		"program_url": "http://empoly.riken.jp/CEMSupra2019/pdf/Poster_List2019.pdf"
-	},
-	{
-		"authors": "甲斐洋行",
-		"date": "2019年11月28日",
-		"time": "10:30-10:50",
-		"title": "ポリマーモノリスへの無電解金めっきによって作製した多孔質マイクロニードル電極",
-		"conference": "第29回日本MRS年次大会",
-		"place": "横浜",
-		"invited": true,
-		"kind": "oral",
-		"url": "https://www.mrs-j.org/meeting2019/jp/",
-		"program_url": "https://www.mrs-j.org/meeting2019/jp/prg/programList_oral.php?id=I"
-	}
+
 ]

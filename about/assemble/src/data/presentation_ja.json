@@ -123,8 +123,8 @@
 	{
 		"authors": "甲斐洋行, 須田亘, 吉田昭太郎, 西澤松彦",
 		"title": "PEDOT:PTSとポリウレタンの複合体による 伸縮性エレクトロクロミック表示素子",
-		"conference": "応用物理学会 2018年秋季学術講演会",
-		"place": "名古屋",
+		"conference": "応用物理学会 2018年第79回秋季学術講演会",
+		"place": "名古屋国際会議場，名古屋",
 		"kind": "poster",
 		"date": "2018/9/20",
 		"url": "https://confit.atlas.jp/guide/event/jsap2018a/subject/20p-PA2-25/detail?lang=ja"
@@ -150,7 +150,7 @@
 	{
 		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
 		"title": "フラクタル空間充填木構造の開放型流路による液滴収集",
-		"conference": "第85回形の科学シンポジウム",
+		"conference": "第85回形の科学シンポジウム",
 		"place": "東北大学青葉山キャンパス, 仙台",
 		"kind": "oral",
 		"date": "2018/6/22",
@@ -169,7 +169,7 @@
 		"authors": "Hiroyuki Kai, Ryoma Toyosato, Matsuhiko Nishizawa",
 		"title": "“Mathematical microfluidics” – fractal, space-filling open microfluidic channels for the efficient collection of water droplets.",
 		"conference": "CEMSupra 2018",
-		"place": "The University of Tokyo, Tokyo, Japan",
+		"place": "東京大学 伊藤謝恩ホール，東京",
 		"kind": "poster",
 		"date": "2018/1/9",
 		"url": "http://empoly.riken.jp/CEMSupra2018/pdf/Poster_List.pdf"
@@ -177,8 +177,8 @@
 	{
 		"authors": "Hiroyuki Kai, Hiroki Kumata, Jun Kubota, Shinya Kusama, Kuniaki Nagamine, Matsuhiko Nishizawa",
 		"title": "Development of porous polymer microneedles and their applications to transdermal interfaces",
-		"conference": "27th Annual Meeting of MRS-J",
-		"place": "Yokohama, Japan",
+		"conference": "第27回日本MRS年次大会",
+		"place": "横浜市開港記念会館，横浜",
 		"kind": "oral",
 		"date": "2017/12/7",
 		"url": "https://www.mrs-j.org/meeting2017/jp/prg/programList_oral.php?id=J"
@@ -195,7 +195,7 @@
 	{
 		"authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
 		"title": "表面濡れ性の階層的パターニングによる基板上の水収集",
-		"conference": "第78回応用物理学会秋季学術講演会",
+		"conference": "応用物理学会2017年第78回秋季学術講演会",
 		"place": "福岡国際センター, 福岡",
 		"kind": "oral",
 		"date": "2017/9/6",

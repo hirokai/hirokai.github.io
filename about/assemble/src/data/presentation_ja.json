@@ -1,5 +1,29 @@
 [
   {
+    "authors": "甲斐洋行",
+    "date": "2021年5月17日",
+    "time": "14:50-16:50",
+    "title": "分岐を有する開放型マイクロ流路における水滴輸送の自由表面流れ解析",
+    "conference": "化学とマイクロ･ナノシステム学会 第43回研究会（CHEMINAS 43）",
+    "place": "オンライン",
+    "invited": false,
+    "kind": "poster",
+    "url": "http://micro-nano.chips.jp/43/",
+    "program_url": "http://micro-nano.chips.jp/43/wp-content/uploads/2021/05/cheminas43_poster-session_definitive2.pdf"
+  },
+  {
+    "authors": "Hiroyuki Kai",
+    "date": "2020年10月8日",
+    "time": "9:05-10:05",
+    "title": "SPACE-FILLING OPEN MICROFLUIDICS FOR DROPLET COLLECTION: GENERALIZED DESIGN OF FRACTAL HYPERBRANCHED CHANNELS",
+    "conference": "MicroTAS 2020",
+    "place": "オンライン",
+    "invited": false,
+    "kind": "poster",
+    "url": "https://microtas2020.org/",
+    "program_url": "https://microtas2020.org/program/MicroTAS2020_Program.pdf"
+  },
+  {
     "authors": "Hiroyuki Kai",
     "date": "2019年12月9日",
     "time": "18:00-20:10",
@@ -28,7 +52,7 @@
     "date": "2019年11月21日",
     "time": "12:50-14:20",
     "title": "多孔質マイクロニードル電極の開発と電気化学センサへの応用",
-    "conference": "CHEMINAS 40",
+    "conference": "化学とマイクロ･ナノシステム学会 第40回研究会（CHEMINAS 40）",
     "place": "アクトシティ浜松",
     "invited": false,
     "kind": "poster",
@@ -110,7 +134,7 @@
     "authors": "甲斐洋行",
     "date": "2019/5/27",
     "title": "任意の凸多角形を充填するフラクタル開放型流路の設計",
-    "conference": "第39回 化学とマイクロ・ナノシステム学会",
+    "conference": "化学とマイクロ･ナノシステム学会 第39回研究会（CHEMINAS 39）",
     "place": "金沢大学 宝町・鶴間キャンパス, 金沢",
     "kind": "poster",
     "invited": false,
@@ -219,7 +243,7 @@
   {
     "authors": "甲斐洋行, 豊里涼馬, 西澤松彦",
     "title": "階層的枝分かれ構造を持つ開放型流路による液滴収集機構",
-    "conference": "化学とマイクロ・ナノシステム学会 第37回研究会",
+    "conference": "化学とマイクロ･ナノシステム学会 第37回研究会（CHEMINAS 37）",
     "place": "産業技術総合研究所つくばセンター, つくば",
     "kind": "poster",
     "date": "2018/5/22",

@@ -1,537 +1,726 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Art Timeline</title>
 
     <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag -->
-    <meta name="viewport" content="width=620, initial-scale=1">
+    <meta name="viewport" content="width=620, initial-scale=1" />
 
-    <meta property="og:image" content="https://hirokai.github.io/timeline/thumbnail.png"/>
+    <meta
+      property="og:image"
+      content="https://hirokai.github.io/timeline/thumbnail.png"
+    />
 
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"
+    />
 
-    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+    <link
+      href="https://fonts.googleapis.com/css?family=Alef"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <style type="text/css">
-        #svgdiv {
-            margin: 0px;
-            padding: 0px;
-        }
-        svg {
-            shape-rendering: crispEdges;
-            font-family: 'Alef', sans-serif;
-            margin: 0px;
-            padding: 0px;
-        }
-        .axis text {
-            font-size: 14px;
-        }
+      #svgdiv {
+        margin: 0px;
+        padding: 0px;
+      }
+      svg {
+        shape-rendering: crispEdges;
+        font-family: "Alef", sans-serif;
+        margin: 0px;
+        padding: 0px;
+      }
+      .axis text {
+        font-size: 14px;
+      }
 
-        /*This is essential for correct axis drawing */
-        /* https://stackoverflow.com/questions/12148188/d3-js-yaxis-not-drawing-all-the-ticks-properly */
-        .axis path,
-        .axis line {
-            fill: none;
-            stroke: #000;
-            shape-rendering: crispEdges;
-        }
+      /*This is essential for correct axis drawing */
+      /* https://stackoverflow.com/questions/12148188/d3-js-yaxis-not-drawing-all-the-ticks-properly */
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
 
-        .event {
-            fill: lightblue;
-            cursor: pointer;
-        }
-        rect.event {
-            cursor: pointer;
-        }
-        .France {
-            /* fill:pink; */
-        }
-        .painter {
-            fill: pink;
-        }
-        .author {
-            fill: #acffcd;
-        }
-        .composer {
-            fill: #ffc982;
-        }
-        .architect {
-            fill: #ce70e8;
-        }
-        rect.Japan {
-            /* fill:purple; */
-        }
-        .person-text{
-            fill: #666;
-            font-size: 11px;
-        }
-        line.red {
-            stroke: red;
-            stroke-width: 1px;
-        }
-        text {
-            fill: black;
-        }
+      .event {
+        fill: lightblue;
+        cursor: pointer;
+      }
+      rect.event {
+        cursor: pointer;
+      }
+      .France {
+        /* fill:pink; */
+      }
+      .painter {
+        fill: pink;
+      }
+      .author {
+        fill: #acffcd;
+      }
+      .composer {
+        fill: #ffc982;
+      }
+      .architect {
+        fill: #ce70e8;
+      }
+      rect.Japan {
+        /* fill:purple; */
+      }
+      .person-text {
+        fill: #666;
+        font-size: 11px;
+      }
+      line.red {
+        stroke: red;
+        stroke-width: 1px;
+      }
+      text {
+        fill: black;
+      }
 
-        #slider {
-         /* height: 30px; */
-            width: 120px;
-            margin: 20px 0px 20px 0px;
-        }
+      #slider {
+        /* height: 30px; */
+        width: 120px;
+        margin: 20px 0px 20px 0px;
+      }
 
-        #sliderdiv > div{
-            display: inline-block;
-        }
-        .btn {
-            width: 120px;
-            color: #888;
-        }
-        #music {
-            background-color: #ffe7cc;
-        }
-        #music.active {
-            background-color: #ff900b;
-        }
-        #painting {
-            background-color: #ffc4cd;
-        }
-        #painting.active {
-            background-color: #ff4d6a;
-        }
-        #literature {
-            background-color: #e6fff5;
-        }
-        #literature.active {
-            background-color: #4dffb5;
-        }
-        #architecture {
-            background-color: #eebeff;
-        }
-        #architecture.active {
-            background-color: #cf4dff;
-        }
-        .btn.active {
-            font-weight: bold;
-            color: black;
-        }
-        #levels {
-            margin: 20px 0px;
-        }
-        #levels label {
-            width: 80px;
-            background-color: #edf1db;
-            color: #bbbbbb;
-        }
-        #levels label.active {
-            color: black;
-        }
-        #levels .glyphicon-user {
-            margin-left: -5px;
-        }
-        #help {
-            margin: 10px 80px 0px 200px;
-            z-index: 100;
-        }
-        #levels,#genres {
-            margin-left: 20px;
-        }
+      #sliderdiv > div {
+        display: inline-block;
+      }
+      .btn {
+        width: 120px;
+        color: #888;
+      }
+      #music {
+        background-color: #ffe7cc;
+      }
+      #music.active {
+        background-color: #ff900b;
+      }
+      #painting {
+        background-color: #ffc4cd;
+      }
+      #painting.active {
+        background-color: #ff4d6a;
+      }
+      #literature {
+        background-color: #e6fff5;
+      }
+      #literature.active {
+        background-color: #4dffb5;
+      }
+      #architecture {
+        background-color: #eebeff;
+      }
+      #architecture.active {
+        background-color: #cf4dff;
+      }
+      .btn.active {
+        font-weight: bold;
+        color: black;
+      }
+      #levels {
+        margin: 20px 0px;
+      }
+      #levels label {
+        width: 80px;
+        background-color: #edf1db;
+        color: #bbbbbb;
+      }
+      #levels label.active {
+        color: black;
+      }
+      #levels .glyphicon-user {
+        margin-left: -5px;
+      }
+      #help {
+        margin: 10px 80px 0px 200px;
+        z-index: 100;
+      }
+      #levels,
+      #genres {
+        margin-left: 20px;
+      }
 
-        span.h1 {
-            font-size: 25px;
-            color: #804571;
-            margin: 20px 0px 0px 20px;
-        }
+      span.h1 {
+        font-size: 25px;
+        color: #804571;
+        margin: 20px 0px 0px 20px;
+      }
 
-        .fb-like {
-            margin: 10px 0px 0px 350px;
-        }
+      .fb-like {
+        margin: 10px 0px 0px 350px;
+      }
 
-        body {
-            width: 620px;
-            margin-top: 30px;
-        }
+      body {
+        width: 620px;
+        margin-top: 30px;
+      }
 
-        #social {
-            opacity: 0;
-        }
-
+      #social {
+        opacity: 0;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>
+      ;(function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0]
+        if (d.getElementById(id)) return
+        js = d.createElement(s)
+        js.id = id
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1"
+        fjs.parentNode.insertBefore(js, fjs)
+      })(document, "script", "facebook-jssdk")
+    </script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div class='container'>
-
-<div class='row'><span class="h1">Art Timeline</span>
-
-</div>
-    <div class='row'>
-    <div class="btn-group" id="levels" data-toggle="buttons">
-        <label class="btn">
-            <input type="radio" name="levels" x-num="1">
+    <div class="container">
+      <div class="row"><span class="h1">Art Timeline</span></div>
+      <div class="row">
+        <div class="btn-group" id="levels" data-toggle="buttons">
+          <label class="btn">
+            <input type="radio" name="levels" x-num="1" />
             <span class="glyphicon glyphicon-user"></span>
-        </label>
-        <label class="btn active">
-            <input type="radio" name="levels" x-num="2">
+          </label>
+          <label class="btn active">
+            <input type="radio" name="levels" x-num="2" />
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
-        </label>
-        <label class="btn">
-            <input type="radio" name="levels" x-num="3">
+          </label>
+          <label class="btn">
+            <input type="radio" name="levels" x-num="3" />
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
-        </label>
-        <label class="btn">
-            <input type="radio" name="levels" x-num="4">
+          </label>
+          <label class="btn">
+            <input type="radio" name="levels" x-num="4" />
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
-        </label>
-        <label class="btn">
-            <input type="radio" name="levels" x-num="5">
+          </label>
+          <label class="btn">
+            <input type="radio" name="levels" x-num="5" />
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
             <span class="glyphicon glyphicon-user"></span>
-        </label>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="btn-group" id="genres" data-toggle="buttons">
+          <label class="btn active" id="music">
+            <input type="checkbox" /> Music
+          </label>
+          <label class="btn" id="painting">
+            <input type="checkbox" /> Painting
+          </label>
+          <label class="btn" id="literature">
+            <input type="checkbox" /> Literature
+          </label>
+          <label class="btn" id="architecture">
+            <input type="checkbox" /> Architecture
+          </label>
+        </div>
+      </div>
+      <div class="row" id="help">
+        Click a bar to zoom. Double click background to
+        <a href="#" id="unzoom">unzoom</a>.
+      </div>
+      <div class="row" id="svgdiv"></div>
+      <div id="social">
+        <div
+          class="fb-like"
+          data-href="https://hirokai.github.io/timeline"
+          data-width="300"
+          data-layout="button_count"
+          data-action="like"
+          data-show-faces="true"
+          data-share="true"
+        ></div>
+        <a href="https://twitter.com/share" class="twitter-share-button"
+          >Tweet</a
+        >
+        <script>
+          !(function (d, s, id) {
+            var js,
+              fjs = d.getElementsByTagName(s)[0],
+              p = /^https:/.test(d.location) ? "http" : "https"
+            if (!d.getElementById(id)) {
+              js = d.createElement(s)
+              js.id = id
+              js.src = p + "://platform.twitter.com/widgets.js"
+              fjs.parentNode.insertBefore(js, fjs)
+            }
+          })(document, "script", "twitter-wjs")
+        </script>
+      </div>
     </div>
-    </div>
-    <div class='row'>
-    <div class="btn-group" id='genres' data-toggle="buttons">
-        <label class="btn active" id='music'>
-            <input type="checkbox"> Music
-        </label>
-        <label class="btn" id='painting'>
-            <input type="checkbox"> Painting
-        </label>
-        <label class="btn" id='literature'>
-            <input type="checkbox"> Literature
-        </label>
-        <label class="btn" id='architecture'>
-            <input type="checkbox"> Architecture
-        </label>
-    </div>
-</div>
-    <div class='row' id='help'>
-        Click a bar to zoom. Double click background to <a href="#" id="unzoom">unzoom</a>.
-    </div>
-<div class='row' id='svgdiv'>
-</div>
-    <div id="social">
-    <div class="fb-like" data-href="https://hirokai.github.io/timeline" data-width="300" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^https:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    </div>
-</div>
 
-<!-- <script src='d3.js'></script> -->
-<!-- <script src='underscore.js'></script> -->
+    <!-- <script src='d3.js'></script> -->
+    <!-- <script src='underscore.js'></script> -->
 
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"
+      charset="utf-8"
+    ></script>
 
-<script type="text/javascript" src='https://code.jquery.com/jquery-1.10.2.min.js'></script>
-<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-$(function(){
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.10.2.min.js"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        var height = 1500,
+          width = 600
+        var margin = { left: 30, top: 0, right: 30, bottom: 30 }
 
-    var height = 1500, width = 600;
-    var margin = {left: 30,top: 0,right: 30,bottom:30};
+        var maxLevel = +$("#levels label.active input").attr("x-num")
 
-    var maxLevel = +$('#levels label.active input').attr('x-num');
+        var yearFromDef = 1500
+        var yearToDef = 2014
 
+        var yearFrom = yearFromDef
+        var yearTo = yearToDef
 
-    var yearFromDef = 1500;
-    var yearToDef = 2014;
+        var yinterval = 15
 
-    var yearFrom = yearFromDef;
-    var yearTo = yearToDef;
+        //    $( "#levels > label" ).on('click',function(e){
+        //       console.log($(e.target).attr('x-num'));
+        //    });
+        //    $( "#levels input" ).on('click',function(e){
+        //        console.log($(e.target).attr('x-num'));
+        //    });
 
-    var yinterval = 15;
-
-//    $( "#levels > label" ).on('click',function(e){
-//       console.log($(e.target).attr('x-num'));
-//    });
-//    $( "#levels input" ).on('click',function(e){
-//        console.log($(e.target).attr('x-num'));
-//    });
-
-    $('#levels label').change(function(e){
-        var lev = $(e.target).attr('x-num');
-        maxLevel = +lev;
-        updateFiltered();
-    });
-    var xAxis,xAxis2;
-    var xaxisobj,xaxisobj2;
-
-    var usedData = [],allData;
-
-
-    var genre = {music: $('#music').hasClass('active'),
-        painting: $('#painting').hasClass('active'),
-        literature: $('#literature').hasClass('active'),
-        architecture:$('#architecture').hasClass('active')};
-
-    var svg = d3.select('#svgdiv').append('svg').attr('width',width).attr('height',height);
-
-    // https://www.h2.dion.ne.jp/~defghi/svgMemo/svgMemo_10.htm
-//    svg.append('defs').append('clipPath').attr('id','clip').attr('clip-rule','evenodd')
-//            .append('rect').attr({x: 0,y:0,width: 800,height:300});
-
-    svg.on('dblclick',bgDblClick);
-    $('#unzoom').click(function(){bgDblClick();return false;}); //For mobile.
-
-    var g_people = svg.append('g');
-
-    var x = d3.time.scale().domain([new Date(yearFrom,0,0,0,0,0,0),new Date(yearTo,0,0,0,0,0,0)]).range([margin.left,width-margin.right]);
-
-    $('#music').change(function(e){genre.music = e.target.checked; updateFiltered();});
-    $('#literature').change(function(e){genre.literature = e.target.checked; updateFiltered();});
-    $('#painting').change(function(e){genre.painting = e.target.checked; updateFiltered();});
-    $('#architecture').change(function(e){genre.architecture = e.target.checked; updateFiltered();});
-
-    //mkEra();
-    mkAxis();
-
-    d3.tsv('./composers.tsv',function(composers){
-        d3.csv('./painters.csv',function(painters){
-            d3.csv('./architecture.csv',function(architects){
-                d3.csv('./authors.csv',function(authors){
-                    var dat2 = readData(composers,'composer');
-
-                    dat2 = dat2.concat(readData(painters,'painter'));
-                    dat2 = dat2.concat(readData(architects,'architect'));
-                    dat2 = dat2.concat(readData(authors,'author'));
-
-                    allData = _.sortBy(_.filter(dat2,function(d){return !!d.name;}),function(d){return d.from;});
-                    updateFiltered();
-                    d3.select('#social').transition().delay(600).duration(100).style('opacity',1);
-                });
-            });
-        });
-    });
-
-    function readData(dat,kind){
-        return _.map(dat,function(d,i){
-            var d2 = {};
-            d2.from = new Date(+d.from,0,0,0,0,0,0);
-            d2.to = (d.to && d.to != "") ? new Date(+d.to,0,0,0,0,0,0) : 2050;  // still alive
-            d2.name = d.name;
-            d2.i = i;
-            d2.kind = kind;
-            d2.nationality = d.nationality;
-            d2.importance = d.importance ? +d.importance : 5;
-            return d2;
-        });
-    }
-
-    var zoomed = false;
-
-    function isAnchorAhead(d){
-       return d.from-new Date(yearFrom,0,0,0,0,0,0) > new Date(yearTo,0,0,0,0,0,0)-d.to;
-    }
-
-    function personNamePos(d){
-        return isAnchorAhead(d) ? "end" : "start";
-    }
-
-    function bgDblClick(){
-        console.log(event);
-        if(zoomed){
-            zoomed = false;
-            setYearRange(yearFromDef,yearToDef);
-        }
-    }
-
-    function clicked(){
-        zoomed = false;
-        var from,to;
-
-        if(zoomed){ // already zoomed in?
-            zoomed = false;
-            from = yearFromDef;
-            to = yearToDef;
-        }else{
-            zoomed = true;
-//         var cent = x.invert(event.x);
-            var name = $(event.target).attr('x-name');
-            var psn = _.find(usedData,function(d){return d.name == name;});
-            console.log(psn);
-            var yr = Math.round((psn.from.getFullYear() + psn.to.getFullYear()) / 2);// cent.getFullYear();
-            from = yr-100;
-            to = yr+100;
-        }
-        setYearRange(from,to);
-    }
-
-    function setYearRange(from,to){
-        yearFrom = from;
-        yearTo = to;
-        x = d3.time.scale().domain([new Date(yearFrom,0,0,0,0,0,0),new Date(yearTo,0,0,0,0,0,0)]).range([margin.left,width-margin.right]);
-
-        //Set axes
-        xAxis = d3.svg.axis()
-                .scale(x)
-                .tickSize(-4).ticks(10).orient("top");
-
-        xAxis2 = d3.svg.axis()
-                .scale(x)
-                .tickSize(-4).ticks(10).orient("bottom");
-
-        xaxisobj.transition().duration(500).call(xAxis.scale(x));
-        xaxisobj2.transition().duration(500).call(xAxis2.scale(x));
-
-
-        var y1945 = new Date(1945,0,0,0,0,0,0);
-        svg.select('.vert').transition().duration(500).attr({x1: x(y1945),y1:0,x2:x(y1945),y2:height-50});
-        gs.transition().duration(500).attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';})
-                .attr('width',function(d){return x(d.to)-x(d.from);});
-        gs.selectAll('rect').transition().duration(500).attr('width',function(d){return x(d.to)-x(d.from);});
-        gs.selectAll('.person-text').transition().duration(500).attr('x',function(d){
-            return isAnchorAhead(d) ? -5 : x(d.to)-x(d.from)+5;
+        $("#levels label").change(function (e) {
+          var lev = $(e.target).attr("x-num")
+          maxLevel = +lev
+          updateFiltered()
         })
-                .attr('text-anchor',personNamePos);
+        var xAxis, xAxis2
+        var xaxisobj, xaxisobj2
 
-    }
+        var usedData = [],
+          allData
 
-    function mkPerson(s){
-        s.append('rect').attr('x',0)
-                .attr('y',0)
-                .attr('width',function(d){return x(d.to)-x(d.from);})
-                .attr('height',10)
-                .attr('i',function(_,i){return i;})
-                .attr('class',function(d){return 'event '+ d.kind + ' ' + d.nationality;})
-                .attr('x-nation',function(d){return d.nationality;})
-                .attr('x-name',function(d){return d.name;})
-                .on('click',clicked);
-        s.append('text')
-                .text(function(d){return d.name;})
-                .attr('x',function(d){
-                    return isAnchorAhead(d) ? -5 : x(d.to)-x(d.from)+5;
-                })
-                .attr('y',9)
-                .attr('class','person-text')
-                .attr('text-anchor',personNamePos);
-    }
+        var genre = {
+          music: $("#music").hasClass("active"),
+          painting: $("#painting").hasClass("active"),
+          literature: $("#literature").hasClass("active"),
+          architecture: $("#architecture").hasClass("active"),
+        }
 
-    function mkEra(){
-        d3.tsv('era.tsv',function(dat){
-            console.log(dat);
-            var gs = svg.append('g').attr('class','period').selectAll('g')
-                    .data(dat).enter().append('g')
-                    .attr('transform',function(d){return 'translate('+x(new Date(+d.from,0,0,0,0,0,0))+','+0+')';});
-            var cs = d3.scale.category10().domain(d3.range(dat.length));
-            gs.append('rect')
-                    .attr('x',0)
-                    .attr('width',function(d){return x(new Date(+d.to,0,0,0,0,0,0))-x(new Date(+d.from,0,0,0,0,0,0));})
-                    .attr('height',30)
-                    .style('fill',function(d,i){return cs(i);})
-                    .attr('y',0);
-            gs.append('text')
-                    .attr('x',0)
-                    .attr('y',20)
-                    .text(function(d){return d.name;});
-        });
-    }
+        var svg = d3
+          .select("#svgdiv")
+          .append("svg")
+          .attr("width", width)
+          .attr("height", height)
 
-    //called only in the beginning
-    function mkAxis(){
-        xAxis = d3.svg.axis()
-                .scale(x)
-                .tickSize(-4).ticks(d3.time.years,50).orient("top");
+        // https://www.h2.dion.ne.jp/~defghi/svgMemo/svgMemo_10.htm
+        //    svg.append('defs').append('clipPath').attr('id','clip').attr('clip-rule','evenodd')
+        //            .append('rect').attr({x: 0,y:0,width: 800,height:300});
 
-        xAxis2 = d3.svg.axis()
-                .scale(x)
-                .tickSize(-4).ticks(d3.time.years,50).orient("bottom");
+        svg.on("dblclick", bgDblClick)
+        $("#unzoom").click(function () {
+          bgDblClick()
+          return false
+        }) //For mobile.
 
-        xaxisobj = svg.append("g")
-                .attr("transform", "translate(0,30)")
-                .attr('class','axis x x1')
-                .call(xAxis);
+        var g_people = svg.append("g")
 
-        xaxisobj.selectAll("path.domain").attr("stroke","black").style('fill','none');
-        xaxisobj.selectAll("line.tick").style('fill','black');
+        var x = d3.time
+          .scale()
+          .domain([
+            new Date(yearFrom, 0, 0, 0, 0, 0, 0),
+            new Date(yearTo, 0, 0, 0, 0, 0, 0),
+          ])
+          .range([margin.left, width - margin.right])
 
-        xaxisobj2 = svg.append("g")
-                  .attr("transform", "translate(0,100)")
-                .attr('class','axis x x2')
-                .call(xAxis2);
+        $("#music").change(function (e) {
+          genre.music = e.target.checked
+          updateFiltered()
+        })
+        $("#literature").change(function (e) {
+          genre.literature = e.target.checked
+          updateFiltered()
+        })
+        $("#painting").change(function (e) {
+          genre.painting = e.target.checked
+          updateFiltered()
+        })
+        $("#architecture").change(function (e) {
+          genre.architecture = e.target.checked
+          updateFiltered()
+        })
 
-        xaxisobj2.selectAll("path.domain").attr("stroke","black").style('fill','none');
-        xaxisobj2.selectAll("line.tick").style('fill','black');
-    }
+        //mkEra();
+        mkAxis()
 
-    function updateShowLevel(_minLevel){
-        maxLevel = _minLevel;
-        updateFiltered();
-    }
+        d3.tsv("./composers.tsv", function (composers) {
+          d3.csv("./painters.csv", function (painters) {
+            d3.csv("./architecture.csv", function (architects) {
+              d3.csv("./authors.csv", function (authors) {
+                var dat2 = readData(composers, "composer")
 
-    //Update people with appropriate filters.
-    function updateFiltered(){
-        usedData = _.filter(allData,function(d){
-            return (d.importance <= maxLevel &&
-                    ((d.kind=='composer' && genre.music) ||
-                    (d.kind=='painter' && genre.painting) ||
-                    (d.kind=='architect' && genre.architecture) ||
-                    (d.kind=='author' && genre.literature)));
-        });
-        update(usedData);
-    }
+                dat2 = dat2.concat(readData(painters, "painter"))
+                dat2 = dat2.concat(readData(architects, "architect"))
+                dat2 = dat2.concat(readData(authors, "author"))
 
-    function update(dat){
-        svg.transition().duration(500).attr('height',dat.length * yinterval+100);
-        gs = g_people.selectAll('g')
-                .data(dat,function(d){return d.name;});
+                allData = _.sortBy(
+                  _.filter(dat2, function (d) {
+                    return !!d.name
+                  }),
+                  function (d) {
+                    return d.from
+                  }
+                )
+                updateFiltered()
+                d3.select("#social")
+                  .transition()
+                  .delay(600)
+                  .duration(100)
+                  .style("opacity", 1)
+              })
+            })
+          })
+        })
 
-        //Move existing ones
-        gs.transition().duration(500)
-                .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';});
+        function readData(dat, kind) {
+          return _.map(dat, function (d, i) {
+            var d2 = {}
+            d2.from = new Date(+d.from, 0, 0, 0, 0, 0, 0)
+            d2.to =
+              d.to && d.to != "" ? new Date(+d.to, 0, 0, 0, 0, 0, 0) : 2050 // still alive
+            d2.name = d.name
+            d2.i = i
+            d2.kind = kind
+            d2.nationality = d.nationality
+            d2.importance = d.importance ? +d.importance : 5
+            return d2
+          })
+        }
 
-        xaxisobj2.transition().duration(500).attr("transform", "translate(0,"+(usedData.length*yinterval+60)+")");
+        var zoomed = false
 
-                 //Append new ones
-        gs.enter().append('g')
-      //          .attr('clip-path',"url(#clip)")
-                .style('opacity',0)
-                .attr('transform',function(d,i){return 'translate('+x(d.from)+','+(i*yinterval+40)+')';})
-                .call(mkPerson)
-                .transition().duration(500).style('opacity',1);
+        function isAnchorAhead(d) {
+          return (
+            d.from - new Date(yearFrom, 0, 0, 0, 0, 0, 0) >
+            new Date(yearTo, 0, 0, 0, 0, 0, 0) - d.to
+          )
+        }
 
-        //Remove ones
-        gs.exit().transition().duration(500).style('opacity',0)
-                .remove();
+        function personNamePos(d) {
+          return isAnchorAhead(d) ? "end" : "start"
+        }
 
+        function bgDblClick() {
+          console.log(event)
+          if (zoomed) {
+            zoomed = false
+            setYearRange(yearFromDef, yearToDef)
+          }
+        }
 
-        var y1945 = new Date(1945,0,0,0,0,0,0);
+        function clicked() {
+          zoomed = false
+          var from, to
 
-    }
-});
-</script>
+          if (zoomed) {
+            // already zoomed in?
+            zoomed = false
+            from = yearFromDef
+            to = yearToDef
+          } else {
+            zoomed = true
+            //         var cent = x.invert(event.x);
+            var name = $(event.target).attr("x-name")
+            var psn = _.find(usedData, function (d) {
+              return d.name == name
+            })
+            console.log(psn)
+            var yr = Math.round(
+              (psn.from.getFullYear() + psn.to.getFullYear()) / 2
+            ) // cent.getFullYear();
+            from = yr - 100
+            to = yr + 100
+          }
+          setYearRange(from, to)
+        }
 
-<script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        function setYearRange(from, to) {
+          yearFrom = from
+          yearTo = to
+          x = d3.time
+            .scale()
+            .domain([
+              new Date(yearFrom, 0, 0, 0, 0, 0, 0),
+              new Date(yearTo, 0, 0, 0, 0, 0, 0),
+            ])
+            .range([margin.left, width - margin.right])
 
-    ga('create', 'UA-47555853-1', 'hirokai.github.io');
-    ga('send', 'pageview');
+          //Set axes
+          xAxis = d3.svg.axis().scale(x).tickSize(-4).ticks(10).orient("top")
 
-</script>
+          xAxis2 = d3.svg
+            .axis()
+            .scale(x)
+            .tickSize(-4)
+            .ticks(10)
+            .orient("bottom")
 
-</body>
+          xaxisobj.transition().duration(500).call(xAxis.scale(x))
+          xaxisobj2.transition().duration(500).call(xAxis2.scale(x))
+
+          var y1945 = new Date(1945, 0, 0, 0, 0, 0, 0)
+          svg
+            .select(".vert")
+            .transition()
+            .duration(500)
+            .attr({ x1: x(y1945), y1: 0, x2: x(y1945), y2: height - 50 })
+          gs.transition()
+            .duration(500)
+            .attr("transform", function (d, i) {
+              return "translate(" + x(d.from) + "," + (i * yinterval + 40) + ")"
+            })
+            .attr("width", function (d) {
+              return x(d.to) - x(d.from)
+            })
+          gs.selectAll("rect")
+            .transition()
+            .duration(500)
+            .attr("width", function (d) {
+              return x(d.to) - x(d.from)
+            })
+          gs.selectAll(".person-text")
+            .transition()
+            .duration(500)
+            .attr("x", function (d) {
+              return isAnchorAhead(d) ? -5 : x(d.to) - x(d.from) + 5
+            })
+            .attr("text-anchor", personNamePos)
+        }
+
+        function mkPerson(s) {
+          s.append("rect")
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", function (d) {
+              return x(d.to) - x(d.from)
+            })
+            .attr("height", 10)
+            .attr("i", function (_, i) {
+              return i
+            })
+            .attr("class", function (d) {
+              return "event " + d.kind + " " + d.nationality
+            })
+            .attr("x-nation", function (d) {
+              return d.nationality
+            })
+            .attr("x-name", function (d) {
+              return d.name
+            })
+            .on("click", clicked)
+          s.append("text")
+            .text(function (d) {
+              return d.name
+            })
+            .attr("x", function (d) {
+              return isAnchorAhead(d) ? -5 : x(d.to) - x(d.from) + 5
+            })
+            .attr("y", 9)
+            .attr("class", "person-text")
+            .attr("text-anchor", personNamePos)
+        }
+
+        function mkEra() {
+          d3.tsv("era.tsv", function (dat) {
+            console.log(dat)
+            var gs = svg
+              .append("g")
+              .attr("class", "period")
+              .selectAll("g")
+              .data(dat)
+              .enter()
+              .append("g")
+              .attr("transform", function (d) {
+                return (
+                  "translate(" +
+                  x(new Date(+d.from, 0, 0, 0, 0, 0, 0)) +
+                  "," +
+                  0 +
+                  ")"
+                )
+              })
+            var cs = d3.scale.category10().domain(d3.range(dat.length))
+            gs.append("rect")
+              .attr("x", 0)
+              .attr("width", function (d) {
+                return (
+                  x(new Date(+d.to, 0, 0, 0, 0, 0, 0)) -
+                  x(new Date(+d.from, 0, 0, 0, 0, 0, 0))
+                )
+              })
+              .attr("height", 30)
+              .style("fill", function (d, i) {
+                return cs(i)
+              })
+              .attr("y", 0)
+            gs.append("text")
+              .attr("x", 0)
+              .attr("y", 20)
+              .text(function (d) {
+                return d.name
+              })
+          })
+        }
+
+        //called only in the beginning
+        function mkAxis() {
+          xAxis = d3.svg
+            .axis()
+            .scale(x)
+            .tickSize(-4)
+            .ticks(d3.time.years, 50)
+            .orient("top")
+
+          xAxis2 = d3.svg
+            .axis()
+            .scale(x)
+            .tickSize(-4)
+            .ticks(d3.time.years, 50)
+            .orient("bottom")
+
+          xaxisobj = svg
+            .append("g")
+            .attr("transform", "translate(0,30)")
+            .attr("class", "axis x x1")
+            .call(xAxis)
+
+          xaxisobj
+            .selectAll("path.domain")
+            .attr("stroke", "black")
+            .style("fill", "none")
+          xaxisobj.selectAll("line.tick").style("fill", "black")
+
+          xaxisobj2 = svg
+            .append("g")
+            .attr("transform", "translate(0,100)")
+            .attr("class", "axis x x2")
+            .call(xAxis2)
+
+          xaxisobj2
+            .selectAll("path.domain")
+            .attr("stroke", "black")
+            .style("fill", "none")
+          xaxisobj2.selectAll("line.tick").style("fill", "black")
+        }
+
+        function updateShowLevel(_minLevel) {
+          maxLevel = _minLevel
+          updateFiltered()
+        }
+
+        //Update people with appropriate filters.
+        function updateFiltered() {
+          usedData = _.filter(allData, function (d) {
+            return (
+              d.importance <= maxLevel &&
+              ((d.kind == "composer" && genre.music) ||
+                (d.kind == "painter" && genre.painting) ||
+                (d.kind == "architect" && genre.architecture) ||
+                (d.kind == "author" && genre.literature))
+            )
+          })
+          update(usedData)
+        }
+
+        function update(dat) {
+          svg
+            .transition()
+            .duration(500)
+            .attr("height", dat.length * yinterval + 100)
+          gs = g_people.selectAll("g").data(dat, function (d) {
+            return d.name
+          })
+
+          //Move existing ones
+          gs.transition()
+            .duration(500)
+            .attr("transform", function (d, i) {
+              return "translate(" + x(d.from) + "," + (i * yinterval + 40) + ")"
+            })
+
+          xaxisobj2
+            .transition()
+            .duration(500)
+            .attr(
+              "transform",
+              "translate(0," + (usedData.length * yinterval + 60) + ")"
+            )
+
+          //Append new ones
+          gs.enter()
+            .append("g")
+            //          .attr('clip-path',"url(#clip)")
+            .style("opacity", 0)
+            .attr("transform", function (d, i) {
+              return "translate(" + x(d.from) + "," + (i * yinterval + 40) + ")"
+            })
+            .call(mkPerson)
+            .transition()
+            .duration(500)
+            .style("opacity", 1)
+
+          //Remove ones
+          gs.exit().transition().duration(500).style("opacity", 0).remove()
+
+          var y1945 = new Date(1945, 0, 0, 0, 0, 0, 0)
+        }
+      })
+    </script>
+
+    <script>
+      ;(function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r
+        ;(i[r] =
+          i[r] ||
+          function () {
+            ;(i[r].q = i[r].q || []).push(arguments)
+          }),
+          (i[r].l = 1 * new Date())
+        ;(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0])
+        a.async = 1
+        a.src = g
+        m.parentNode.insertBefore(a, m)
+      })(
+        window,
+        document,
+        "script",
+        "//www.google-analytics.com/analytics.js",
+        "ga"
+      )
+
+      ga("create", "UA-47555853-1", "hirokai.github.io")
+      ga("send", "pageview")
+    </script>
+  </body>
 </html>

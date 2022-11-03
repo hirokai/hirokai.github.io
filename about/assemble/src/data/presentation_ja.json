@@ -1,6 +1,18 @@
 [
   {
     "authors": "甲斐洋行",
+    "date": "2022年9月21日",
+    "time": "16:00-18:00",
+    "title": "高分岐の開放型マイクロ流路による微小液滴反応器",
+    "conference": "2022年第83回応用物理学会秋季学術講演会",
+    "place": "東北大学 川内キャンパス",
+    "invited": false,
+    "kind": "poster",
+    "url": "https://meeting.jsap.or.jp/jsap2022a/program",
+    "program_url": "https://confit.atlas.jp/guide/event/jsap2022a/subject/21p-P18-7/advanced"
+  },
+  {
+    "authors": "甲斐洋行",
     "date": "2021年5月17日",
     "time": "14:50-16:50",
     "title": "分岐を有する開放型マイクロ流路における水滴輸送の自由表面流れ解析",

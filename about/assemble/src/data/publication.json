@@ -1,8 +1,14 @@
 [
   {
+    "authors": "Shunsuke Yamamoto<sup>*</sup>, Hiroyuki Kai",
+    "title": "Wettability Patternable Hybrid Polymer Films Based on TiO2 and Fluorinated Polymer for Bioelectronics Applications.",
+    "journal_cit": "<i>Advanced Materials Interfaces</i>, 2201736 (2022)",
+    "journal": "https://doi.org/10.1002/admi.202201736"
+  },
+  {
     "authors": "Hiroyuki Kai<sup>*</sup>, Akichika Kumatani",
     "title": "A porous microneedle electrochemical glucose sensor fabricated on a scaffold of a polymer monolith.",
-    "journal_cit": "<i>Journal of Physics: Energy</i>, in press",
+    "journal_cit": "<i>Journal of Physics: Energy</i>, <b>3</b>, 024006 (2021)",
     "journal": "https://iopscience.iop.org/article/10.1088/2515-7655/abe4a1"
   },
   {
